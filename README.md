@@ -7,7 +7,7 @@ A responsive personal portfolio built with HTML, CSS and vanilla JavaScript, rea
 
 
  Mudita Sharma
-- `YOUR-GITHUB-USERNAME`- muditadigitalstudio-hash
+- `YOUR -GITHUB-USERNAME`- muditadigitalstudio-hash
 - `YOUR-LINKEDIN-USERNAME`- https://www.linkedin.com/in/mudita-sharma
 - `YOUR-EMAIL@example.com`-muditadigitalstudio@gmail.com
 - `Company Name`- Fractal Analytics- AI and data analytics company
