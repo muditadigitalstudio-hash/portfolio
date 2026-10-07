@@ -3,30 +3,345 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mudita Sharma - Data Engineer portfolio: cloud data platforms, pipelines, analytics, and mentoring.">
+  <meta name="description" content="Mudita Sharma - Data Engineer & Cloud Platforms Portfolio">
   <title>Mudita Sharma | Data Engineer & Cloud Specialist</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f293d;
+      --primary: #00e676;
+      --secondary: #00b0ff;
+      --accent: #a855f7;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 1. ENLARGED & HIGHLIGHTED NAME (NO DOT) */
+    .brand-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+    }
+
+    /* Section Base */
+    section {
+      margin-bottom: 7rem;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(0, 230, 118, 0.1);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      border-radius: 50px;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.5rem;
+    }
+
+    /* 2. CAPTIVATING HEADLINE */
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Interactive Pipeline UI (Hero Visual) */
+    .pipeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .pipeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .pipeline-status {
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pipeline-node {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    /* About Section Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .stat-card h4 {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+
+    /* Skills Badges */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(9, 13, 22, 0.9));
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .hero, .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="progress-bar" id="progressBar"></div>
 
-  <!-- NAVIGATION HEADER -->
-  <header class="nav-wrap">
-    <nav class="nav-container">
-      <!-- 1. ENLARGED & HIGHLIGHTED NAME (NO DOT) -->
-      <a class="brand" href="#home" aria-label="Home" style="font-size: 1.5rem; font-weight: 800; text-decoration: none;">
-        <span style="background: linear-gradient(135deg, #00e676, #00b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Mudita Sharma</span>
-      </a>
-
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="#home" class="brand-name">Mudita Sharma</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -34,90 +349,136 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section id="home" class="hero-section">
-      <div class="hero-content">
-        <span class="badge">• DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
-        
-        <!-- 2. CAPTIVATING HEADLINE -->
-        <h1 class="hero-title">Architecting High-Performance Pipelines to Turn Complex Data into Actionable Intelligence.</h1>
-        
-        <p class="hero-subtext">
-          Data Engineer with 3+ years of experience building scalable pipelines, cloud data platforms, and automated analytics workflows for global clients.
-        </p>
-        
+    <section id="home" class="hero">
+      <div>
+        <span class="hero-badge">● DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
+        <h1>Architecting High-Performance Pipelines & Scalable Cloud Data Platforms.</h1>
+        <p>I design, automate, and optimize enterprise data workflows to convert raw data streams into business-ready intelligence.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn primary-btn">Explore My Work →</a>
-          <a href="#contact" class="btn secondary-btn">Get In Touch ↓</a>
+          <a href="#experience" class="btn btn-primary">View Experience →</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
-      
-      <!-- HERO IMAGE / CODE PREVIEW -->
-      <div class="hero-visual">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics Visualization" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-      </div>
-    </section>
 
-    <!-- 3. ENHANCED ABOUT SECTION -->
-    <section id="about" class="about-section">
-      <div class="section-grid">
-        <div class="about-text">
-          <span class="section-number">01 — ABOUT</span>
-          <h2>Engineering Data Infrastructure with Purpose & Precision.</h2>
-          <p>
-            I specialize in turning unstructured, high-volume data streams into clean, reliable, production-ready systems[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span). With a strong background in data modeling, cloud infrastructure, and distributed computing, I design systems that empower enterprise business decisions.
-          </p>
-          <p>
-            Beyond engineering, I am passionate about mentoring the next generation of tech talent, having guided 50+ mentees in mastering modern data stacks[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).
-          </p>
+      <!-- INTERACTIVE PIPELINE VISUAL -->
+      <div class="pipeline-card">
+        <div class="pipeline-header">
+          <span class="pipeline-status"><span>●</span> LIVE PIPELINE</span>
+          <span style="color: var(--text-muted);">LATENCY: 12ms</span>
         </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Collaboration and Data Engineering" style="width: 100%; border-radius: 12px;">
+        <div class="pipeline-node" style="border-left: 3px solid var(--secondary);">
+          <span>[INGESTION] Event Streams</span>
+          <span style="color: var(--secondary);">Kafka / Azure</span>
+        </div>
+        <div class="pipeline-node" style="border-left: 3px solid var(--primary);">
+          <span>[PROCESSING] PySpark / Databricks</span>
+          <span style="color: var(--primary);">Cleaned & Curated</span>
+        </div>
+        <div class="pipeline-node" style="border-left: 3px solid var(--accent);">
+          <span>[STORAGE] Snowflake / BigQuery</span>
+          <span style="color: var(--accent);">Warehouse Ready</span>
         </div>
       </div>
     </section>
 
-    <!-- 4. EXPANDED SKILLS SECTION -->
-    <section id="skills" class="skills-section">
-      <span class="section-number">02 — SKILLS & CREDENTIALS</span>
-      <h2>Technical Stack & Expertise</h2>
-      
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <span class="section-label">01 — ABOUT</span>
+      <h2 class="section-title">Engineering Data Infrastructure with Precision</h2>
+      <div class="about-grid">
+        <div class="about-box">
+          <p>I am a Data Engineer with extensive experience building enterprise-scale pipelines, modern data architectures, and automated analytics solutions for global enterprise clients.</p>
+          <br>
+          <p>My work centers around optimizing end-to-end data workflows, ensuring SLA adherence, and empowering teams through active technical mentorship.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="stat-card">
+            <h4>3+ Years</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Data Engineering Experience</p>
+          </div>
+          <div class="stat-card">
+            <h4>50+ Mentees</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Guided in Modern Data Stacks</p>
+          </div>
+          <div class="stat-card">
+            <h4>99%+ SLA</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Production Workload Reliability</p>
+          </div>
+          <div class="stat-card">
+            <h4>Multi-Cloud</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Azure & Cloud Platforms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <span class="section-label">02 — SKILLS & CREDENTIALS</span>
+      <h2 class="section-title">Technical Stack & Expertise</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Databases & Warehousing</h3>
-          <p>Snowflake, BigQuery, Hive, MySQL, PostgreSQL, MS SQL Server, Data Warehousing, Data Migration[span_6](start_span)[span_6](end_span)</p>
-        </div>
-        
-        <div class="skill-card">
-          <h3>Data Engineering & Pipelines</h3>
-          <p>Python, PySpark, SQL, HQL, Airflow, Databricks, ELT/ETL Pipelines, Shell Scripting[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)</p>
-        </div>
-        
-        <div class="skill-card">
-          <h3>Cloud & Infrastructure</h3>
-          <p>Microsoft Azure, Linux, Hadoop, Git, GitHub, Bitbucket, CI/CD, Docker, Jira[span_9](start_span)[span_9](end_span)</p>
+          <div class="tag-container">
+            <span class="tag">Snowflake</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Hive</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MS SQL Server</span>
+          </div>
         </div>
 
         <div class="skill-card">
-          <h3>Analytics, AI & Visualization</h3>
-          <p>Power BI, Machine Learning (CNNs), Data Analytics, Anaconda, Model Deployment[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)</p>
+          <h3>Pipelines & Processing</h3>
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">SQL / HQL</span>
+            <span class="tag">ETL / ELT</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">Shell Scripting</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Cloud & Infrastructure</h3>
+          <div class="tag-container">
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Hadoop</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">Bitbucket</span>
+            <span class="tag">Jira</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Certifications & Analytics</h3>
+          <div class="tag-container">
+            <span class="tag">Azure Data Engineer Associate</span>
+            <span class="tag">Claude Certified Architect</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Deep Learning (CNNs)</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. CONTACT SECTION AT THE END -->
-    <section id="contact" class="contact-section" style="padding: 80px 0; text-align: center;">
-      <span class="section-number">05 — CONTACT</span>
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Let’s Build Something Great Together</h2>
-      <p style="max-width: 600px; margin: 0 auto 2rem; color: #a0aec0;">
-        Whether you have a project in mind, want to discuss cloud pipelines, or are looking for mentorship, feel free to reach out!
-      </p>
-
-      <div class="contact-links" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="mailto:mudita10251@gmail.com" class="btn primary-btn">📧 Email Me</a>
-        <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="btn secondary-btn">💼 LinkedIn</a>
-        <a href="https://github.com/muditadigitalstudio-hash" target="_blank" class="btn secondary-btn">🐙 GitHub</a>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="contact-card">
+        <span class="section-label">03 — CONTACT</span>
+        <h2>Let’s Build Something Great Together</h2>
+        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Whether you want to discuss cloud data architecture, data pipelines, or mentoring, feel free to connect!</p>
+        <div class="contact-links">
+          <a href="mailto:mudita10251@gmail.com" class="btn btn-primary">📧 Email Me</a>
+          <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="btn btn-secondary">💼 LinkedIn</a>
+          <a href="https://github.com/muditadigitalstudio-hash" target="_blank" class="btn btn-secondary">🐙 GitHub</a>
+        </div>
       </div>
     </section>
   </main>
+
 </body>
 </html>
