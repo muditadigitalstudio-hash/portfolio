@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mudita Sharma - Data Engineer portfolio: cloud data platforms, pipelines, analytics, and mentoring.">
-  <meta name="theme-color" content="#07111f">
-  <title>Mudita Sharma | Data Engineer</title>
+  <title>Mudita Sharma | Data Engineer & Cloud Specialist</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,266 +17,107 @@
   <!-- NAVIGATION HEADER -->
   <header class="nav-wrap">
     <nav class="nav-container">
-     <a class="brand" href="#home" aria-label="Home">
-  <span style="color: #00e676; font-weight: bold;">Mudita Sharma</span>
-     </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">≡</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#mentoring">Mentoring</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+      <!-- 1. ENLARGED & HIGHLIGHTED NAME (NO DOT) -->
+      <a class="brand" href="#home" aria-label="Home" style="font-size: 1.5rem; font-weight: 800; text-decoration: none;">
+        <span style="background: linear-gradient(135deg, #00e676, #00b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Mudita Sharma</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <!-- HERO SECTION -->
-    <section class="hero container" id="home">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse"></span> DATA ENGINEER · BUILDER · MENTOR</div>
-        <h1>Turning messy data into <span class="gradient-text">reliable systems.</span></h1>
-        <p class="hero-text">
-          Data Engineer with experience building scalable pipelines, cloud platforms, and analytics workflows for enterprise clients.
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <span class="badge">• DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
+        
+        <!-- 2. CAPTIVATING HEADLINE -->
+        <h1 class="hero-title">Architecting High-Performance Pipelines to Turn Complex Data into Actionable Intelligence.</h1>
+        
+        <p class="hero-subtext">
+          Data Engineer with 3+ years of experience building scalable pipelines, cloud data platforms, and automated analytics workflows for global clients.
         </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore my work <span>↗</span></a>
-          <a class="btn secondary" href="#contact">Get in touch <span>↓</span></a>
-        </div>
-        <div class="social-row">
-          <a href="https://github.com/mudatadigitalstudio-hash" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/mudita-sharma/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="mailto:mudatadigitalstudio@gmail.com">Email ↗</a>
+        
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary-btn">Explore My Work →</a>
+          <a href="#contact" class="btn secondary-btn">Get In Touch ↓</a>
         </div>
       </div>
+      
+      <!-- HERO IMAGE / CODE PREVIEW -->
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics Visualization" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      </div>
+    </section>
 
-      <div class="hero-visual reveal">
-        <div class="orb orb-a"></div><div class="orb orb-b"></div>
-        <div class="code-card">
-          <div class="window-bar"><span></span><span></span><span></span><small>data_pipeline.py</small></div>
-          <pre><code><span class="kw">def</span> <span class="fn">build_pipeline</span>(source):
-    raw = <span class="fn">ingest</span>(source)
-    clean = <span class="fn">transform</span>(raw)
-    curated = <span class="fn">publish</span>(clean)
-
-    <span class="kw">return</span> curated</code></pre>
-          <div class="pipeline-status">
-            <span class="status-dot"></span>
-            <span>Pipeline healthy</span>
-            <strong>99.9%</strong>
-          </div>
+    <!-- 3. ENHANCED ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="section-grid">
+        <div class="about-text">
+          <span class="section-number">01 — ABOUT</span>
+          <h2>Engineering Data Infrastructure with Purpose & Precision.</h2>
+          <p>
+            I specialize in turning unstructured, high-volume data streams into clean, reliable, production-ready systems[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span). With a strong background in data modeling, cloud infrastructure, and distributed computing, I design systems that empower enterprise business decisions.
+          </p>
+          <p>
+            Beyond engineering, I am passionate about mentoring the next generation of tech talent, having guided 50+ mentees in mastering modern data stacks[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Collaboration and Data Engineering" style="width: 100%; border-radius: 12px;">
         </div>
       </div>
     </section>
 
-    <!-- METRICS -->
-    <section class="metrics container reveal">
-      <div><strong>DATA</strong><span>Engineering mindset</span></div>
-      <div><strong>CLOUD</strong><span>Modern platforms</span></div>
-      <div><strong>BUILD</strong><span>Reliable pipelines</span></div>
-      <div><strong>MENTOR</strong><span>Share what I learn</span></div>
-    </section>
+    <!-- 4. EXPANDED SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <span class="section-number">02 — SKILLS & CREDENTIALS</span>
+      <h2>Technical Stack & Expertise</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Databases & Warehousing</h3>
+          <p>Snowflake, BigQuery, Hive, MySQL, PostgreSQL, MS SQL Server, Data Warehousing, Data Migration[span_6](start_span)[span_6](end_span)</p>
+        </div>
+        
+        <div class="skill-card">
+          <h3>Data Engineering & Pipelines</h3>
+          <p>Python, PySpark, SQL, HQL, Airflow, Databricks, ELT/ETL Pipelines, Shell Scripting[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)</p>
+        </div>
+        
+        <div class="skill-card">
+          <h3>Cloud & Infrastructure</h3>
+          <p>Microsoft Azure, Linux, Hadoop, Git, GitHub, Bitbucket, CI/CD, Docker, Jira[span_9](start_span)[span_9](end_span)</p>
+        </div>
 
-    <!-- 01 ABOUT SECTION -->
-    <section class="section container" id="about">
-      <div class="section-label">01 — ABOUT</div>
-      <div class="split">
-        <div>
-          <h2>Engineering with <span class="gradient-text">purpose.</span></h2>
-        </div>
-        <div>
-          <p class="lead">I seek challenging opportunities where I can fully enhance my professional skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 SKILLS & CERTIFICATIONS SECTION -->
-    <section class="section alt" id="skills">
-      <div class="container">
-        <div class="section-label">02 — SKILLS & CERTIFICATIONS</div>
-        <div class="section-heading">
-          <h2>Technical Stack & Credentials</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Databases & Data Engineering</h3>
-            <ul>
-              <li>Hive, MySQL, Snowflake, BigQuery</li>
-              <li>Microsoft SQL Server Management Studio</li>
-              <li>ELT/ETL, Data Warehousing, Data Migration</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3>Technical Skills</h3>
-            <ul>
-              <li>Python, PySpark, SQL, HQL</li>
-              <li>Linux, Hadoop</li>
-              <li>Claude Certified Architect - Foundations</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3>Tools & Platforms</h3>
-            <ul>
-              <li>Microsoft Azure Data Engineer Associate</li>
-              <li>Power BI Data Analyst Associate</li>
-              <li>Git, GitHub, Bitbucket, Jira, Anaconda</li>
-            </ul>
-          </div>
+        <div class="skill-card">
+          <h3>Analytics, AI & Visualization</h3>
+          <p>Power BI, Machine Learning (CNNs), Data Analytics, Anaconda, Model Deployment[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)</p>
         </div>
       </div>
     </section>
 
-    <!-- 03 EXPERIENCE SECTION -->
-    <section class="section container" id="experience">
-      <div class="section-label">03 — EXPERIENCE</div>
-      <div class="section-heading">
-        <h2>Career History</h2>
-      </div>
-      <div class="experience-list">
-        <div class="exp-item">
-          <h3>Data Engineer — <span>Fractal Analytics</span></h3>
-          <p class="exp-meta">July 2022 – Present | Gurugram, India</p>
-          <ul>
-            <li>Worked as a Data Engineer for an International US-based Bank (Citi Bank), top CPG companies (Unilever, P&G, Mars, Mondelez), and search engine companies (Google).</li>
-            <li>Built end-to-end data pipelines using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
-            <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, outputting to Hive, Parquet, and CSV targets.</li>
-            <li>Automated pipeline execution using Shell scripting and implemented data quality checks to ensure production readiness.</li>
-            <li>Automated Databricks workflow reconciliation and validation processes, reducing manual effort by approximately 2 hours per day.</li>
-            <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
-          </ul>
-        </div>
-        <div class="exp-item">
-          <h3>System Engineer — <span>Infosys</span></h3>
-          <p class="exp-meta">January 2021 – June 2022</p>
-          <ul>
-            <li>Gained professional experience in enterprise technology environments and software delivery practices.</li>
-            <li>Developed analytical and problem-solving skills while working on technical tasks and project requirements.</li>
-            <li>Collaborated with team members to support project deliverables and resolve technical challenges.</li>
-          </ul>
-        </div>
-        <div class="exp-item">
-          <h3>Data Analytics Consulting Virtual Intern — <span>KPMG Global Services</span></h3>
-          <p class="exp-meta">May 2021 – June 2021</p>
-          <ul>
-            <li>Completed data analytics consulting tasks focusing on data quality assessment and insights generation.</li>
-          </ul>
-        </div>
-        <div class="exp-item">
-          <h3>Research Trainee — <span>DRDO</span></h3>
-          <p class="exp-meta">June 2019 – August 2019 | New Delhi, India</p>
-          <ul>
-            <li>Worked on innovative research projects regarding landslide and non-landslide image detection.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- 5. CONTACT SECTION AT THE END -->
+    <section id="contact" class="contact-section" style="padding: 80px 0; text-align: center;">
+      <span class="section-number">05 — CONTACT</span>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Let’s Build Something Great Together</h2>
+      <p style="max-width: 600px; margin: 0 auto 2rem; color: #a0aec0;">
+        Whether you have a project in mind, want to discuss cloud pipelines, or are looking for mentorship, feel free to reach out!
+      </p>
 
-    <!-- 04 PROJECTS SECTION -->
-    <section class="section alt" id="projects">
-      <div class="container">
-        <div class="section-label">04 — SELECTED WORK</div>
-        <div class="section-heading">
-          <h2>Projects</h2>
-        </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Credit Card Fraud Detection</h3>
-            <p><strong>Tech Stack:</strong> Python · Machine Learning</p>
-            <ul>
-              <li>Determines fraud transactions by comparing three machine learning algorithms.</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Facial Recognition Using CNN</h3>
-            <p><strong>Tech Stack:</strong> Python · Deep Learning · CNN</p>
-            <ul>
-              <li>Multiclass image classification model identifying 106 classes with ~51% accuracy.</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Finger Knuckle Recognition Using CNN</h3>
-            <p><strong>Tech Stack:</strong> Python · Deep Learning · CNN · Image Processing</p>
-            <ul>
-              <li>Image classification project for finger knuckle recognition across 100 classes.</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Landslide Detection Using Deep Learning</h3>
-            <p><strong>Tech Stack:</strong> Python · Deep Learning · CNN</p>
-            <ul>
-              <li>Built model to classify landslide vs non-landslide images for disaster monitoring.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 EDUCATION SECTION -->
-    <section class="section container" id="education">
-      <div class="section-label">05 — EDUCATION</div>
-      <div class="section-heading">
-        <h2>Academic Credentials</h2>
-      </div>
-      <div class="experience-list">
-        <div class="exp-item">
-          <h3>B.Tech in Electronics & Communications Engineering — <span>Guru Gobind Singh Indraprastha University</span></h3>
-          <p class="exp-meta">Aug 2016 – Oct 2020 | Grade: A</p>
-        </div>
-        <div class="exp-item">
-          <h3>12th (Physics, Chemistry, Maths) — <span>St. Angel's School</span></h3>
-          <p class="exp-meta">Mar 2015 – Mar 2016 | Grade: 84.5%</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 MENTORING SECTION -->
-    <section class="section alt" id="mentoring">
-      <div class="container">
-        <div class="section-label">06 — MENTORING</div>
-        <div class="mentor-card">
-          <div>
-            <h2>Mentor Partner | Boss Coder</h2>
-            <p>I support learners in strengthening technical foundations, developing practical skills, and preparing for opportunities in Data Engineering.</p>
-            <h3>What I contribute:</h3>
-            <ul>
-              <li><strong>Technical Guidance:</strong> Concepts, tools, and industry practices.</li>
-              <li><strong>Career Mentorship:</strong> Skill development roadmaps and resume optimization.</li>
-              <li><strong>Interview Preparation:</strong> Problem-solving approaches and technical prep.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07 CONTACT SECTION -->
-    <section class="section container" id="contact">
-      <div class="contact-box">
-        <div class="section-label">07 — CONTACT</div>
-        <h2>Have a data problem to solve?</h2>
-        <p>Whether it's a data engineering opportunity, collaboration, or mentoring conversation, I'd love to hear from you.</p>
-        <a class="email-big" href="mailto:mudatadigitalstudio@gmail.com">mudatadigitalstudio@gmail.com</a>
-        <div class="social-row large">
-          <a href="https://github.com/mudatadigitalstudio-hash" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/mudita-sharma/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
+      <div class="contact-links" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:mudita10251@gmail.com" class="btn primary-btn">📧 Email Me</a>
+        <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="btn secondary-btn">💼 LinkedIn</a>
+        <a href="https://github.com/muditadigitalstudio-hash" target="_blank" class="btn secondary-btn">🐙 GitHub</a>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Mudita Sharma</span>
-      <span>Built with HTML · CSS · JavaScript · GitHub Pages</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
-          
-        
-           
