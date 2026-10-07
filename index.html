@@ -187,7 +187,7 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Image */
+    /* Hero Image Styles */
     .hero-image-wrap {
       position: relative;
     }
@@ -196,8 +196,13 @@
       width: 100%;
       border-radius: 16px;
       border: 1px solid var(--card-border);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 230, 118, 0.15);
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.02);
     }
 
     /* Grids & Cards */
@@ -303,7 +308,6 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certificates">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
-        <!-- RESUME LINK WITH YOUR GOOGLE DOCS LINK -->
         <li><a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" style="color: var(--primary); font-weight: 600;">Resume 📄</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -314,20 +318,20 @@
     <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div>
-        <span class="hero-badge">● DATA ENGINEER AT FRACTAL • CLAUDE CERTIFIED • MENTOR •5x MICROSOFT AZURE CERTIFIED </span>
+        <span class="hero-badge">● DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
         <h1>Building Fault-Tolerant Data Infrastructure & Enterprise Cloud Ecosystems at Scale.</h1>
         <p>Experienced Data Engineer with 5 years designing, developing, and optimizing end-to-end data workflows for global enterprise organizations including Citi Bank, Google, Unilever, P&G, Mars, and Mondelez.</p>
         
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Explore Projects →</a>
-          <!-- RESUME BUTTON WITH YOUR GOOGLE DOCS LINK -->
           <a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" class="btn btn-secondary">📄 View Resume</a>
           <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
 
+      <!-- UPDATED DARK DATA ARCHITECTURE HERO IMAGE -->
       <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure and Data Engineering" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure and Cyber Data Architecture" class="hero-img">
       </div>
     </section>
 
@@ -388,31 +392,44 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
+    <!-- CERTIFICATIONS SECTION WITH UPLOADED CERTIFICATE IMAGES -->
     <section id="certificates">
       <span class="section-label">03 — CERTIFICATIONS</span>
       <h2 class="section-title">Verified Credentials</h2>
       <div class="grid-cards">
+        
+        <!-- Certificate 1 -->
         <div class="card">
+          <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
           <h3>Claude Certified Architect - Foundations</h3>
           <span class="card-meta">Issued by Anthropic</span>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Architecting AI solutions and foundations.</p>
         </div>
+
+        <!-- Certificate 2 -->
         <div class="card">
+          <img src="MICROSOFT CERTIFIED.jpeg" alt="Azure Data Fundamentals" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
           <h3>Microsoft Certified: Azure Data Fundamentals</h3>
           <span class="card-meta">DP-900 | Issued by Microsoft</span>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Core cloud data concepts, relational & non-relational data in Azure.</p>
         </div>
+
+        <!-- Certificate 3 -->
         <div class="card">
+          <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Power BI Data Analyst Associate" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
           <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
           <span class="card-meta">PL-300 | Issued by Microsoft</span>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Data preparation, modeling, visualization, and analytical reporting.</p>
         </div>
+
+        <!-- Certificate 4 -->
         <div class="card">
+          <img src="SQL INTERMEDIATE CERTIFICATE.jpeg" alt="SQL Intermediate Certificate" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
           <h3>SQL (Intermediate) Certificate</h3>
           <span class="card-meta">Issued by HackerRank</span>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Complex joins, aggregation, subqueries, and database performance.</p>
         </div>
+
       </div>
     </section>
 
@@ -478,12 +495,25 @@
 
 </body>
 </html>
-      
-    
-  
+     
 
    
+     
+     
+   
+  
 
+      
+    
+     
+
+
+      
+          
+
+   
+           
+           
     
           
     
