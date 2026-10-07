@@ -187,7 +187,7 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Image Styles */
+    /* Hero Image */
     .hero-image-wrap {
       position: relative;
     }
@@ -203,6 +203,61 @@
 
     .hero-img:hover {
       transform: scale(1.02);
+    }
+
+    /* Technical Skills Table Styles */
+    .skills-table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .skills-table th, 
+    .skills-table td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .skills-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .skills-table th {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .skills-category {
+      color: var(--secondary);
+      font-weight: 700;
+      width: 25%;
+      font-size: 0.95rem;
+      border-right: 1px solid var(--card-border);
+    }
+
+    .skills-list {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .skills-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
     }
 
     /* Grids & Cards */
@@ -262,6 +317,21 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
+    /* Experience List */
+    .exp-item {
+      margin-bottom: 2rem;
+    }
+
+    .exp-item ul {
+      margin-left: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .exp-item li {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
     /* Contact Card */
     .contact-card {
       background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(9, 13, 22, 0.95));
@@ -291,6 +361,9 @@
       }
       .brand-name {
         font-size: 1.8rem;
+      }
+      .skills-category {
+        width: 35%;
       }
     }
   </style>
@@ -329,7 +402,6 @@
         </div>
       </div>
 
-      <!-- UPDATED DARK DATA ARCHITECTURE HERO IMAGE -->
       <div class="hero-image-wrap">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure and Cyber Data Architecture" class="hero-img">
       </div>
@@ -353,48 +425,79 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- TECHNICAL SKILLS TABULAR SECTION -->
     <section id="skills">
       <span class="section-label">02 — SKILLS & TECH STACK</span>
-      <h2 class="section-title">Core Competencies</h2>
-      <div class="grid-cards">
-        <div class="card">
-          <h3>Cloud & Platforms</h3>
-          <div class="tag-container">
-            <span class="tag">Microsoft Azure</span>
-            <span class="tag">Azure Data Factory</span>
-            <span class="tag">Databricks</span>
-            <span class="tag">GCP</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Data Engineering & Code</h3>
-          <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">PySpark</span>
-            <span class="tag">SQL / HQL</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Hadoop</span>
-            <span class="tag">Shell Scripting</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Databases & Warehousing</h3>
-          <div class="tag-container">
-            <span class="tag">Snowflake</span>
-            <span class="tag">BigQuery</span>
-            <span class="tag">Hive</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">ELT / ETL</span>
-          </div>
-        </div>
+      <h2 class="section-title">Technical Skills</h2>
+      
+      <div class="skills-table-container">
+        <table class="skills-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Technologies & Tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="skills-category">Cloud Technologies</td>
+              <td class="skills-list">Microsoft Azure, Microsoft Azure Data Factory, Databricks</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Databases</td>
+              <td class="skills-list">Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Technical Skills</td>
+              <td class="skills-list">Python, PySpark, SQL, HQL, Linux, Hadoop</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Other Tools</td>
+              <td class="skills-list">Anaconda, Tectia, Bitbucket, Github</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Version Control</td>
+              <td class="skills-list">Github, Bitbucket, Jira</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Data Engineering</td>
+              <td class="skills-list">ELT/ETL, Data Warehousing, Data Migration, Data Quality</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION WITH UPLOADED CERTIFICATE IMAGES -->
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
+      <h2 class="section-title">Career History</h2>
+      
+      <div class="card exp-item">
+        <h3>Fractal Analytics | Data Engineer</h3>
+        <span class="card-meta">July 2022 – Present</span>
+        <ul>
+          <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+          <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
+          <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
+          <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
+        </ul>
+      </div>
+
+      <div class="card exp-item">
+        <h3>Infosys | System Engineer</h3>
+        <span class="card-meta">Jan 2021 – June 2022</span>
+        <ul>
+          <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads from GCP to Azure platform.</li>
+          <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
+          <li>Collaborated with business stakeholders and client teams to validate migration requirements and ensure successful project delivery.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
     <section id="certificates">
-      <span class="section-label">03 — CERTIFICATIONS</span>
+      <span class="section-label">04 — CERTIFICATIONS</span>
       <h2 class="section-title">Verified Credentials</h2>
       <div class="grid-cards">
         
@@ -435,7 +538,7 @@
 
     <!-- PROJECTS SECTION -->
     <section id="projects">
-      <span class="section-label">04 — FEATURED PROJECTS</span>
+      <span class="section-label">05 — FEATURED PROJECTS</span>
       <h2 class="section-title">Engineering Case Studies</h2>
       <div class="grid-cards">
         <div class="card">
@@ -474,7 +577,7 @@
     <!-- CONTACT SECTION -->
     <section id="contact">
       <div class="contact-card">
-        <span class="section-label">05 — GET IN TOUCH</span>
+        <span class="section-label">06 — GET IN TOUCH</span>
         <h2>Let’s Work Together</h2>
         <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Feel free to reach out for data engineering engagements, cloud pipeline consulting, or mentorship.</p>
         
@@ -495,25 +598,4 @@
 
 </body>
 </html>
-     
-
-   
-     
-     
-   
-  
-
-      
-    
-     
-
-
-      
-          
-
-   
-           
-           
-    
-          
-    
+        
