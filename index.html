@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudita Sharma - Portfolio & Certifications</title>
+    <title>Mudita Sharma - Portfolio</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -13,50 +13,145 @@
             --text-secondary: #8b949e;
             --accent-color: #58a6ff;
             --badge-bg: #21262d;
+            --button-hover: #1f6feb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
-            margin: 0;
-            padding: 2rem;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        header {
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(22, 27, 34, 0.9);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
+            z-index: 1000;
+            padding: 1rem 2rem;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 2rem;
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: #fff;
+            text-decoration: none;
         }
 
-        p.subtitle {
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
             color: var(--text-secondary);
-            margin-top: 0.5rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero Section */
+        header.hero {
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Common Section Layout */
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #fff;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            position: relative;
         }
 
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .skill-card h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Certifications Grid */
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
         }
 
@@ -80,7 +175,7 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
-            margin: 0 0 0.5rem 0;
+            margin-bottom: 0.5rem;
         }
 
         .cert-issuer {
@@ -92,7 +187,7 @@
         .cert-details {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .cert-id {
@@ -108,156 +203,405 @@
             margin-top: auto;
             display: flex;
             gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: var(--badge-bg);
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Buttons */
         .btn {
             display: inline-block;
             text-decoration: none;
-            color: var(--accent-color);
-            border: 1px solid var(--border-color);
-            background-color: var(--badge-bg);
-            padding: 0.4rem 0.8rem;
+            color: #fff;
+            background-color: var(--button-hover);
+            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, border-color 0.2s;
+            cursor: pointer;
         }
 
         .btn:hover {
+            background-color: #1158c7;
+        }
+
+        .btn-outline {
+            background-color: var(--badge-bg);
+            color: var(--accent-color);
+            border-color: var(--border-color);
+        }
+
+        .btn-outline:hover {
             background-color: #30363d;
             border-color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .contact-list a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.6rem;
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Mudita Sharma</h1>
-        <p class="subtitle">Data & Cloud Professional | Verified Certifications</p>
-    </header>
-
-    <main>
-        <h2 class="section-title">Certifications & Credentials</h2>
-        
-        <div class="cert-grid">
-
-            <!-- Claude Certified Architect -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
-                    <div class="cert-issuer">Anthropic</div>
-                    <div class="cert-details">
-                        <div>Issued: Sep 05, 2026</div>
-                        <div>Expires: Sep 05, 2027</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/claude-architect.pdf" target="_blank" class="btn">View Certificate</a>
-                    <a href="https://www.credly.com/badges/5a2d11c9-9f85-46ea-a825-e8fba4e565ff" target="_blank" class="btn">Verify Link</a>
-                </div>
-            </div>
-
-            <!-- Microsoft Azure Data Engineer Associate -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
-                    <div class="cert-issuer">Microsoft</div>
-                    <div class="cert-details">
-                        <div>Issued: July 20, 2022</div>
-                        <div class="cert-id">ID: 1355-4696</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/azure-data-engineer.pdf" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
-
-            <!-- Microsoft Power BI Data Analyst Associate -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
-                    <div class="cert-issuer">Microsoft</div>
-                    <div class="cert-details">
-                        <div>Issued: August 19, 2022</div>
-                        <div class="cert-id">ID: 1386-2927</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/power-bi-data-analyst.pdf" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
-
-            <!-- Microsoft Azure Administrator Associate -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
-                    <div class="cert-issuer">Microsoft</div>
-                    <div class="cert-details">
-                        <div>Issued: January 17, 2022</div>
-                        <div class="cert-id">ID: 1109-9027</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/azure-administrator.pdf" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
-
-            <!-- Microsoft Azure Data Fundamentals -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
-                    <div class="cert-issuer">Microsoft</div>
-                    <div class="cert-details">
-                        <div>Issued: June 16, 2022</div>
-                        <div class="cert-id">ID: 1310-8724</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/azure-data-fundamentals.pdf" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
-
-            <!-- Microsoft Azure Fundamentals -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">Microsoft Certified: Azure Fundamentals</h3>
-                    <div class="cert-issuer">Microsoft</div>
-                    <div class="cert-details">
-                        <div>Issued: July 14, 2021</div>
-                        <div class="cert-id">ID: H898-7313</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/azure-fundamentals.pdf" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
-
-            <!-- IBM Data Science Professional Certificate -->
-            <div class="cert-card">
-                <div>
-                    <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
-                    <div class="cert-issuer">Coursera / IBM</div>
-                    <div class="cert-details">
-                        <div>Issued: August 25, 2019</div>
-                    </div>
-                </div>
-                <div class="cert-actions">
-                    <a href="certificates/ibm-data-science.pdf" target="_blank" class="btn">View Certificate</a>
-                    <a href="https://coursera.org/verify/professional-cert/LZ5MXZEP7F5W" target="_blank" class="btn">Verify Link</a>
-                </div>
-            </div>
-
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Mudita Sharma</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </main>
-</div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Mudita Sharma</h1>
+            <div class="hero-subtitle">Data Engineer & Cloud Architect</div>
+            <p class="hero-description">
+                Specializing in scalable data pipelines, enterprise cloud architecture, end-to-end data analytics, and modern AI/LLM solutions across Azure, Databricks, and Anthropic Claude ecosystems.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Get in Touch</a>
+                <a href="#certifications" class="btn btn-outline">View Credentials</a>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p style="color: var(--text-secondary); max-width: 850px; font-size: 1rem; line-height: 1.8;">
+                I am an accomplished Data and Cloud Professional with expertise in designing high-throughput data pipelines, data warehouses, and AI-driven workflows. With multiple industry certifications from Microsoft, IBM, and Anthropic, I specialize in converting raw big data into actionable analytics and building modern cloud infrastructure that scales.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Cloud Platforms</h4>
+                    <p>Microsoft Azure, AWS, Databricks, Snowflake</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Data Engineering</h4>
+                    <p>PySpark, SQL, Azure Data Factory, Synapse, ETL/ELT Pipelines</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Analytics & BI</h4>
+                    <p>Power BI, DAX, Data Modeling, Tableau, Visualizations</p>
+                </div>
+                <div class="skill-card">
+                    <h4>AI & Machine Learning</h4>
+                    <p>Claude Architecture, Prompt Engineering, Python, Scikit-Learn</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Enterprise Azure Data Pipeline</h3>
+                    <p>Designed and built an end-to-end cloud data warehouse solution utilizing Azure Data Factory, Synapse Analytics, and Power BI for real-time reporting.</p>
+                    <div class="tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">Data Factory</span>
+                        <span class="tag">Synapse</span>
+                        <span class="tag">Power BI</span>
+                    </div>
+                    <a href="https://github.com/" target="_blank" class="btn btn-outline">View Repository</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>LLM Orchestration Architecture</h3>
+                    <p>Implemented context-aware generative AI workflows using Claude API, structured prompt orchestration, and vector retrieval pipelines.</p>
+                    <div class="tags">
+                        <span class="tag">Claude API</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">GenAI</span>
+                    </div>
+                    <a href="https://github.com/" target="_blank" class="btn btn-outline">View Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title">Certifications & Credentials</h2>
+            
+            <div class="cert-grid">
+
+                <!-- Claude Certified Architect - Foundations -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
+                        <div class="cert-issuer">Anthropic</div>
+                        <div class="cert-details">
+                            <div>Issued: Sep 05, 2026</div>
+                            <div>Expires: Sep 05, 2027</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/claude-architect.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                        <a href="https://www.credly.com/badges/5a2d11c9-9f85-46ea-a825-e8fba4e565ff" target="_blank" class="btn btn-outline">Verify Credly</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certified: Azure Data Engineer Associate (DP-203) -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
+                        <div class="cert-issuer">Microsoft</div>
+                        <div class="cert-details">
+                            <div>Issued: July 20, 2022</div>
+                            <div>Valid until: July 21, 2023</div>
+                            <div class="cert-id">ID: 1355-4696</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/azure-data-engineer.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certified: Power BI Data Analyst Associate (PL-300) -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
+                        <div class="cert-issuer">Microsoft</div>
+                        <div class="cert-details">
+                            <div>Issued: August 19, 2022</div>
+                            <div>Valid until: August 20, 2023</div>
+                            <div class="cert-id">ID: 1386-2927</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/power-bi-data-analyst.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certified: Azure Administrator Associate (AZ-104) -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
+                        <div class="cert-issuer">Microsoft</div>
+                        <div class="cert-details">
+                            <div>Issued: January 17, 2022</div>
+                            <div>Valid until: January 18, 2023</div>
+                            <div class="cert-id">ID: 1109-9027</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/azure-administrator.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certified: Azure Data Fundamentals (DP-900) -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
+                        <div class="cert-issuer">Microsoft</div>
+                        <div class="cert-details">
+                            <div>Issued: June 16, 2022</div>
+                            <div class="cert-id">ID: 1310-8724</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/azure-data-fundamentals.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certified: Azure Fundamentals (AZ-900) -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">Microsoft Certified: Azure Fundamentals</h3>
+                        <div class="cert-issuer">Microsoft</div>
+                        <div class="cert-details">
+                            <div>Issued: July 14, 2021</div>
+                            <div class="cert-id">ID: H898-7313</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/azure-fundamentals.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- IBM Data Science Professional Certificate -->
+                <div class="cert-card">
+                    <div>
+                        <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
+                        <div class="cert-issuer">Coursera / IBM</div>
+                        <div class="cert-details">
+                            <div>Issued: August 25, 2019</div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="certificates/ibm-data-science.pdf" target="_blank" class="btn btn-outline">View PDF</a>
+                        <a href="https://coursera.org/verify/professional-cert/LZ5MXZEP7F5W" target="_blank" class="btn btn-outline">Verify Coursera</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>I am open to collaborations, technical consulting, and data engineering/cloud engineering opportunities. Feel free to reach out directly through the form or my social profiles!</p>
+                    <ul class="contact-list">
+                        <li><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/muditasharma</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">linkedin.com/in/muditasharma</a></li>
+                    </ul>
+                </div>
+
+                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder= "your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Your Message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Mudita Sharma. Built with HTML/CSS and deployed via GitHub Pages.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
-     
-
-  
-        
-      
-
-      
