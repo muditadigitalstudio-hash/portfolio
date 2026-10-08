@@ -125,7 +125,7 @@
         }
 
         .hero-tagline {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 800;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -146,42 +146,30 @@
             box-shadow: 0 0 10px #22c55e;
         }
 
-        .hero-name {
-            font-size: 4.8rem;
+        /* EXACT IMAGE DESIGN HEADLINE TYPOGRAPHY */
+        .hero-image-headline {
+            font-size: 3.8rem;
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1.08;
             letter-spacing: -1.5px;
-            margin-bottom: 0.8rem;
-            background: linear-gradient(135deg, #ffffff 20%, #22c55e 60%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-        }
-
-        .headline-primary {
-            font-size: 2.3rem;
-            line-height: 1.25;
-            font-weight: 800;
             color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+            max-width: 580px;
         }
 
-        .headline-secondary {
-            font-size: 1.8rem;
-            line-height: 1.25;
-            font-weight: 800;
-            background: linear-gradient(90deg, #00d2ff, #4ade80);
+        .hero-image-headline .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #4ade80 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .hero-description {
             color: #94a3b8;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 2rem;
-            max-width: 580px;
-            line-height: 1.7;
+            max-width: 560px;
+            line-height: 1.6;
         }
 
         .mentor-badge-card {
@@ -673,14 +661,8 @@
             .contact-header h3 {
                 font-size: 1.8rem;
             }
-            .hero-name {
-                font-size: 3.2rem;
-            }
-            .headline-primary {
-                font-size: 1.8rem;
-            }
-            .headline-secondary {
-                font-size: 1.5rem;
+            .hero-image-headline {
+                font-size: 2.8rem;
             }
         }
     </style>
@@ -711,26 +693,26 @@
         <!-- Hero Section -->
         <header class="hero">
             <div>
-                <div class="hero-tagline">DATA ENGINEER • CLOUD ARCHITECT • TECH MENTOR</div>
+                <div class="hero-tagline">ENGINEER • BUILDER • MENTOR</div>
                 
-                <div class="hero-name">MUDITA SHARMA</div>
-                
-                <!-- VIVID GREEN, BLUE, WHITE HEADLINES -->
-                <div class="headline-primary">Architecting <span class="text-green">Scalable Data Pipelines</span> & <span class="text-blue">Cloud Platforms</span></div>
-                <div class="headline-secondary">Turning Complex Data into Actionable Intelligence</div>
-                
+                <!-- EXACT DESIGN MATCHING YOUR IMAGE -->
+                <h1 class="hero-image-headline">
+                    Turning messy data into
+                    <span class="gradient-text">reliable systems.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Data Engineer with experience building scalable pipelines, cloud platforms, and analytics workflows for enterprise clients.
+                </p>
+
                 <div class="mentor-badge-card">
                     <div class="mentor-number">300+</div>
                     <div class="mentor-text">Mentees Mentored in Cloud Data Engineering & AI</div>
                 </div>
-
-                <p class="hero-description">
-                    Architecting high-throughput cloud data platforms while guiding emerging tech professionals into high-impact careers in Azure data engineering, PySpark analytics, and modern AI infrastructure.
-                </p>
                 
                 <div class="hero-buttons">
                     <a href="resume.pdf" target="_blank" class="btn">📄 View / Download Resume</a>
-                    <a href="#contact" class="btn btn-outline">Let's Connect</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
                 </div>
             </div>
 
@@ -769,10 +751,10 @@
                             <div class="timeline-date">July 2022 - Present</div>
                         </div>
                         <div class="timeline-body">
-                            <p>• Worked as a Data Engineer for an International US-based Bank (Citi Bank), top CPG brands (Unilever, P&G, Mars, Mondelez), and Google[span_37](start_span)[span_37](end_span)[span_38](start_span)[span_38](end_span).</p>
-                            <p>• Built end-to-end data pipelines ingesting and processing data using Python (Pandas, NumPy), PySpark, Hive, and SQL[span_39](start_span)[span_39](end_span).</p>
-                            <p>• Created and optimized HiveQL and SQL scripts for data processing, reducing lead time and automating Databricks workflow reconciliation[span_40](start_span)[span_40](end_span).</p>
-                            <p>• Maintained 99%+ SLA adherence through proactive monitoring and led technical discussions with business stakeholders[span_41](start_span)[span_41](end_span).</p>
+                            <p>• Worked as a Data Engineer for an International US-based Bank (Citi Bank), top CPG brands (Unilever, P&G, Mars, Mondelez), and Google[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span).</p>
+                            <p>• Built end-to-end data pipelines ingesting and processing data using Python (Pandas, NumPy), PySpark, Hive, and SQL[span_2](start_span)[span_2](end_span).</p>
+                            <p>• Created and optimized HiveQL and SQL scripts for data processing, reducing lead time and automating Databricks workflow reconciliation[span_3](start_span)[span_3](end_span).</p>
+                            <p>• Maintained 99%+ SLA adherence through proactive monitoring and led technical discussions with business stakeholders[span_4](start_span)[span_4](end_span).</p>
                         </div>
                     </div>
                 </div>
@@ -789,9 +771,9 @@
                             <div class="timeline-date">Jan 2021 - June 2022</div>
                         </div>
                         <div class="timeline-body">
-                            <p>• Served as a Data Validation Engineer for a US-based Global Clothing brand on a cloud migration project (GCP to Azure)[span_42](start_span)[span_42](end_span).</p>
-                            <p>• Developed and executed complex SQL validation queries, managed Defect Management in Jira, and verified Tableau to MicroStrategy report migrations[span_43](start_span)[span_43](end_span).</p>
-                            <p>• Automated manual tasks for faster pipeline execution and verified incremental load data transfers[span_44](start_span)[span_44](end_span).</p>
+                            <p>• Served as a Data Validation Engineer for a US-based Global Clothing brand on a cloud migration project (GCP to Azure)[span_5](start_span)[span_5](end_span).</p>
+                            <p>• Developed and executed complex SQL validation queries, managed Defect Management in Jira, and verified Tableau to MicroStrategy report migrations[span_6](start_span)[span_6](end_span).</p>
+                            <p>• Automated manual tasks for faster pipeline execution and verified incremental load data transfers[span_7](start_span)[span_7](end_span).</p>
                         </div>
                     </div>
                 </div>
@@ -808,7 +790,7 @@
                             <div class="timeline-date">May 2021 - June 2021</div>
                         </div>
                         <div class="timeline-body">
-                            <p>• Executed data quality assessments, customer segmentation, and data visualization analytics for consulting client use cases[span_45](start_span)[span_45](end_span).</p>
+                            <p>• Executed data quality assessments, customer segmentation, and data visualization analytics for consulting client use cases[span_8](start_span)[span_8](end_span).</p>
                         </div>
                     </div>
                 </div>
@@ -825,7 +807,7 @@
                             <div class="timeline-date">Oct 2020 - Jan 2021</div>
                         </div>
                         <div class="timeline-body">
-                            <p>• Curated tech content and instructional learning materials for data science and analytics courses[span_46](start_span)[span_46](end_span).</p>
+                            <p>• Curated tech content and instructional learning materials for data science and analytics courses[span_9](start_span)[span_9](end_span).</p>
                         </div>
                     </div>
                 </div>
@@ -842,7 +824,7 @@
                             <div class="timeline-date">Jun 2019 - Aug 2019</div>
                         </div>
                         <div class="timeline-body">
-                            <p>• Worked on an innovative deep learning project focusing on "Landslide & non-landslide detection" using CNN models[span_47](start_span)[span_47](end_span)[span_48](start_span)[span_48](end_span).</p>
+                            <p>• Worked on an innovative deep learning project focusing on "Landslide & non-landslide detection" using CNN models[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span).</p>
                         </div>
                     </div>
                 </div>
@@ -859,11 +841,11 @@
                     <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Credit Card Fraud Detection" class="project-img">
                     <div class="project-content">
                         <h3>Credit Card Fraud Detection</h3>
-                        <p>Determined fraud transactions by comparing three machine learning classification algorithms on financial datasets[span_49](start_span)[span_49](end_span).</p>
+                        <p>Determined fraud transactions by comparing three machine learning classification algorithms on financial datasets[span_12](start_span)[span_12](end_span).</p>
                         <div class="tags">
-                            <span class="tag">Jan 2020 - Mar 2020</span>[span_50](start_span)[span_50](end_span)
-                            <span class="tag">Machine Learning</span>[span_51](start_span)[span_51](end_span)
-                            <span class="tag">Python</span>[span_52](start_span)[span_52](end_span)
+                            <span class="tag">Jan 2020 - Mar 2020</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
                         </div>
                         <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
                     </div>
@@ -873,11 +855,11 @@
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Deep Learning CNN" class="project-img">
                     <div class="project-content">
                         <h3>Landslide Detection using Deep Learning & CNN</h3>
-                        <p>Built a CNN deep learning classifier to accurately predict landslide occurrences from satellite imagery[span_53](start_span)[span_53](end_span)[span_54](start_span)[span_54](end_span).</p>
+                        <p>Built a CNN deep learning classifier to accurately predict landslide occurrences from satellite imagery[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).</p>
                         <div class="tags">
-                            <span class="tag">Jun 2019 - Aug 2019</span>[span_55](start_span)[span_55](end_span)
-                            <span class="tag">CNN</span>[span_56](start_span)[span_56](end_span)
-                            <span class="tag">Deep Learning</span>[span_57](start_span)[span_57](end_span)
+                            <span class="tag">Jun 2019 - Aug 2019</span>
+                            <span class="tag">CNN</span>
+                            <span class="tag">Deep Learning</span>
                         </div>
                         <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
                     </div>
@@ -887,11 +869,11 @@
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Airport Cloud Data Analysis" class="project-img">
                     <div class="project-content">
                         <h3>Airport Data Analysis in Cloud</h3>
-                        <p>Analyzed Chicago International Airport data by deploying a cloud machine learning instance[span_58](start_span)[span_58](end_span).</p>
+                        <p>Analyzed Chicago International Airport data by deploying a cloud machine learning instance[span_15](start_span)[span_15](end_span).</p>
                         <div class="tags">
-                            <span class="tag">Jan 2019</span>[span_59](start_span)[span_59](end_span)
-                            <span class="tag">Cloud Instance</span>[span_60](start_span)[span_60](end_span)
-                            <span class="tag">Data Analytics</span>[span_61](start_span)[span_61](end_span)
+                            <span class="tag">Jan 2019</span>
+                            <span class="tag">Cloud Instance</span>
+                            <span class="tag">Data Analytics</span>
                         </div>
                         <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
                     </div>
@@ -906,10 +888,10 @@
             <div class="about-grid">
                 <div>
                     <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.2rem;">
-                        I seek challenging opportunities where I can fully enhance my professional skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges[span_62](start_span)[span_62](end_span).
+                        I seek challenging opportunities where I can fully enhance my professional skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges[span_16](start_span)[span_16](end_span).
                     </p>
                     <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.8;">
-                        With over 5 years of experience in data engineering, I specialize in PySpark, SQL, Azure Data Factory, Databricks, Snowflake, BigQuery, and building enterprise ETL/ELT pipelines[span_63](start_span)[span_63](end_span)[span_64](start_span)[span_64](end_span)[span_65](start_span)[span_65](end_span).
+                        With over 5 years of experience in data engineering, I specialize in PySpark, SQL, Azure Data Factory, Databricks, Snowflake, BigQuery, and building enterprise ETL/ELT pipelines[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).
                     </p>
                 </div>
                 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Data Code Network" class="about-image">
@@ -922,19 +904,19 @@
             <div class="skills-grid">
                 <div class="skill-card">
                     <h4>Cloud Technologies</h4>
-                    <p>Microsoft Azure, Microsoft Azure Data Factory, Databricks</p>[span_66](start_span)[span_66](end_span)
+                    <p>Microsoft Azure, Microsoft Azure Data Factory, Databricks</p>[span_20](start_span)[span_20](end_span)
                 </div>
                 <div class="skill-card">
                     <h4>Databases</h4>
-                    <p>Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</p>[span_67](start_span)[span_67](end_span)
+                    <p>Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</p>[span_21](start_span)[span_21](end_span)
                 </div>
                 <div class="skill-card">
                     <h4>Technical Languages</h4>
-                    <p>Python, PySpark, SQL, HQL, Linux, Hadoop</p>[span_68](start_span)[span_68](end_span)
+                    <p>Python, PySpark, SQL, HQL, Linux, Hadoop</p>[span_22](start_span)[span_22](end_span)
                 </div>
                 <div class="skill-card">
                     <h4>Tools & Version Control</h4>
-                    <p>Git, GitHub, Bitbucket, Jira, Anaconda, Tectia</p>[span_69](start_span)[span_69](end_span)
+                    <p>Git, GitHub, Bitbucket, Jira, Anaconda, Tectia</p>[span_23](start_span)[span_23](end_span)
                 </div>
             </div>
         </section>
@@ -953,8 +935,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
                         <div class="cert-issuer">Anthropic</div>
-                        <p class="cert-description">Validates core competence in Claude AI architecture design, prompt orchestration, and generative AI foundational systems[span_70](start_span)[span_70](end_span)[span_71](start_span)[span_71](end_span).</p>
-                        <div class="cert-meta">Issued: Sep 2026 • Valid to Sep 2027</div>[span_72](start_span)[span_72](end_span)[span_73](start_span)[span_73](end_span)
+                        <p class="cert-description">Validates core competence in Claude AI architecture design, prompt orchestration, and generative AI foundational systems[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span).</p>
+                        <div class="cert-meta">Issued: Sep 2026 • Valid to Sep 2027</div>[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)
                     </div>
                 </div>
 
@@ -966,8 +948,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
                         <div class="cert-issuer">Microsoft (DP-203)</div>
-                        <p class="cert-description">Demonstrates expert proficiency in building, monitoring, and optimizing analytical data stores on Microsoft Azure[span_74](start_span)[span_74](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1355-4696</div>[span_75](start_span)[span_75](end_span)
+                        <p class="cert-description">Demonstrates expert proficiency in building, monitoring, and optimizing analytical data stores on Microsoft Azure[span_28](start_span)[span_28](end_span).</p>
+                        <div class="cert-meta">Certification ID: 1355-4696</div>[span_29](start_span)[span_29](end_span)
                     </div>
                 </div>
 
@@ -979,8 +961,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
                         <div class="cert-issuer">Microsoft (PL-300)</div>
-                        <p class="cert-description">Validates enterprise-level competency in data transformation, DAX modeling, and visual analytics dashboards[span_76](start_span)[span_76](end_span)[span_77](start_span)[span_77](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1386-2927</div>[span_78](start_span)[span_78](end_span)[span_79](start_span)[span_79](end_span)
+                        <p class="cert-description">Validates enterprise-level competency in data transformation, DAX modeling, and visual analytics dashboards[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span).</p>
+                        <div class="cert-meta">Certification ID: 1386-2927</div>[span_32](start_span)[span_32](end_span)[span_33](start_span)[span_33](end_span)
                     </div>
                 </div>
 
@@ -992,8 +974,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
                         <div class="cert-issuer">Microsoft (AZ-104)</div>
-                        <p class="cert-description">Confirms skill in implementing, managing, and monitoring identity, governance, storage, and cloud networks[span_80](start_span)[span_80](end_span)[span_81](start_span)[span_81](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1109-9027</div>[span_82](start_span)[span_82](end_span)[span_83](start_span)[span_83](end_span)
+                        <p class="cert-description">Confirms skill in implementing, managing, and monitoring identity, governance, storage, and cloud networks[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span).</p>
+                        <div class="cert-meta">Certification ID: 1109-9027</div>[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span)
                     </div>
                 </div>
 
@@ -1005,8 +987,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
                         <div class="cert-issuer">Microsoft (DP-900)</div>
-                        <p class="cert-description">Demonstrates foundational knowledge of core data concepts and cloud data services on Microsoft Azure[span_84](start_span)[span_84](end_span)[span_85](start_span)[span_85](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1310-8724</div>[span_86](start_span)[span_86](end_span)[span_87](start_span)[span_87](end_span)
+                        <p class="cert-description">Demonstrates foundational knowledge of core data concepts and cloud data services on Microsoft Azure[span_38](start_span)[span_38](end_span)[span_39](start_span)[span_39](end_span).</p>
+                        <div class="cert-meta">Certification ID: 1310-8724</div>[span_40](start_span)[span_40](end_span)[span_41](start_span)[span_41](end_span)
                     </div>
                 </div>
 
@@ -1018,8 +1000,8 @@
                     <div class="cert-snapshot-info">
                         <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
                         <div class="cert-issuer">Coursera / IBM</div>
-                        <p class="cert-description">Comprehensive 9-course specialization covering Python, SQL, machine learning, and cloud-based analytics[span_88](start_span)[span_88](end_span)[span_89](start_span)[span_89](end_span).</p>
-                        <div class="cert-meta">Issued: Aug 25, 2019</div>[span_90](start_span)[span_90](end_span)[span_91](start_span)[span_91](end_span)
+                        <p class="cert-description">Comprehensive 9-course specialization covering Python, SQL, machine learning, and cloud-based analytics[span_42](start_span)[span_42](end_span)[span_43](start_span)[span_43](end_span).</p>
+                        <div class="cert-meta">Issued: Aug 25, 2019</div>[span_44](start_span)[span_44](end_span)[span_45](start_span)[span_45](end_span)
                     </div>
                 </div>
 
@@ -1040,25 +1022,25 @@
                     <a href="tel:+919599010195" class="contact-card-clean">
                         <div class="contact-icon-large">📞</div>
                         <div class="contact-card-title">Phone Number</div>
-                        <div class="contact-card-value">+91 95990 10195</div>[span_92](start_span)[span_92](end_span)
+                        <div class="contact-card-value">+91 95990 10195</div>[span_46](start_span)[span_46](end_span)
                     </a>
 
                     <a href="mailto:mudita10251@gmail.com" class="contact-card-clean">
                         <div class="contact-icon-large">✉️</div>
                         <div class="contact-card-title">Direct Email</div>
-                        <div class="contact-card-value">mudita10251@gmail.com</div>[span_93](start_span)[span_93](end_span)
+                        <div class="contact-card-value">mudita10251@gmail.com</div>[span_47](start_span)[span_47](end_span)
                     </a>
 
                     <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="contact-card-clean">
                         <div class="contact-icon-large">💼</div>
                         <div class="contact-card-title">LinkedIn Profile</div>
-                        <div class="contact-card-value">linkedin.com/in/mudita-sharma</div>[span_94](start_span)[span_94](end_span)
+                        <div class="contact-card-value">linkedin.com/in/mudita-sharma</div>[span_48](start_span)[span_48](end_span)
                     </a>
 
                     <a href="https://github.com/Mudita98/Sharma" target="_blank" class="contact-card-clean">
                         <div class="contact-icon-large">💻</div>
                         <div class="contact-card-title">GitHub Portfolio</div>
-                        <div class="contact-card-value">github.com/Mudita98/Sharma</div>[span_95](start_span)[span_95](end_span)
+                        <div class="contact-card-value">github.com/Mudita98/Sharma</div>[span_49](start_span)[span_49](end_span)
                     </a>
 
                 </div>
