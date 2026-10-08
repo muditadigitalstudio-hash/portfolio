@@ -3,59 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudita Sharma - Data Engineer & Tech Mentor</title>
+    <title>Mudita Sharma - Data Engineer Portfolio</title>
     <style>
         :root {
-            --bg-black: #000000;
-            --card-bg: #070b12;
-            --code-bg: #04070d;
-            --border-color: #1e293b;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --electric-blue: #00d2ff;
-            --cyan-blue: #38bdf8;
-            --neon-green: #22c55e;
-            --light-green: #4ade80;
-            --badge-bg: #031525;
-            --glow-green: rgba(34, 197, 94, 0.25);
-            --glow-blue: rgba(0, 210, 255, 0.25);
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-glow: rgba(88, 166, 255, 0.15);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #000000;
-            color: #f8fafc;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
-        .ambient-glow {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, rgba(0, 210, 255, 0.08) 50%, rgba(0,0,0,0) 80%);
-            pointer-events: none;
-            z-index: 0;
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
         }
 
+        /* Navigation */
         nav {
+            background-color: rgba(22, 27, 34, 0.9);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            background-color: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid #1e293b;
-            z-index: 1000;
-            padding: 1.2rem 2rem;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
         }
 
         .nav-container {
@@ -66,196 +52,126 @@
             align-items: center;
         }
 
-        /* ENLARGED TOP LEFT LOGO */
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #22c55e;
-            text-decoration: none;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .nav-logo:hover {
-            color: #00d2ff;
-            text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
-            align-items: center;
         }
 
         .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: color 0.2s ease;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: #00d2ff;
+            color: var(--accent-color);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 1;
+            padding: 2rem;
         }
 
-        .text-green { color: #22c55e; }
-        .text-light-green { color: #4ade80; }
-        .text-blue { color: #00d2ff; }
-        .text-cyan { color: #38bdf8; }
-
-        header.hero {
-            padding: 6rem 0 5rem;
+        /* Hero Header Section */
+        header {
+            padding: 4rem 0 3rem;
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             align-items: center;
-            border-bottom: 1px solid #1e293b;
+        }
+
+        .hero-name {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #ffffff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-tagline {
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 3px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-color);
             text-transform: uppercase;
-            color: #4ade80;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
         }
 
-        .hero-tagline::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22c55e;
-        }
-
-        /* EXACT IMAGE DESIGN HEADLINE TYPOGRAPHY */
-        .hero-image-headline {
-            font-size: 3.8rem;
-            font-weight: 900;
-            line-height: 1.08;
-            letter-spacing: -1.5px;
-            color: #ffffff;
-            margin-bottom: 1.2rem;
-            max-width: 580px;
-        }
-
-        .hero-image-headline .gradient-text {
-            background: linear-gradient(135deg, #38bdf8 0%, #4ade80 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
         }
 
         .hero-description {
-            color: #94a3b8;
-            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-size: 1.15rem;
             margin-bottom: 2rem;
-            max-width: 560px;
-            line-height: 1.6;
         }
 
-        .mentor-badge-card {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: #031525;
-            border: 1px solid #22c55e;
-            padding: 0.8rem 1.4rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+        .code-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: #79c0ff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .mentor-number {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #22c55e;
-            line-height: 1;
-        }
-
-        .mentor-text {
-            font-size: 0.9rem;
-            color: #f8fafc;
-            font-weight: 600;
-        }
-
-        .hero-buttons {
+        .code-title {
             display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 1rem;
         }
 
-        .code-window {
-            background-color: #04070d;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 1.8rem;
-            font-family: 'Fira Code', Consolas, Monaco, monospace;
-            font-size: 0.85rem;
-            box-shadow: 0 0 40px rgba(0, 210, 255, 0.12);
-            transition: border-color 0.3s ease;
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
 
-        .code-window:hover {
-            border-color: #00d2ff;
-        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
 
-        .code-dots {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .dot { width: 11px; height: 11px; border-radius: 50%; }
-        .dot-red { background-color: #ef4444; }
-        .dot-yellow { background-color: #f59e0b; }
-        .dot-green { background-color: #22c55e; }
-
-        .code-line { margin-bottom: 0.5rem; color: #94a3b8; }
-        .keyword { color: #00d2ff; }
-        .function { color: #4ade80; }
-        .string { color: #f472b6; }
-        .status { color: #22c55e; font-size: 0.8rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; font-weight: 600; }
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #22c55e; box-shadow: 0 0 8px #22c55e; }
-
+        /* Sections */
         section {
-            padding: 5rem 0;
-            border-bottom: 1px solid #1e293b;
+            margin: 5rem 0;
         }
 
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 2.5rem;
-            color: #00d2ff;
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-weight: 800;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
         }
 
-        /* CAREER TIMELINE FORMAT */
+        /* Timeline for Experience */
         .timeline {
             position: relative;
             padding-left: 2rem;
-            border-left: 2px solid #1e293b;
+            border-left: 2px solid var(--border-color);
         }
 
         .timeline-item {
@@ -263,568 +179,332 @@
             margin-bottom: 2.5rem;
         }
 
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-dot {
+        .timeline-item::before {
+            content: '';
             position: absolute;
             left: -2.55rem;
-            top: 0.2rem;
-            width: 16px;
-            height: 16px;
-            background-color: #22c55e;
+            top: 0.3rem;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            border: 3px solid #000000;
-            box-shadow: 0 0 10px #22c55e;
+            background-color: var(--accent-color);
+            border: 3px solid var(--bg-color);
         }
 
-        .timeline-content {
-            background-color: #070b12;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 1.8rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            border-color: #00d2ff;
+        .timeline-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
         }
 
         .timeline-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.8rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .role-title {
             font-size: 1.25rem;
-            color: #ffffff;
             font-weight: 700;
         }
 
         .company-name {
-            color: #00d2ff;
+            color: var(--accent-color);
             font-weight: 600;
         }
 
-        .timeline-date {
+        .date-badge {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             font-size: 0.85rem;
-            color: #4ade80;
-            background-color: #031525;
-            padding: 0.2rem 0.6rem;
-            border-radius: 6px;
-            border: 1px solid #1e293b;
             font-weight: 600;
         }
 
         .timeline-body p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
         }
 
-        /* PROJECTS GRID */
-        .projects-grid {
+        /* About Me Section */
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: #070b12;
-            border: 1px solid #1e293b;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2.5rem;
+            align-items: center;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 2.5rem;
         }
 
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: #00d2ff;
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .project-content {
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-content h3 {
-            color: #4ade80;
-            font-size: 1.25rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .project-content p {
-            color: #94a3b8;
-            font-size: 0.95rem;
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
             margin-bottom: 1.2rem;
         }
 
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background-color: #031525;
-            color: #38bdf8;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            border: 1px solid #1e293b;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-image {
+        .about-image img {
             width: 100%;
-            height: 320px;
+            height: 300px;
             object-fit: cover;
-            border-radius: 12px;
-            border: 1px solid #1e293b;
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background-color: #070b12;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            padding: 1.8rem;
-            transition: border-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .skill-card:hover {
-            border-color: #22c55e;
-            transform: translateY(-3px);
-        }
-
-        .skill-card h4 {
-            color: #00d2ff;
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .skill-card p {
-            font-size: 0.95rem;
-            color: #94a3b8;
-        }
-
-        /* CERTIFICATE SNAPSHOTS DISPLAY */
-        .cert-grid-snapshots {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .cert-snapshot-card {
-            background-color: #070b12;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cert-snapshot-card:hover {
-            transform: translateY(-6px);
-            border-color: #22c55e;
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.18);
-        }
-
-        .cert-img-container {
-            width: 100%;
-            height: 220px;
-            background-color: #031525;
-            border-bottom: 1px solid #1e293b;
-            overflow: hidden;
-        }
-
-        .cert-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .cert-snapshot-card:hover .cert-img-container img {
-            transform: scale(1.04);
-        }
-
-        .cert-snapshot-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .cert-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.4rem;
-        }
-
-        .cert-issuer {
-            font-size: 0.9rem;
-            color: #00d2ff;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        .cert-description {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .cert-meta {
-            margin-top: auto;
-            font-size: 0.8rem;
-            color: #4ade80;
-            font-weight: 600;
-            background: #031525;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            border: 1px solid #1e293b;
-            display: inline-block;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #000000;
-            background-color: #22c55e;
-            border: 1px solid #22c55e;
-            padding: 0.85rem 1.8rem;
             border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            text-align: center;
+            border: 1px solid var(--border-color);
         }
 
-        .btn:hover {
-            background-color: #4ade80;
-            box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #38bdf8;
-            border-color: #1e293b;
-        }
-
-        .btn-outline:hover {
-            background-color: #031525;
-            border-color: #00d2ff;
-            color: #ffffff;
-        }
-
-        /* UNTOUCHED GET IN TOUCH SECTION */
-        .contact-card-wrapper {
-            background: linear-gradient(135deg, #070b12 0%, #0c1424 100%);
-            border: 1px solid #1e293b;
-            border-radius: 20px;
-            padding: 3.5rem;
-            box-shadow: 0 0 50px rgba(0, 210, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .contact-card-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-header {
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .contact-header h3 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .contact-header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .contact-grid-clean {
+        /* Technical Stack Form */
+        .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
-        .contact-card-clean {
-            background-color: #031525;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .tech-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
         }
 
-        .contact-card-clean:hover {
-            border-color: #00d2ff;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+        .tech-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
         }
 
-        .contact-icon-large {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
-        .contact-card-title {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
+        .cert-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .contact-card-value {
-            color: #4ade80;
-            font-weight: 700;
-            font-size: 1.05rem;
-            word-break: break-all;
+        .cert-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cert-info {
+            padding: 1.25rem;
+        }
+
+        .cert-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-info .issuer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            display: block;
+            color: var(--text-primary);
+            transition: border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
 
         footer {
-            padding: 3rem 0;
             text-align: center;
-            color: #94a3b8;
-            font-size: 0.9rem;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
 
-        @media (max-width: 900px) {
-            header.hero, .about-grid {
+        @media (max-width: 768px) {
+            header, .about-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-card-wrapper {
-                padding: 2rem 1.5rem;
-            }
-            .contact-header h3 {
-                font-size: 1.8rem;
-            }
-            .hero-image-headline {
-                font-size: 2.8rem;
+            .hero-name {
+                font-size: 3.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <!-- ENLARGED LOGO IN TOP LEFT -->
-            <a href="#" class="nav-logo">MUDITA SHARMA</a>
+            <a href="#" class="nav-brand">MUDITA SHARMA</a>
             <ul class="nav-links">
-                <li><a href="#career">Career</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="resume.pdf" target="_blank" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem;">📄 Resume</a></li>
+                <li><a href="resume.pdf" target="_blank">📄 Resume</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
 
-        <!-- Hero Section -->
-        <header class="hero">
+        <!-- Header / Hero Section -->
+        <header>
             <div>
-                <div class="hero-tagline">ENGINEER • BUILDER • MENTOR</div>
-                
-                <!-- EXACT DESIGN MATCHING YOUR IMAGE -->
-                <h1 class="hero-image-headline">
-                    Turning messy data into
-                    <span class="gradient-text">reliable systems.</span>
-                </h1>
-
+                <div class="hero-tagline">Data Engineer • Analytics • Cloud Architect</div>
+                <h1 class="hero-name">MUDITA SHARMA</h1>
+                <h2 class="hero-title">Transforming Raw Data into Scalable Enterprise Systems</h2>
                 <p class="hero-description">
-                    Data Engineer with experience building scalable pipelines, cloud platforms, and analytics workflows for enterprise clients.
+                    Experienced Data Engineer specializing in building scalable pipelines, cloud data platforms, and analytics workflows for global enterprise clients.
                 </p>
-
-                <div class="mentor-badge-card">
-                    <div class="mentor-number">300+</div>
-                    <div class="mentor-text">Mentees Mentored in Cloud Data Engineering & AI</div>
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="resume.pdf" target="_blank" class="btn">📄 View / Download Resume</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
             </div>
 
-            <!-- Code Window -->
-            <div class="code-window">
-                <div class="code-dots">
+            <div class="code-box">
+                <div class="code-title">
                     <div class="dot dot-red"></div>
                     <div class="dot dot-yellow"></div>
                     <div class="dot dot-green"></div>
                 </div>
-                <div class="code-line"><span class="keyword">def</span> <span class="function">clean_and_load</span>(data_stream):</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;raw = <span class="function">ingest_azure_eventhub</span>(data_stream)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;transformed = <span class="function">pyspark_clean</span>(raw)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">load_to_delta_lake</span>(transformed)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Pipeline Online & Scaled"</span></div>
-                <div class="status">
-                    <div class="status-dot"></div> Systems Operational • Mentoring Active
-                </div>
+                <div><span>def</span> <span>clean_and_load</span>(data_stream):</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;raw = <span>ingest_azure_eventhub</span>(data_stream)</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;transformed = <span>pyspark_clean</span>(raw)</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span>load_to_delta_lake</span>(transformed)</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span>return</span> <span style="color:#a5d6ff;">"Pipeline Online & Scaled"</span></div>
             </div>
         </header>
 
-        <!-- Career History Timeline Section -->
-        <section id="career">
-            <h2 class="section-title"><span class="text-green">💼</span> Professional Experience</h2>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2><span>#</span> About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I am a dedicated Data Engineer with over 5 years of hands-on experience designing, developing, and optimizing large-scale data architecture and ETL/ELT pipelines. My expertise spans cloud platform engineering, PySpark data processing, automated workflows, and enterprise data validation across financial and consumer goods sectors.
+                    </p>
+                    <p>
+                        Having collaborated with tier-1 global organizations—including Citi Bank, Unilever, P&G, and Google—I focus on delivering highly reliable, production-ready data infrastructures that empower organizations to drive actionable analytics and data-informed decision-making.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Data Engineering Infrastructure">
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section (Timeline) -->
+        <section id="experience">
+            <h2><span>💼</span> Professional Experience</h2>
             <div class="timeline">
-                
-                <!-- Fractal Analytics -->
+
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <div class="role-title">Data Engineer</div>
                                 <div class="company-name">Fractal Analytics • Gurugram</div>
                             </div>
-                            <div class="timeline-date">July 2022 - Present</div>
+                            <span class="date-badge">July 2022 - Present</span>
                         </div>
                         <div class="timeline-body">
-                            <p>• Worked as a Data Engineer for an International US-based Bank (Citi Bank), top CPG brands (Unilever, P&G, Mars, Mondelez), and Google[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span).</p>
-                            <p>• Built end-to-end data pipelines ingesting and processing data using Python (Pandas, NumPy), PySpark, Hive, and SQL[span_2](start_span)[span_2](end_span).</p>
-                            <p>• Created and optimized HiveQL and SQL scripts for data processing, reducing lead time and automating Databricks workflow reconciliation[span_3](start_span)[span_3](end_span).</p>
-                            <p>• Maintained 99%+ SLA adherence through proactive monitoring and led technical discussions with business stakeholders[span_4](start_span)[span_4](end_span).</p>
+                            <p>• Data Engineer supporting major enterprise clients including Citi Bank, Unilever, P&G, Mars, Mondelez, and Google.</p>
+                            <p>• Developed end-to-end data pipelines ingesting and processing massive data volumes using Python (Pandas, NumPy), PySpark, Hive, and SQL.</p>
+                            <p>• Created and optimized HiveQL and SQL scripts for automated Databricks workflow reconciliation and reduced pipeline execution latency.</p>
+                            <p>• Maintained 99%+ SLA adherence through proactive pipeline monitoring and direct technical collaboration with key stakeholders.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Infosys -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <div class="role-title">System Engineer</div>
                                 <div class="company-name">Infosys • Full-time</div>
                             </div>
-                            <div class="timeline-date">Jan 2021 - June 2022</div>
+                            <span class="date-badge">Jan 2021 - June 2022</span>
                         </div>
                         <div class="timeline-body">
-                            <p>• Served as a Data Validation Engineer for a US-based Global Clothing brand on a cloud migration project (GCP to Azure)[span_5](start_span)[span_5](end_span).</p>
-                            <p>• Developed and executed complex SQL validation queries, managed Defect Management in Jira, and verified Tableau to MicroStrategy report migrations[span_6](start_span)[span_6](end_span).</p>
-                            <p>• Automated manual tasks for faster pipeline execution and verified incremental load data transfers[span_7](start_span)[span_7](end_span).</p>
+                            <p>• Served as Data Validation Engineer for a major global retail brand on a GCP-to-Azure cloud migration project.</p>
+                            <p>• Engineered complex SQL validation queries, executed defect management in Jira, and verified Tableau to MicroStrategy report migrations.</p>
+                            <p>• Automated manual verification workflows for incremental data transfers across cloud platforms.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- KPMG -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <div class="role-title">Data Analytics Consulting Virtual Intern</div>
                                 <div class="company-name">KPMG Global Services (KGS)</div>
                             </div>
-                            <div class="timeline-date">May 2021 - June 2021</div>
+                            <span class="date-badge">May 2021 - June 2021</span>
                         </div>
                         <div class="timeline-body">
-                            <p>• Executed data quality assessments, customer segmentation, and data visualization analytics for consulting client use cases[span_8](start_span)[span_8](end_span).</p>
+                            <p>• Conducted data quality assessments, customer segmentation analytics, and interactive dashboard visualizations for client consulting scenarios.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Great Learning -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <div class="role-title">Content Intern</div>
                                 <div class="company-name">Great Learning • New Delhi, India</div>
                             </div>
-                            <div class="timeline-date">Oct 2020 - Jan 2021</div>
+                            <span class="date-badge">Oct 2020 - Jan 2021</span>
                         </div>
                         <div class="timeline-body">
-                            <p>• Curated tech content and instructional learning materials for data science and analytics courses[span_9](start_span)[span_9](end_span).</p>
+                            <p>• Designed and curated technical learning content for Data Science and Analytics courses.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- DRDO -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-card">
                         <div class="timeline-header">
                             <div>
                                 <div class="role-title">Research Trainee</div>
                                 <div class="company-name">DRDO (Defence Research and Development Organisation)</div>
                             </div>
-                            <div class="timeline-date">Jun 2019 - Aug 2019</div>
+                            <span class="date-badge">Jun 2019 - Aug 2019</span>
                         </div>
                         <div class="timeline-body">
-                            <p>• Worked on an innovative deep learning project focusing on "Landslide & non-landslide detection" using CNN models[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span).</p>
+                            <p>• Researched and built deep learning Convolutional Neural Network (CNN) models for satellite landslide detection.</p>
                         </div>
                     </div>
                 </div>
@@ -832,224 +512,114 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title"><span class="text-blue">&lt;/&gt;</span> Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Credit Card Fraud Detection" class="project-img">
-                    <div class="project-content">
-                        <h3>Credit Card Fraud Detection</h3>
-                        <p>Determined fraud transactions by comparing three machine learning classification algorithms on financial datasets[span_12](start_span)[span_12](end_span).</p>
-                        <div class="tags">
-                            <span class="tag">Jan 2020 - Mar 2020</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Python</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Deep Learning CNN" class="project-img">
-                    <div class="project-content">
-                        <h3>Landslide Detection using Deep Learning & CNN</h3>
-                        <p>Built a CNN deep learning classifier to accurately predict landslide occurrences from satellite imagery[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).</p>
-                        <div class="tags">
-                            <span class="tag">Jun 2019 - Aug 2019</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Deep Learning</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Airport Cloud Data Analysis" class="project-img">
-                    <div class="project-content">
-                        <h3>Airport Data Analysis in Cloud</h3>
-                        <p>Analyzed Chicago International Airport data by deploying a cloud machine learning instance[span_15](start_span)[span_15](end_span).</p>
-                        <div class="tags">
-                            <span class="tag">Jan 2019</span>
-                            <span class="tag">Cloud Instance</span>
-                            <span class="tag">Data Analytics</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title"><span class="text-green">#</span> About Me</h2>
-            <div class="about-grid">
-                <div>
-                    <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.2rem;">
-                        I seek challenging opportunities where I can fully enhance my professional skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges[span_16](start_span)[span_16](end_span).
-                    </p>
-                    <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.8;">
-                        With over 5 years of experience in data engineering, I specialize in PySpark, SQL, Azure Data Factory, Databricks, Snowflake, BigQuery, and building enterprise ETL/ELT pipelines[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).
-                    </p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Data Code Network" class="about-image">
-            </div>
-        </section>
-
-        <!-- Skills Section -->
+        <!-- Technical Stack Section -->
         <section id="skills">
-            <h2 class="section-title"><span class="text-blue">⚡</span> Technical Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
+            <h2><span>⚡</span> Technical Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
                     <h4>Cloud Technologies</h4>
-                    <p>Microsoft Azure, Microsoft Azure Data Factory, Databricks</p>[span_20](start_span)[span_20](end_span)
+                    <p>Microsoft Azure, Azure Data Factory, Databricks</p>
                 </div>
-                <div class="skill-card">
-                    <h4>Databases</h4>
-                    <p>Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</p>[span_21](start_span)[span_21](end_span)
+                <div class="tech-card">
+                    <h4>Databases & Lakes</h4>
+                    <p>Hive, MySQL, Snowflake, BigQuery, SQL Server</p>
                 </div>
-                <div class="skill-card">
-                    <h4>Technical Languages</h4>
-                    <p>Python, PySpark, SQL, HQL, Linux, Hadoop</p>[span_22](start_span)[span_22](end_span)
+                <div class="tech-card">
+                    <h4>Languages & Frameworks</h4>
+                    <p>Python, PySpark, SQL, HQL, Linux, Hadoop</p>
                 </div>
-                <div class="skill-card">
+                <div class="tech-card">
                     <h4>Tools & Version Control</h4>
-                    <p>Git, GitHub, Bitbucket, Jira, Anaconda, Tectia</p>[span_23](start_span)[span_23](end_span)
+                    <p>Git, GitHub, Bitbucket, Jira, Anaconda, Tectia</p>
                 </div>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS SECTION (IMAGE SNAPSHOTS ONLY) -->
+        <!-- Certifications Section -->
         <section id="certifications">
-            <h2 class="section-title"><span class="text-green">★</span> Certifications & Credentials</h2>
-            
-            <div class="cert-grid-snapshots">
+            <h2><span>★</span> Certifications & Credentials</h2>
+            <div class="cert-grid">
 
-                <!-- Claude Certified Architect -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Claude Certified Architect Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
-                        <div class="cert-issuer">Anthropic</div>
-                        <p class="cert-description">Validates core competence in Claude AI architecture design, prompt orchestration, and generative AI foundational systems[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span).</p>
-                        <div class="cert-meta">Issued: Sep 2026 • Valid to Sep 2027</div>[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Claude Certified Architect Certificate Image">
+                    <div class="cert-info">
+                        <h3>Claude Certified Architect - Foundations</h3>
+                        <div class="issuer">Anthropic</div>
                     </div>
                 </div>
 
-                <!-- Azure Data Engineer Associate (DP-203) -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Azure Data Engineer Associate Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
-                        <div class="cert-issuer">Microsoft (DP-203)</div>
-                        <p class="cert-description">Demonstrates expert proficiency in building, monitoring, and optimizing analytical data stores on Microsoft Azure[span_28](start_span)[span_28](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1355-4696</div>[span_29](start_span)[span_29](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Azure Data Engineer Certificate Image">
+                    <div class="cert-info">
+                        <h3>Microsoft Certified: Azure Data Engineer Associate</h3>
+                        <div class="issuer">Microsoft (DP-203)</div>
                     </div>
                 </div>
 
-                <!-- Power BI Data Analyst Associate (PL-300) -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Power BI Data Analyst Associate Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
-                        <div class="cert-issuer">Microsoft (PL-300)</div>
-                        <p class="cert-description">Validates enterprise-level competency in data transformation, DAX modeling, and visual analytics dashboards[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1386-2927</div>[span_32](start_span)[span_32](end_span)[span_33](start_span)[span_33](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Power BI Data Analyst Certificate Image">
+                    <div class="cert-info">
+                        <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+                        <div class="issuer">Microsoft (PL-300)</div>
                     </div>
                 </div>
 
-                <!-- Azure Administrator Associate (AZ-104) -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Azure Administrator Associate Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
-                        <div class="cert-issuer">Microsoft (AZ-104)</div>
-                        <p class="cert-description">Confirms skill in implementing, managing, and monitoring identity, governance, storage, and cloud networks[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1109-9027</div>[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Azure Administrator Certificate Image">
+                    <div class="cert-info">
+                        <h3>Microsoft Certified: Azure Administrator Associate</h3>
+                        <div class="issuer">Microsoft (AZ-104)</div>
                     </div>
                 </div>
 
-                <!-- Azure Data Fundamentals (DP-900) -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Azure Data Fundamentals Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
-                        <div class="cert-issuer">Microsoft (DP-900)</div>
-                        <p class="cert-description">Demonstrates foundational knowledge of core data concepts and cloud data services on Microsoft Azure[span_38](start_span)[span_38](end_span)[span_39](start_span)[span_39](end_span).</p>
-                        <div class="cert-meta">Certification ID: 1310-8724</div>[span_40](start_span)[span_40](end_span)[span_41](start_span)[span_41](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Azure Data Fundamentals Certificate Image">
+                    <div class="cert-info">
+                        <h3>Microsoft Certified: Azure Data Fundamentals</h3>
+                        <div class="issuer">Microsoft (DP-900)</div>
                     </div>
                 </div>
 
-                <!-- IBM Data Science Professional Certificate -->
-                <div class="cert-snapshot-card">
-                    <div class="cert-img-container">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="IBM Data Science Professional Snapshot">
-                    </div>
-                    <div class="cert-snapshot-info">
-                        <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
-                        <div class="cert-issuer">Coursera / IBM</div>
-                        <p class="cert-description">Comprehensive 9-course specialization covering Python, SQL, machine learning, and cloud-based analytics[span_42](start_span)[span_42](end_span)[span_43](start_span)[span_43](end_span).</p>
-                        <div class="cert-meta">Issued: Aug 25, 2019</div>[span_44](start_span)[span_44](end_span)[span_45](start_span)[span_45](end_span)
+                <div class="cert-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="IBM Data Science Certificate Image">
+                    <div class="cert-info">
+                        <h3>IBM Data Science Professional Certificate</h3>
+                        <div class="issuer">Coursera / IBM</div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- UNTOUCHED GET IN TOUCH SECTION -->
-        <section id="contact" style="border-bottom: none;">
-            <div class="contact-card-wrapper">
-                
-                <div class="contact-header">
-                    <h3>Let's Build <span class="text-blue">Data Systems</span> or Grow Your <span class="text-green">Tech Career</span></h3>
-                    <p>Whether you need scalable cloud architecture solutions or expert mentorship to accelerate your data engineering journey, reach out directly through any platform below.</p>
-                </div>
-                
-                <div class="contact-grid-clean">
-                    
-                    <a href="tel:+919599010195" class="contact-card-clean">
-                        <div class="contact-icon-large">📞</div>
-                        <div class="contact-card-title">Phone Number</div>
-                        <div class="contact-card-value">+91 95990 10195</div>[span_46](start_span)[span_46](end_span)
-                    </a>
-
-                    <a href="mailto:mudita10251@gmail.com" class="contact-card-clean">
-                        <div class="contact-icon-large">✉️</div>
-                        <div class="contact-card-title">Direct Email</div>
-                        <div class="contact-card-value">mudita10251@gmail.com</div>[span_47](start_span)[span_47](end_span)
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="contact-card-clean">
-                        <div class="contact-icon-large">💼</div>
-                        <div class="contact-card-title">LinkedIn Profile</div>
-                        <div class="contact-card-value">linkedin.com/in/mudita-sharma</div>[span_48](start_span)[span_48](end_span)
-                    </a>
-
-                    <a href="https://github.com/Mudita98/Sharma" target="_blank" class="contact-card-clean">
-                        <div class="contact-icon-large">💻</div>
-                        <div class="contact-card-title">GitHub Portfolio</div>
-                        <div class="contact-card-value">github.com/Mudita98/Sharma</div>[span_49](start_span)[span_49](end_span)
-                    </a>
-
-                </div>
-
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2><span>✉️</span> Get In Touch</h2>
+            <div class="contact-grid">
+                <a href="tel:+919599010195" class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <div><strong>Phone</strong></div>
+                    <div>+91 95990 10195</div>
+                </a>
+                <a href="mailto:mudita10251@gmail.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div><strong>Email</strong></div>
+                    <div>mudita10251@gmail.com</div>
+                </a>
+                <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div><strong>LinkedIn</strong></div>
+                    <div>mudita-sharma</div>
+                </a>
+                <a href="https://github.com/Mudita98/Sharma" target="_blank" class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <div><strong>GitHub</strong></div>
+                    <div>Mudita98/Sharma</div>
+                </a>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Mudita Sharma. Built with HTML/CSS & deployed via GitHub Pages.</p>
+            <p>© Mudita Sharma. Hosted on GitHub Pages.</p>
         </footer>
 
     </div>
