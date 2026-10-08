@@ -13,7 +13,6 @@
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             
-            /* Electric Green & Blue Palette */
             --electric-blue: #00d2ff;
             --cyan-blue: #38bdf8;
             --neon-green: #22c55e;
@@ -37,7 +36,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Ambient Glow Background Effect */
         .ambient-glow {
             position: absolute;
             top: 0;
@@ -51,7 +49,6 @@
             z-index: 0;
         }
 
-        /* Navigation Bar */
         nav {
             position: sticky;
             top: 0;
@@ -96,7 +93,6 @@
             color: var(--electric-blue);
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -105,13 +101,11 @@
             z-index: 1;
         }
 
-        /* Color Utility Classes */
         .text-green { color: var(--neon-green); }
         .text-light-green { color: var(--light-green); }
         .text-blue { color: var(--electric-blue); }
         .text-cyan { color: var(--cyan-blue); }
 
-        /* Hero Section */
         header.hero {
             padding: 6rem 0 5rem;
             display: grid;
@@ -143,7 +137,6 @@
             box-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* NAME TYPOGRAPHY */
         .hero-name {
             font-size: 4.5rem;
             font-weight: 900;
@@ -156,7 +149,6 @@
             text-transform: uppercase;
         }
 
-        /* DUAL HEADLINES */
         .headline-primary {
             font-size: 2.2rem;
             line-height: 1.25;
@@ -183,7 +175,6 @@
             line-height: 1.7;
         }
 
-        /* Mentorship Highlight Card */
         .mentor-badge-card {
             display: inline-flex;
             align-items: center;
@@ -214,7 +205,6 @@
             gap: 1.2rem;
         }
 
-        /* Hero Code Window */
         .code-window {
             background-color: var(--code-bg);
             border: 1px solid var(--border-color);
@@ -248,7 +238,6 @@
         .status { color: var(--neon-green); font-size: 0.8rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; font-weight: 600; }
         .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
 
-        /* Section Layout */
         section {
             padding: 5rem 0;
             border-bottom: 1px solid var(--border-color);
@@ -264,7 +253,6 @@
             font-weight: 800;
         }
 
-        /* Career History Section */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -340,7 +328,6 @@
             margin-bottom: 0.6rem;
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -406,7 +393,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* About Grid */
         .about-grid {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
@@ -423,7 +409,6 @@
             box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -435,205 +420,10 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 1.8rem;
-            transition: border-color 0.3s ease, transform 0.2s ease;
-        }
+            transition: border-color
+           
 
-        .skill-card:hover {
-            border-color: var(--neon-green);
-            transform: translateY(-3px);
-        }
-
-        .skill-card h4 {
-            color: var(--electric-blue);
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .skill-card p {
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
-
-        /* Certifications Grid */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .cert-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-green);
-            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.12);
-        }
-
-        .cert-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-issuer {
-            font-size: 0.95rem;
-            color: var(--electric-blue);
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-        }
-
-        .cert-details {
-            font-size: 0.88rem;
-            color: var(--text-sub);
-            margin-bottom: 1.5rem;
-        }
-
-        .cert-id {
-            font-family: monospace;
-            background: var(--badge-bg);
-            color: var(--light-green);
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 0.4rem;
-            border: 1px solid var(--border-color);
-            font-size: 0.8rem;
-        }
-
-        .cert-actions {
-            margin-top: auto;
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #000000;
-            background-color: var(--neon-green);
-            border: 1px solid var(--neon-green);
-            padding: 0.85rem 1.8rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: var(--light-green);
-            box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--cyan-blue);
-            border-color: var(--border-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--badge-bg);
-            border-color: var(--electric-blue);
-            color: #ffffff;
-        }
-
-        /* REDESIGNED FORM-FREE CONTACT SECTION */
-        .contact-card-wrapper {
-            background: linear-gradient(135deg, var(--card-bg) 0%, #0c1424 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3.5rem;
-            box-shadow: 0 0 50px rgba(0, 210, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .contact-card-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-header {
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .contact-header h3 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .contact-header p {
-            color: var(--text-sub);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .contact-grid-clean {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-card-clean {
-            background-color: var(--badge-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card-clean:hover {
-            border-color: var(--electric-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
-        }
-
-        .contact-icon-large {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .contact-card-title {
-            font-size: 0.8rem;
-            color: var(--text-sub);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-
-        .contact-card-value {
-            color: var(--light-green);
-            font-weight:
+        
+           
+           
+                   
