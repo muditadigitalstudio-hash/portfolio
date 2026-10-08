@@ -4,598 +4,320 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mudita Sharma - Data Engineer & Cloud Platforms Portfolio">
-  <title>Mudita Sharma | Data Engineer & Cloud Specialist</title>
+  <title>Mudita Sharma - Data Engineer</title>
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    :root {
-      --bg: #090d16;
-      --card-bg: #111827;
-      --card-border: #1f293d;
-      --primary: #00e676;
-      --secondary: #00b0ff;
-      --accent: #a855f7;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f17;
+      color: #e2e8f0;
     }
-
-    /* Navigation Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(9, 13, 22, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
-      z-index: 1000;
+    .code-font {
+      font-family: 'Fira Code', monospace;
     }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-name {
-      font-size: 2.2rem;
-      font-weight: 800;
-      text-decoration: none;
-      background: linear-gradient(135deg, #00e676, #00b0ff);
+    .text-gradient {
+      background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
-      filter: drop-shadow(0 0 10px rgba(0, 230, 118, 0.3));
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Main Container */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 8.5rem 2rem 4rem;
-    }
-
-    section {
-      margin-bottom: 6rem;
-    }
-
-    .section-label {
-      color: var(--primary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #fff;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      min-height: 65vh;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: rgba(0, 230, 118, 0.1);
-      border: 1px solid rgba(0, 230, 118, 0.3);
-      border-radius: 50px;
-      color: var(--primary);
-      font-size: 0.8rem;
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      line-height: 1.25;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.8rem 1.6rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #000;
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-      border: 1px solid var(--card-border);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Image */
-    .hero-image-wrap {
-      position: relative;
-    }
-
-    .hero-img {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 230, 118, 0.15);
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .hero-img:hover {
-      transform: scale(1.02);
-    }
-
-    /* Technical Skills Table Styles */
-    .skills-table-container {
-      width: 100%;
-      overflow-x: auto;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 0.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .skills-table th, 
-    .skills-table td {
-      padding: 1rem 1.2rem;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .skills-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .skills-table th {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--primary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .skills-category {
-      color: var(--secondary);
-      font-weight: 700;
-      width: 25%;
-      font-size: 0.95rem;
-      border-right: 1px solid var(--card-border);
-    }
-
-    .skills-list {
-      color: var(--text);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .skills-table tr:hover {
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    /* Grids & Cards */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .grid-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.8rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .card:hover {
-      border-color: var(--primary);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-meta {
-      color: var(--secondary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 0.3rem 0.7rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Experience List */
-    .exp-item {
-      margin-bottom: 2rem;
-    }
-
-    .exp-item ul {
-      margin-left: 1.2rem;
-      color: var(--text-muted);
-    }
-
-    .exp-item li {
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    /* Contact Card */
-    .contact-card {
-      background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(9, 13, 22, 0.95));
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-    }
-
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-      color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero, .grid-2 {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .brand-name {
-        font-size: 1.8rem;
-      }
-      .skills-category {
-        width: 35%;
-      }
     }
   </style>
 </head>
-<body>
+<body class="antialiased">
 
-  <!-- HEADER NAVIGATION -->
-  <header>
-    <nav>
-      <a href="#home" class="brand-name">Mudita Sharma</a>
-      
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#certificates">Certifications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" style="color: var(--primary); font-weight: 600;">Resume 📄</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- Navigation Header -->
+  <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center sticky top-0 bg-[#0b0f17]/90 backdrop-blur-md z-50 border-b border-slate-800/80">
+    <a href="#" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white hover:text-teal-400 transition">
+      Mudita Sharma<span class="text-teal-400">.</span>
+    </a>
+    
+    <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+      <a href="#about" class="hover:text-white transition">About</a>
+      <a href="#skills" class="hover:text-white transition">Skills</a>
+      <a href="#experience" class="hover:text-white transition">Experience</a>
+      <a href="#certificates" class="hover:text-white transition">Certifications</a>
+      <a href="#projects" class="hover:text-white transition">Projects</a>
+      <a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" class="text-teal-400 font-semibold hover:text-teal-300 transition">Resume 📄</a>
     </nav>
+
+    <a href="#contact" class="bg-teal-500/10 text-teal-400 border border-teal-500/30 px-5 py-2 rounded-full text-sm font-medium hover:bg-teal-500 hover:text-slate-900 transition">
+      Get in Touch
+    </a>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-      <div>
-        <span class="hero-badge">● DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
-        <h1>Building Fault-Tolerant Data Infrastructure & Enterprise Cloud Ecosystems at Scale.</h1>
-        <p>Experienced Data Engineer with 5 years designing, developing, and optimizing end-to-end data workflows for global enterprise organizations including Citi Bank, Google, Unilever, P&G, Mars, and Mondelez.</p>
-        
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Explore Projects →</a>
-          <a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" class="btn btn-secondary">📄 View Resume</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-      </div>
-
-      <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure and Cyber Data Architecture" class="hero-img">
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-      <span class="section-label">01 — ABOUT</span>
-      <h2 class="section-title">Transforming Unstructured Big Data into High-Value Business Intelligence</h2>
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-6 pt-12 pb-20 grid md:grid-cols-2 gap-12 items-center min-h-[85vh]">
+    <div class="space-y-6">
+      <p class="text-xs font-mono uppercase tracking-widest text-teal-400">
+        Data Engineer • Cloud Architect • Mentor
+      </p>
       
-      <div class="grid-2">
-        <div class="card">
-          <p>I specialize in building reliable data platforms, designing automated ELT/ETL pipelines, and migrating enterprise architectures to modern cloud platforms like Microsoft Azure and Databricks.</p>
-          <br>
-          <p>Over my career across Fractal Analytics and Infosys, I have led client engagements, maintained 99%+ SLA adherence on production workloads, and actively mentored 50+ engineers in modern data engineering stacks.</p>
-        </div>
-        
-        <div>
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics Visualization" style="width: 100%; border-radius: 14px; border: 1px solid var(--card-border);">
-        </div>
-      </div>
-    </section>
+      <!-- ENLARGED NAME DISPLAY -->
+      <h1 class="text-5xl sm:text-7xl font-black text-white tracking-tight leading-none">
+        Mudita <span class="text-gradient">Sharma</span>
+      </h1>
 
-    <!-- TECHNICAL SKILLS TABULAR SECTION -->
-    <section id="skills">
-      <span class="section-label">02 — SKILLS & TECH STACK</span>
-      <h2 class="section-title">Technical Skills</h2>
+      <p class="text-xl sm:text-2xl font-bold text-slate-200">
+        Turning messy data into <span class="text-gradient">reliable systems.</span>
+      </p>
+
+      <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+        Data Engineer with 5 years of experience building fault-tolerant pipelines, distributed compute architectures, and cloud analytics platforms for enterprise clients including Citi Bank, Google, Unilever, P&G, Mars, and Mondelez.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a href="#projects" class="bg-gradient-to-r from-teal-400 to-sky-400 text-slate-950 font-semibold px-6 py-3 rounded-lg shadow-lg hover:opacity-90 transition">
+          Explore Work →
+        </a>
+        <a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" class="border border-slate-700 bg-slate-900/50 text-slate-200 font-medium px-6 py-3 rounded-lg hover:border-slate-500 transition">
+          📄 View Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- Code Snippet Card -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-6 code-font text-sm relative overflow-hidden">
+      <div class="flex items-center space-x-2 pb-4 border-b border-slate-800">
+        <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+        <span class="text-xs text-slate-500 ml-2">data_pipeline.py</span>
+      </div>
+      <div class="pt-4 space-y-2 text-slate-300">
+        <p><span class="text-purple-400">def</span> <span class="text-blue-400">build_pipeline</span>(source):</p>
+        <p class="pl-4"><span class="text-slate-500"># Extract unstructured big data</span></p>
+        <p class="pl-4">raw_df = spark.read.json(source)</p>
+        <p class="pl-4"><span class="text-slate-500"># PySpark ETL transformations</span></p>
+        <p class="pl-4">clean_df = transform(raw_df)</p>
+        <p class="pl-4">curated = process(clean_df)</p>
+        <p class="pl-4 mt-2"><span class="text-purple-400">return</span> curated</p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500">
+        <span>Status: <span class="text-emerald-400">99%+ SLA Active</span></span>
+        <span>PySpark / Databricks</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-slate-900/50 border-t border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
       
-      <div class="skills-table-container">
-        <table class="skills-table">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Technologies & Tools</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="skills-category">Cloud Technologies</td>
-              <td class="skills-list">Microsoft Azure, Microsoft Azure Data Factory, Databricks</td>
-            </tr>
-            <tr>
-              <td class="skills-category">Databases</td>
-              <td class="skills-list">Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</td>
-            </tr>
-            <tr>
-              <td class="skills-category">Technical Skills</td>
-              <td class="skills-list">Python, PySpark, SQL, HQL, Linux, Hadoop</td>
-            </tr>
-            <tr>
-              <td class="skills-category">Other Tools</td>
-              <td class="skills-list">Anaconda, Tectia, Bitbucket, Github</td>
-            </tr>
-            <tr>
-              <td class="skills-category">Version Control</td>
-              <td class="skills-list">Github, Bitbucket, Jira</td>
-            </tr>
-            <tr>
-              <td class="skills-category">Data Engineering</td>
-              <td class="skills-list">ELT/ETL, Data Warehousing, Data Migration, Data Quality</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- DATA ENGINEERING ARCHITECTURE IMAGE -->
+      <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl group">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80" alt="Data Engineering Pipeline Infrastructure" class="w-full h-80 md:h-[400px] object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-slate-950/30"></div>
       </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience">
-      <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
-      <h2 class="section-title">Career History</h2>
       
-      <div class="card exp-item">
-        <h3>Fractal Analytics | Data Engineer</h3>
-        <span class="card-meta">July 2022 – Present</span>
-        <ul>
-          <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
-          <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
-          <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
-          <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
-        </ul>
-      </div>
-
-      <div class="card exp-item">
-        <h3>Infosys | System Engineer</h3>
-        <span class="card-meta">Jan 2021 – June 2022</span>
-        <ul>
-          <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads from GCP to Azure platform.</li>
-          <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
-          <li>Collaborated with business stakeholders and client teams to validate migration requirements and ensure successful project delivery.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certificates">
-      <span class="section-label">04 — CERTIFICATIONS</span>
-      <h2 class="section-title">Verified Credentials</h2>
-      <div class="grid-cards">
-        
-        <!-- Certificate 1 -->
-        <div class="card">
-          <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
-          <h3>Claude Certified Architect - Foundations</h3>
-          <span class="card-meta">Issued by Anthropic</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Architecting AI solutions and foundations.</p>
-        </div>
-
-        <!-- Certificate 2 -->
-        <div class="card">
-          <img src="MICROSOFT CERTIFIED.jpeg" alt="Azure Data Fundamentals" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
-          <h3>Microsoft Certified: Azure Data Fundamentals</h3>
-          <span class="card-meta">DP-900 | Issued by Microsoft</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Core cloud data concepts, relational & non-relational data in Azure.</p>
-        </div>
-
-        <!-- Certificate 3 -->
-        <div class="card">
-          <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Power BI Data Analyst Associate" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
-          <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
-          <span class="card-meta">PL-300 | Issued by Microsoft</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Data preparation, modeling, visualization, and analytical reporting.</p>
-        </div>
-
-        <!-- Certificate 4 -->
-        <div class="card">
-          <img src="SQL INTERMEDIATE CERTIFICATE.jpeg" alt="SQL Intermediate Certificate" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
-          <h3>SQL (Intermediate) Certificate</h3>
-          <span class="card-meta">Issued by HackerRank</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Complex joins, aggregation, subqueries, and database performance.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-      <span class="section-label">05 — FEATURED PROJECTS</span>
-      <h2 class="section-title">Engineering Case Studies</h2>
-      <div class="grid-cards">
-        <div class="card">
-          <h3>Credit Card Fraud Detection</h3>
-          <span class="card-meta">Machine Learning Pipeline</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Determines fraud transactions by comparing three machine learning algorithms with high reliability.</p>
-          <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">Scikit-Learn</span>
-            <span class="tag">Data Analysis</span>
+      <div class="space-y-6">
+        <p class="text-xs font-mono uppercase tracking-widest text-teal-400">01 — About Me</p>
+        <h2 class="text-3xl font-bold text-white">Transforming Unstructured Big Data into High-Value Business Intelligence</h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          I specialize in building reliable data platforms, designing automated ELT/ETL pipelines, and migrating enterprise architectures to modern cloud platforms like Microsoft Azure and Databricks.
+        </p>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Over my career across Fractal Analytics and Infosys, I have led client engagements, maintained 99%+ SLA adherence on production workloads, and actively mentored 50+ engineers in modern data engineering stacks.
+        </p>
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-slate-900 rounded-lg border border-slate-800">
+            <h3 class="text-xl font-bold text-teal-400">99%+ SLA</h3>
+            <p class="text-xs text-slate-400 mt-1">Production Workloads</p>
           </div>
-        </div>
-        <div class="card">
-          <h3>Facial Recognition Using CNN</h3>
-          <span class="card-meta">Deep Learning Pipeline</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Multiclass image classification model identifying 106 classes with optimized training metrics.</p>
-          <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">CNN</span>
-            <span class="tag">Deep Learning</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Landslide Detection System</h3>
-          <span class="card-meta">Computer Vision / DRDO Research</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Research initiative for image detection of landslide vs non-landslide geographical terrains.</p>
-          <div class="tag-container">
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Research</span>
-            <span class="tag">Python</span>
+          <div class="p-4 bg-slate-900 rounded-lg border border-slate-800">
+            <h3 class="text-xl font-bold text-sky-400">50+ Mentees</h3>
+            <p class="text-xs text-slate-400 mt-1">Guided Data Engineers</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-      <div class="contact-card">
-        <span class="section-label">06 — GET IN TOUCH</span>
-        <h2>Let’s Work Together</h2>
-        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Feel free to reach out for data engineering engagements, cloud pipeline consulting, or mentorship.</p>
-        
-        <div class="contact-details">
-          <span>📧 mudita10251@gmail.com</span>
-          <span>📞 (+91) 9599010195</span>
-          <span>📍 New Delhi, India</span>
+  <!-- Technical Skills Tabular Section -->
+  <section id="skills" class="py-20 max-w-7xl mx-auto px-6">
+    <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">02 — Skills & Tech Stack</p>
+    <h2 class="text-3xl font-bold text-white mb-8">Technical Skills</h2>
+    
+    <div class="overflow-x-auto bg-slate-900 border border-slate-800 rounded-xl shadow-xl">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-slate-800 bg-slate-800/40 text-teal-400 font-mono text-sm uppercase">
+            <th class="p-4 w-1/4">Category</th>
+            <th class="p-4">Technologies & Tools</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800 text-sm">
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Cloud Technologies</td>
+            <td class="p-4 text-slate-300">Microsoft Azure, Microsoft Azure Data Factory, Databricks</td>
+          </tr>
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Databases</td>
+            <td class="p-4 text-slate-300">Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</td>
+          </tr>
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Technical Skills</td>
+            <td class="p-4 text-slate-300">Python, PySpark, SQL, HQL, Linux, Hadoop</td>
+          </tr>
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Other Tools</td>
+            <td class="p-4 text-slate-300">Anaconda, Tectia, Bitbucket, Github</td>
+          </tr>
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Version Control</td>
+            <td class="p-4 text-slate-300">Github, Bitbucket, Jira</td>
+          </tr>
+          <tr class="hover:bg-slate-800/20">
+            <td class="p-4 font-bold text-sky-400 border-r border-slate-800">Data Engineering</td>
+            <td class="p-4 text-slate-300">ELT/ETL, Data Warehousing, Data Migration, Data Quality</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 bg-slate-900/30 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">03 — Professional Experience</p>
+      <h2 class="text-3xl font-bold text-white mb-8">Career History</h2>
+
+      <div class="space-y-6">
+        <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">Fractal Analytics | Data Engineer</h3>
+            <span class="text-sm font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">July 2022 – Present</span>
+          </div>
+          <ul class="list-disc list-inside space-y-2 text-slate-400 text-sm">
+            <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+            <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
+            <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end pipeline testing.</li>
+            <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
+          </ul>
         </div>
 
-        <div class="hero-buttons" style="justify-content: center;">
-          <a href="mailto:mudita10251@gmail.com" class="btn btn-primary">Send Email →</a>
-          <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
-          <a href="https://github.com/muditadigitalstudio-hash" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+        <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
+          <div class="flex justify-between items-start flex-wrap gap-2 mb-4">
+            <h3 class="text-xl font-bold text-white">Infosys | System Engineer</h3>
+            <span class="text-sm font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">Jan 2021 – June 2022</span>
+          </div>
+          <ul class="list-disc list-inside space-y-2 text-slate-400 text-sm">
+            <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads from GCP to Azure platform.</li>
+            <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
+            <li>Collaborated with business stakeholders and client teams to validate migration requirements and ensure successful project delivery.</li>
+          </ul>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certificates" class="py-20 max-w-7xl mx-auto px-6">
+    <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">04 — Certifications</p>
+    <h2 class="text-3xl font-bold text-white mb-8">Verified Credentials</h2>
+    
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+        <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect" class="w-full h-44 object-cover rounded-lg border border-slate-800 mb-4">
+        <h3 class="font-bold text-white text-base">Claude Certified Architect</h3>
+        <p class="text-xs text-sky-400 font-mono mt-1">Anthropic</p>
+      </div>
+
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+        <img src="MICROSOFT CERTIFIED.jpeg" alt="Azure Data Fundamentals" class="w-full h-44 object-cover rounded-lg border border-slate-800 mb-4">
+        <h3 class="font-bold text-white text-base">Azure Data Fundamentals</h3>
+        <p class="text-xs text-sky-400 font-mono mt-1">DP-900 | Microsoft</p>
+      </div>
+
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+        <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Power BI Data Analyst Associate" class="w-full h-44 object-cover rounded-lg border border-slate-800 mb-4">
+        <h3 class="font-bold text-white text-base">Power BI Data Analyst</h3>
+        <p class="text-xs text-sky-400 font-mono mt-1">PL-300 | Microsoft</p>
+      </div>
+
+      <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+        <img src="SQL INTERMEDIATE CERTIFICATE.jpeg" alt="SQL Intermediate Certificate" class="w-full h-44 object-cover rounded-lg border border-slate-800 mb-4">
+        <h3 class="font-bold text-white text-base">SQL (Intermediate)</h3>
+        <p class="text-xs text-sky-400 font-mono mt-1">HackerRank</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-slate-900/30 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">05 — Featured Projects</p>
+      <h2 class="text-3xl font-bold text-white mb-8">Engineering Case Studies</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+          <h3 class="text-lg font-bold text-white">Credit Card Fraud Detection</h3>
+          <p class="text-xs text-sky-400 font-mono mt-1 mb-3">Machine Learning Pipeline</p>
+          <p class="text-slate-400 text-sm mb-4">Determines fraud transactions by comparing three machine learning algorithms with high reliability.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">Python</span>
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">Scikit-Learn</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+          <h3 class="text-lg font-bold text-white">Facial Recognition Using CNN</h3>
+          <p class="text-xs text-sky-400 font-mono mt-1 mb-3">Deep Learning Pipeline</p>
+          <p class="text-slate-400 text-sm mb-4">Multiclass image classification model identifying 106 classes with optimized training metrics.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">Python</span>
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">CNN</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-teal-400/50 transition">
+          <h3 class="text-lg font-bold text-white">Landslide Detection System</h3>
+          <p class="text-xs text-sky-400 font-mono mt-1 mb-3">Computer Vision / DRDO Research</p>
+          <p class="text-slate-400 text-sm mb-4">Research initiative for image detection of landslide vs non-landslide geographical terrains.</p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">Research</span>
+            <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">Deep Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-6">
+    <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-10 text-center space-y-6 shadow-2xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-teal-400">06 — Get In Touch</p>
+      <h2 class="text-3xl font-bold text-white">Let’s Work Together</h2>
+      <p class="text-slate-400 text-sm max-w-lg mx-auto">Feel free to reach out for data engineering engagements, cloud pipeline consulting, or mentorship.</p>
+      
+      <div class="flex justify-center flex-wrap gap-6 text-sm font-mono text-slate-300">
+        <span>📧 mudita10251@gmail.com</span>
+        <span>📞 (+91) 9599010195</span>
+        <span>📍 New Delhi, India</span>
+      </div>
+
+      <div class="flex justify-center flex-wrap gap-4 pt-4">
+        <a href="mailto:mudita10251@gmail.com" class="bg-teal-400 text-slate-950 font-semibold px-6 py-3 rounded-lg hover:bg-teal-300 transition">
+          Send Email →
+        </a>
+        <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="border border-slate-700 bg-slate-800/50 text-slate-200 font-medium px-6 py-3 rounded-lg hover:border-slate-500 transition">
+          LinkedIn
+        </a>
+        <a href="https://github.com/muditadigitalstudio-hash" target="_blank" class="border border-slate-700 bg-slate-800/50 text-slate-200 font-medium px-6 py-3 rounded-lg hover:border-slate-500 transition">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+    <p>&copy; Mudita Sharma. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
-        
