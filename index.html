@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudita Sharma - Data Engineer & Cloud Architect</title>
+    <title>Mudita Sharma - Data Engineer & Tech Mentor</title>
     <style>
         :root {
             --bg-black: #000000;
@@ -13,12 +13,14 @@
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             
-            /* Green & Blue Electric Palette */
+            /* Electric Green & Blue Palette */
             --electric-blue: #00d2ff;
             --cyan-blue: #38bdf8;
             --neon-green: #22c55e;
             --light-green: #4ade80;
             --badge-bg: #031525;
+            --glow-green: rgba(34, 197, 94, 0.2);
+            --glow-blue: rgba(0, 210, 255, 0.2);
         }
 
         * {
@@ -35,7 +37,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Ambient Glow Background Effects */
+        /* Ambient Glow Background Effect */
         .ambient-glow {
             position: absolute;
             top: 0;
@@ -43,8 +45,8 @@
             transform: translateX(-50%);
             width: 100%;
             max-width: 1200px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, rgba(0, 210, 255, 0.05) 50%, rgba(0,0,0,0) 80%);
+            height: 600px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, rgba(0, 210, 255, 0.06) 50%, rgba(0,0,0,0) 80%);
             pointer-events: none;
             z-index: 0;
         }
@@ -103,13 +105,13 @@
             z-index: 1;
         }
 
-        /* Text Color Utilities */
+        /* Color Utility Classes */
         .text-green { color: var(--neon-green); }
         .text-light-green { color: var(--light-green); }
         .text-blue { color: var(--electric-blue); }
         .text-cyan { color: var(--cyan-blue); }
 
-        /* Massive Hero Section */
+        /* Hero Section */
         header.hero {
             padding: 6rem 0 5rem;
             display: grid;
@@ -134,40 +136,77 @@
         .hero-tagline::before {
             content: '';
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background-color: var(--neon-green);
             border-radius: 50%;
             box-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* ENLARGED NAME TYPOGRAPHY */
+        /* NAME TYPOGRAPHY */
         .hero-name {
             font-size: 4.5rem;
             font-weight: 900;
             line-height: 1.05;
             letter-spacing: -1.5px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             background: linear-gradient(135deg, #ffffff 30%, var(--light-green) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
         }
 
-        .hero-headline {
+        /* DYNAMIC DUAL HEADLINES */
+        .headline-primary {
             font-size: 2.2rem;
-            line-height: 1.2;
+            line-height: 1.25;
             font-weight: 800;
             color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .headline-secondary {
+            font-size: 1.8rem;
+            line-height: 1.25;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--electric-blue), var(--light-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
             color: var(--text-sub);
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             max-width: 580px;
             line-height: 1.7;
+        }
+
+        /* Mentorship Highlight Card */
+        .mentor-badge-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--neon-green);
+            padding: 0.8rem 1.4rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px var(--glow-green);
+        }
+
+        .mentor-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--neon-green);
+            line-height: 1;
+        }
+
+        .mentor-text {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .hero-buttons {
@@ -223,6 +262,82 @@
             align-items: center;
             gap: 0.6rem;
             font-weight: 800;
+        }
+
+        /* Career History Section (Timeline Layout) */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.55rem;
+            top: 0.2rem;
+            width: 16px;
+            height: 16px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            border: 3px solid var(--bg-black);
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .timeline-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--electric-blue);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .company-name {
+            color: var(--electric-blue);
+            font-weight: 600;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--light-green);
+            background-color: var(--badge-bg);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        .timeline-body p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
         }
 
         /* Projects Section */
@@ -409,17 +524,18 @@
             color: #000000;
             background-color: var(--neon-green);
             border: 1px solid var(--neon-green);
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 8px;
             font-size: 0.95rem;
             font-weight: 800;
-            transition: all 0.25 ease;
+            transition: all 0.25s ease;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn:hover {
             background-color: var(--light-green);
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+            box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
         }
 
         .btn-outline {
@@ -434,33 +550,87 @@
             color: #ffffff;
         }
 
-        /* Contact Section */
+        /* CAPTIVATING GET IN TOUCH SECTION */
+        .contact-card-wrapper {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #0c1424 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+            align-items: center;
         }
 
-        .contact-info p {
+        .contact-cta h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
             color: var(--text-sub);
-            margin-bottom: 1.8rem;
             font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
-        .contact-list {
-            list-style: none;
+        .contact-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
         }
 
-        .contact-list li {
-            margin-bottom: 1.2rem;
-            color: var(--text-main);
-            font-size: 1.05rem;
+        .contact-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            transition: border-color 0.2s ease;
         }
 
-        .contact-list a {
-            color: var(--electric-blue);
+        .contact-badge-item:hover {
+            border-color: var(--electric-blue);
+        }
+
+        .contact-badge-icon {
+            font-size: 1.4rem;
+        }
+
+        .contact-badge-text div {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-badge-text a {
+            color: var(--light-green);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1rem;
         }
 
         .contact-form {
@@ -478,25 +648,26 @@
         .form-group label {
             font-size: 0.9rem;
             color: var(--text-sub);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .form-group input,
         .form-group textarea {
-            background-color: var(--card-bg);
+            background-color: rgba(4, 7, 13, 0.8);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 0.85rem;
+            padding: 0.95rem;
             color: var(--text-main);
             font-family: inherit;
             font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--electric-blue);
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
         }
 
         /* Footer */
@@ -511,11 +682,17 @@
             header.hero, .about-grid, .contact-container {
                 grid-template-columns: 1fr;
             }
+            .contact-card-wrapper {
+                padding: 1.8rem;
+            }
             .hero-name {
                 font-size: 3.2rem;
             }
-            .hero-headline {
+            .headline-primary {
                 font-size: 1.8rem;
+            }
+            .headline-secondary {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -529,6 +706,7 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">MUDITA SHARMA</a>
             <ul class="nav-links">
+                <li><a href="#career">Career</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -540,23 +718,30 @@
 
     <div class="container">
 
-        <!-- Enlarged Hero Section -->
+        <!-- Hero Section -->
         <header class="hero">
             <div>
-                <div class="hero-tagline">DATA ENGINEER • CLOUD ARCHITECT</div>
+                <div class="hero-tagline">DATA ENGINEER • CLOUD ARCHITECT • TECH MENTOR</div>
                 
-                <!-- ENLARGED NAME -->
                 <div class="hero-name">MUDITA SHARMA</div>
                 
-                <h1 class="hero-headline">Turning messy data into <span class="text-blue">reliable</span> <span class="text-green">systems.</span></h1>
+                <!-- DUAL HEADLINES -->
+                <div class="headline-primary">Turning messy data into <span class="text-blue">reliable systems.</span></div>
+                <div class="headline-secondary">Empowering the next generation.</div>
                 
+                <!-- MENTORSHIP CALLOUT CARD -->
+                <div class="mentor-badge-card">
+                    <div class="mentor-number">300+</div>
+                    <div class="mentor-text">Mentees Mentored in Cloud Data Engineering & AI</div>
+                </div>
+
                 <p class="hero-description">
-                    Building scalable cloud infrastructure, real-time streaming pipelines, and analytical data warehouses across Azure, Databricks, and AI workflows.
+                    Architecting scalable cloud data platforms while guiding emerging tech professionals into high-impact careers in data engineering, Azure cloud, and analytics.
                 </p>
                 
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn">Get in Touch</a>
-                    <a href="#projects" class="btn btn-outline">Explore Projects</a>
+                    <a href="#contact" class="btn">Let's Connect</a>
+                    <a href="#career" class="btn btn-outline">Explore Career</a>
                 </div>
             </div>
 
@@ -571,16 +756,76 @@
                 <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;raw = <span class="function">ingest_azure_eventhub</span>(data_stream)</div>
                 <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;transformed = <span class="function">pyspark_clean</span>(raw)</div>
                 <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">load_to_delta_lake</span>(transformed)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Pipeline Executed Successfully"</span></div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Pipeline Online & Scaled"</span></div>
                 <div class="status">
-                    <div class="status-dot"></div> Pipeline Online & Streaming
+                    <div class="status-dot"></div> Systems Operational • Mentoring Active
                 </div>
             </div>
         </header>
 
+        <!-- Career History Section -->
+        <section id="career">
+            <h2 class="section-title"><span class="text-green">💼</span> Career History</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Senior Data & Cloud Engineer</div>
+                                <div class="company-name">Enterprise Data Solutions</div>
+                            </div>
+                            <div class="timeline-date">2022 - Present</div>
+                        </div>
+                        <div class="timeline-body">
+                            <p>• Engineered end-to-end cloud data pipelines on Azure Synapse, Databricks, and Data Factory handling multi-terabyte datasets daily.</p>
+                            <p>• Optimized PySpark transformation jobs reducing processing runtimes by over 40%.</p>
+                            <p>• Architected Delta Lake schemas for cross-functional business analytics teams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Tech Career Mentor & Educator</div>
+                                <div class="company-name">Data & AI Mentorship Programs</div>
+                            </div>
+                            <div class="timeline-date">2021 - Present</div>
+                        </div>
+                        <div class="timeline-body">
+                            <p>• Mentored <strong>300+ students and transitioning professionals</strong> in Python, Azure Cloud, PySpark, and SQL data engineering skills.</p>
+                            <p>• Guided mentees through hands-on project builds, technical interviews, and industry certification paths.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="role-title">Data Analyst & Analytics Specialist</div>
+                                <div class="company-name">Cloud Analytics Solutions</div>
+                            </div>
+                            <div class="timeline-date">2019 - 2022</div>
+                        </div>
+                        <div class="timeline-body">
+                            <p>• Developed enterprise Power BI dashboards with complex DAX calculations for C-level leadership decision-making.</p>
+                            <p>• Managed SQL databases, automated ETL processes, and implemented data validation checks.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="section-title"><span class="text-green">&lt;/&gt;</span> Featured Projects</h2>
+            <h2 class="section-title"><span class="text-blue">&lt;/&gt;</span> Featured Projects</h2>
             <div class="projects-grid">
                 
                 <div class="project-card">
@@ -618,14 +863,14 @@
 
         <!-- About Section -->
         <section id="about">
-            <h2 class="section-title"><span class="text-blue">#</span> About Me</h2>
+            <h2 class="section-title"><span class="text-green">#</span> About Me</h2>
             <div class="about-grid">
                 <div>
                     <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.2rem;">
-                        I am a Data & Cloud Engineer passionate about building fault-tolerant infrastructure and scalable data pipelines. With certifications spanning Microsoft Azure, IBM, and Anthropic Claude, I bridge the gap between complex big data engineering and modern AI applications[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span).
+                        I am a Data & Cloud Engineer driven by two core passions: engineering robust data systems and empowering the next generation of technical talent. Holding multiple certifications across Microsoft Azure, IBM, and Anthropic Claude, I turn complex data challenges into scalable infrastructure[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span).
                     </p>
                     <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8;">
-                        My expertise includes PySpark ETL orchestration, cloud data warehouse design, Power BI analytics modeling, and prompt/LLM architecture setup[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).
+                        Having mentored over <strong>300+ mentees</strong>, I advocate for clear communication, practical hands-on building, and continuous learning in cloud computing and modern AI architectures[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).
                     </p>
                 </div>
                 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Data Code Network" class="about-image">
@@ -634,7 +879,7 @@
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-title"><span class="text-green">⚡</span> Technical Stack</h2>
+            <h2 class="section-title"><span class="text-blue">⚡</span> Technical Stack</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h4>Cloud Platforms</h4>
@@ -642,22 +887,22 @@
                 </div>
                 <div class="skill-card">
                     <h4>Data Engineering</h4>
-                    <p>PySpark, SQL, Delta Lake, Orchestration, Data Lakes</p>
+                    <p>PySpark, SQL, Delta Lake, Pipeline Orchestration, Data Lakes</p>
                 </div>
                 <div class="skill-card">
                     <h4>Analytics & BI</h4>
                     <p>Power BI, DAX, Data Modeling, Tableau, Visual Analytics</p>
                 </div>
                 <div class="skill-card">
-                    <h4>AI Architecture</h4>
-                    <p>Claude Frameworks, Prompt Orchestration, Python ML</p>
+                    <h4>AI Architecture & Mentorship</h4>
+                    <p>Claude Frameworks, Prompt Orchestration, Python ML, Mentoring</p>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
         <section id="certifications">
-            <h2 class="section-title"><span class="text-blue">★</span> Certifications & Credentials</h2>
+            <h2 class="section-title"><span class="text-green">★</span> Certifications & Credentials</h2>
             
             <div class="cert-grid">
 
@@ -773,34 +1018,51 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title"><span class="text-green">@</span> Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p>Have a project or want to build high-performance data systems together? Send me a message!</p>
-                    <ul class="contact-list">
-                        <li><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-                        <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/muditasharma</a></li>
-                        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">linkedin.com/in/muditasharma</a></li>
-                    </ul>
-                </div>
+        <!-- CAPTIVATING GET IN TOUCH SECTION -->
+        <section id="contact" style="border-bottom: none;">
+            <div class="contact-card-wrapper">
+                <div class="contact-container">
+                    
+                    <div class="contact-cta">
+                        <h3>Ready to build <span class="text-blue">data systems</span> or grow your <span class="text-green">tech career?</span></h3>
+                        <p>Whether you need scalable cloud architecture consulting or expert mentorship to accelerate your tech journey, let's make it happen.</p>
+                        
+                        <div class="contact-badges">
+                            <div class="contact-badge-item">
+                                <div class="contact-badge-icon">✉️</div>
+                                <div class="contact-badge-text">
+                                    <div>Direct Email</div>
+                                    <a href="mailto:your-email@example.com">your-email@example.com</a>
+                                </div>
+                            </div>
 
-                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                            <div class="contact-badge-item">
+                                <div class="contact-badge-icon">💼</div>
+                                <div class="contact-badge-text">
+                                    <div>LinkedIn Network</div>
+                                    <a href="https://linkedin.com" target="_blank">linkedin.com/in/muditasharma</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Your Message..."></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+
+                    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Alex Rivera">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="alex@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How Can I Help You?</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="I'd like to discuss a data engineering project / mentorship session..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Direct Message</button>
+                    </form>
+
+                </div>
             </div>
         </section>
 
