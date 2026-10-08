@@ -264,7 +264,7 @@
             font-weight: 800;
         }
 
-        /* Career History Section (Timeline Layout) */
+        /* Career History Section */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -550,602 +550,90 @@
             color: #ffffff;
         }
 
-        /* CAPTIVATING GET IN TOUCH SECTION */
+        /* REDESIGNED FORM-FREE CONTACT SECTION */
         .contact-card-wrapper {
             background: linear-gradient(135deg, var(--card-bg) 0%, #0c1424 100%);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 0 40px rgba(0, 210, 255, 0.08);
+            border-radius: 20px;
+            padding: 3.5rem;
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.1);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .contact-card-wrapper::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 250px;
-            height: 250px;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 200px;
             background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3.5rem;
-            align-items: center;
+        .contact-header {
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
         }
 
-        .contact-cta h3 {
-            font-size: 2.2rem;
+        .contact-header h3 {
+            font-size: 2.5rem;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
 
-        .contact-cta p {
+        .contact-header p {
             color: var(--text-sub);
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
             line-height: 1.7;
         }
 
-        .contact-badges {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
+        .contact-grid-clean {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .contact-badge-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .contact-card-clean {
             background-color: var(--badge-bg);
             border: 1px solid var(--border-color);
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            transition: border-color 0.2s ease;
+            border-radius: 14px;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .contact-badge-item:hover {
+        .contact-card-clean:hover {
             border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
         }
 
-        .contact-badge-icon {
-            font-size: 1.4rem;
+        .contact-icon-large {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
 
-        .contact-badge-text div {
+        .contact-card-title {
             font-size: 0.8rem;
             color: var(--text-sub);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-badge-text a {
-            color: var(--light-green);
-            text-decoration: none;
+            letter-spacing: 1.5px;
             font-weight: 700;
-            font-size: 1rem;
+            margin-bottom: 0.4rem;
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            background-color: rgba(4, 7, 13, 0.8);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0.95rem;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--electric-blue);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 900px) {
-            header.hero, .about-grid, .contact-container {
-                grid-template-columns: 1fr;
-            }
-            .contact-card-wrapper {
-                padding: 1.8rem;
-            }
-            .hero-name {
-                font-size: 3.2rem;
-            }
-            .headline-primary {
-                font-size: 1.8rem;
-            }
-            .headline-secondary {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="ambient-glow"></div>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">MUDITA SHARMA</a>
-            <ul class="nav-links">
-                <li><a href="#career">Career</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-
-        <!-- Hero Section -->
-        <header class="hero">
-            <div>
-                <div class="hero-tagline">DATA ENGINEER • CLOUD ARCHITECT • TECH MENTOR</div>
-                
-                <div class="hero-name">MUDITA SHARMA</div>
-                
-                <!-- DUAL HEADLINES -->
-                <div class="headline-primary">Turning messy data into <span class="text-blue">reliable systems.</span></div>
-                <div class="headline-secondary">Empowering the next generation.</div>
-                
-                <!-- MENTORSHIP CALLOUT CARD -->
-                <div class="mentor-badge-card">
-                    <div class="mentor-number">300+</div>
-                    <div class="mentor-text">Mentees Mentored in Cloud Data Engineering & AI</div>
-                </div>
-
-                <p class="hero-description">
-                    Architecting scalable cloud data platforms while guiding emerging tech professionals into high-impact careers in data engineering, Azure cloud, and analytics.
-                </p>
-                
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn">Let's Connect</a>
-                    <a href="#career" class="btn btn-outline">Explore Career</a>
-                </div>
-            </div>
-
-            <!-- Code Window -->
-            <div class="code-window">
-                <div class="code-dots">
-                    <div class="dot dot-red"></div>
-                    <div class="dot dot-yellow"></div>
-                    <div class="dot dot-green"></div>
-                </div>
-                <div class="code-line"><span class="keyword">def</span> <span class="function">clean_and_load</span>(data_stream):</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;raw = <span class="function">ingest_azure_eventhub</span>(data_stream)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;transformed = <span class="function">pyspark_clean</span>(raw)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">load_to_delta_lake</span>(transformed)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Pipeline Online & Scaled"</span></div>
-                <div class="status">
-                    <div class="status-dot"></div> Systems Operational • Mentoring Active
-                </div>
-            </div>
-        </header>
-
-        <!-- Career History Section -->
-        <section id="career">
-            <h2 class="section-title"><span class="text-green">💼</span> Career History</h2>
-            <div class="timeline">
-                
-                <!-- Fractal Analytics -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Data Engineer</div>
-                                <div class="company-name">Fractal Analytics • Gurugram</div>
-                            </div>
-                            <div class="timeline-date">July 2022 - Present</div>
-                        </div>
-                        <div class="timeline-body">
-                            <p>• Worked as a Data Engineer for an International US-based Bank (Citi Bank), top CPG brands (Unilever, P&G, Mars, Mondelez), and Google.</p>
-                            <p>• Built end-to-end data pipelines ingesting and processing data using Python (Pandas, NumPy), PySpark, Hive, and SQL.</p>
-                            <p>• Created and optimized HiveQL and SQL scripts for data processing, reducing lead time and automating Databricks workflow reconciliation.</p>
-                            <p>• Maintained 99%+ SLA adherence through proactive monitoring and led technical discussions with business stakeholders.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Infosys -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">System Engineer</div>
-                                <div class="company-name">Infosys • Full-time</div>
-                            </div>
-                            <div class="timeline-date">Jan 2021 - June 2022</div>
-                        </div>
-                        <div class="timeline-body">
-                            <p>• Served as a Data Validation Engineer for a US-based Global Clothing brand on a cloud migration project (GCP to Azure).</p>
-                            <p>• Developed and executed complex SQL validation queries, managed Defect Management in Jira, and verified Tableau to MicroStrategy report migrations.</p>
-                            <p>• Automated manual tasks for faster pipeline execution and verified incremental load data transfers.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KPMG -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Data Analytics Consulting Virtual Intern</div>
-                                <div class="company-name">KPMG Global Services (KGS)</div>
-                            </div>
-                            <div class="timeline-date">May 2021 - June 2021</div>
-                        </div>
-                        <div class="timeline-body">
-                            <p>• Executed data quality assessments, customer segmentation, and data visualization analytics for consulting client use cases.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Great Learning -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Content Intern</div>
-                                <div class="company-name">Great Learning • New Delhi, India</div>
-                            </div>
-                            <div class="timeline-date">Oct 2020 - Jan 2021</div>
-                        </div>
-                        <div class="timeline-body">
-                            <p>• Curated tech content and instructional learning materials for data science and analytics courses.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DRDO -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="role-title">Research Trainee</div>
-                                <div class="company-name">DRDO (Defence Research and Development Organisation)</div>
-                            </div>
-                            <div class="timeline-date">Jun 2019 - Aug 2019</div>
-                        </div>
-                        <div class="timeline-body">
-                            <p>• Worked on an innovative deep learning project focusing on "Landslide & non-landslide detection" using CNN models.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title"><span class="text-blue">&lt;/&gt;</span> Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Credit Card Fraud Detection" class="project-img">
-                    <div class="project-content">
-                        <h3>Credit Card Fraud Detection</h3>
-                        <p>Determined fraud transactions by comparing three machine learning classification algorithms on financial datasets.</p>
-                        <div class="tags">
-                            <span class="tag">Jan 2020 - Mar 2020</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Python</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Deep Learning CNN" class="project-img">
-                    <div class="project-content">
-                        <h3>Landslide Detection using Deep Learning & CNN</h3>
-                        <p>Built a CNN deep learning classifier to accurately predict landslide occurrences from satellite imagery.</p>
-                        <div class="tags">
-                            <span class="tag">Jun 2019 - Aug 2019</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Deep Learning</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Airport Cloud Data Analysis" class="project-img">
-                    <div class="project-content">
-                        <h3>Airport Data Analysis in Cloud</h3>
-                        <p>Analyzed Chicago International Airport data by deploying a cloud machine learning instance.</p>
-                        <div class="tags">
-                            <span class="tag">Jan 2019</span>
-                            <span class="tag">Cloud Instance</span>
-                            <span class="tag">Data Analytics</span>
-                        </div>
-                        <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title"><span class="text-green">#</span> About Me</h2>
-            <div class="about-grid">
-                <div>
-                    <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.2rem;">
-                        I seek challenging opportunities where I can fully enhance my professional skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges.
-                    </p>
-                    <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8;">
-                        With over 5 years of experience in data engineering, I specialize in PySpark, SQL, Azure Data Factory, Databricks, Snowflake, BigQuery, and building enterprise ETL/ELT pipelines.
-                    </p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Data Code Network" class="about-image">
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title"><span class="text-blue">⚡</span> Technical Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Cloud Technologies</h4>
-                    <p>Microsoft Azure, Microsoft Azure Data Factory, Databricks</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Databases</h4>
-                    <p>Hive, MySQL, Snowflake, BigQuery, Microsoft SQL Server Management Studio</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Technical Languages</h4>
-                    <p>Python, PySpark, SQL, HQL, Linux, Hadoop</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Tools & Version Control</h4>
-                    <p>Git, GitHub, Bitbucket, Jira, Anaconda, Tectia</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2 class="section-title"><span class="text-green">★</span> Certifications & Credentials</h2>
-            
-            <div class="cert-grid">
-
-                <!-- Claude Certified Architect -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
-                        <div class="cert-issuer">Anthropic</div>
-                        <div class="cert-details">
-                            <div>Issued: Sep 05, 2026</div>
-                            <div>Expires: Sep 05, 2027</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/claude-architect.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                        <a href="https://www.credly.com/badges/5a2d11c9-9f85-46ea-a825-e8fba4e565ff" target="_blank" class="btn btn-outline">Verify Credly</a>
-                    </div>
-                </div>
-
-                <!-- Azure Data Engineer Associate (DP-203) -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
-                        <div class="cert-issuer">Microsoft</div>
-                        <div class="cert-details">
-                            <div>Issued: July 20, 2022</div>
-                            <div>Valid until: July 21, 2023</div>
-                            <div class="cert-id">ID: 1355-4696</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/azure-data-engineer.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                    </div>
-                </div>
-
-                <!-- Power BI Data Analyst Associate (PL-300) -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
-                        <div class="cert-issuer">Microsoft</div>
-                        <div class="cert-details">
-                            <div>Issued: August 19, 2022</div>
-                            <div>Valid until: August 20, 2023</div>
-                            <div class="cert-id">ID: 1386-2927</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/power-bi-data-analyst.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                    </div>
-                </div>
-
-                <!-- Azure Administrator Associate (AZ-104) -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
-                        <div class="cert-issuer">Microsoft</div>
-                        <div class="cert-details">
-                            <div>Issued: January 17, 2022</div>
-                            <div>Valid until: January 18, 2023</div>
-                            <div class="cert-id">ID: 1109-9027</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/azure-administrator.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                    </div>
-                </div>
-
-                <!-- Azure Data Fundamentals (DP-900) -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
-                        <div class="cert-issuer">Microsoft</div>
-                        <div class="cert-details">
-                            <div>Issued: June 16, 2022</div>
-                            <div class="cert-id">ID: 1310-8724</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/azure-data-fundamentals.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                    </div>
-                </div>
-
-                <!-- Azure Fundamentals (AZ-900) -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">Microsoft Certified: Azure Fundamentals</h3>
-                        <div class="cert-issuer">Microsoft</div>
-                        <div class="cert-details">
-                            <div>Issued: July 14, 2021</div>
-                            <div class="cert-id">ID: H898-7313</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/azure-fundamentals.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                    </div>
-                </div>
-
-                <!-- IBM Data Science Professional Certificate -->
-                <div class="cert-card">
-                    <div>
-                        <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
-                        <div class="cert-issuer">Coursera / IBM</div>
-                        <div class="cert-details">
-                            <div>Issued: August 25, 2019</div>
-                        </div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="certificates/ibm-data-science.pdf" target="_blank" class="btn btn-outline">View PDF</a>
-                        <a href="https://coursera.org/verify/professional-cert/LZ5MXZEP7F5W" target="_blank" class="btn btn-outline">Verify Coursera</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CAPTIVATING GET IN TOUCH SECTION -->
-        <section id="contact" style="border-bottom: none;">
-            <div class="contact-card-wrapper">
-                <div class="contact-container">
-                    
-                    <div class="contact-cta">
-                        <h3>Ready to build <span class="text-blue">data systems</span> or grow your <span class="text-green">tech career?</span></h3>
-                        <p>Whether you need scalable cloud architecture consulting or expert mentorship to accelerate your tech journey, let's make it happen.</p>
-                        
-                        <div class="contact-badges">
-                            <div class="contact-badge-item">
-                                <div class="contact-badge-icon">📞</div>
-                                <div class="contact-badge-text">
-                                    <div>Phone Number</div>
-                                    <a href="tel:+919599010195">+91 95990 10195</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-badge-item">
-                                <div class="contact-badge-icon">✉️</div>
-                                <div class="contact-badge-text">
-                                    <div>Direct Email</div>
-                                    <a href="mailto:mudita10251@gmail.com">mudita10251@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-badge-item">
-                                <div class="contact-badge-icon">💼</div>
-                                <div class="contact-badge-text">
-                                    <div>LinkedIn Profile</div>
-                                    <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank">linkedin.com/in/mudita-sharma</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-badge-item">
-                                <div class="contact-badge-icon">💻</div>
-                                <div class="contact-badge-text">
-                                    <div>GitHub Portfolio</div>
-                                    <a href="https://github.com/Mudita98/Sharma" target="_blank">github.com/Mudita98/Sharma</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Alex Rivera">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="alex@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">How Can I Help You?</label>
-                            <textarea id="message" name="message" rows="4" required placeholder="I'd like to discuss a data engineering project / mentorship session..."></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Send Direct Message</button>
-                    </form>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Mudita Sharma. Built with HTML/CSS & deployed via GitHub Pages.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
-        
-        
-        
-           
-
-                
-                    
-                   
+        .contact-card-value {
+            color: var(--light-green);
+            font-weight:
