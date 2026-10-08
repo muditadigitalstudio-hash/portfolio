@@ -1,23 +1,24 @@
-Here is the complete, updated index.html code designed to match the hero styling shown on your screen—featuring the bold headline "Turning messy data into reliable systems.", a hero code window snippet, modern dark mode aesthetics, and all 7 of your certificates integrated with full contact and navigation sections.
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudita Sharma - Portfolio</title>
+    <title>Mudita Sharma - Data Engineer & Cloud Architect</title>
     <style>
         :root {
-            --bg-color: #0b0f17;
-            --card-bg: #131822;
-            --code-bg: #161c28;
-            --border-color: #232d3f;
-            --text-primary: #e6edf3;
-            --text-secondary: #8b949e;
-            --accent-cyan: #38bdf8;
-            --accent-green: #34d399;
-            --badge-bg: #1c2433;
-            --btn-bg: #e6edf3;
-            --btn-text: #0b0f17;
+            --bg-black: #000000;
+            --card-bg: #070b12;
+            --code-bg: #04070d;
+            --border-color: #1e293b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            
+            /* Green & Blue Electric Palette */
+            --electric-blue: #00d2ff;
+            --cyan-blue: #38bdf8;
+            --neon-green: #22c55e;
+            --light-green: #4ade80;
+            --badge-bg: #031525;
         }
 
         * {
@@ -28,25 +29,39 @@ Here is the complete, updated index.html code designed to match the hero styling
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-black);
+            color: var(--text-main);
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Ambient Glow Background Effects */
+        .ambient-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, rgba(0, 210, 255, 0.05) 50%, rgba(0,0,0,0) 80%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Navigation Bar */
         nav {
             position: sticky;
             top: 0;
-            background-color: rgba(11, 15, 23, 0.85);
-            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             padding: 1.2rem 2rem;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -55,10 +70,10 @@ Here is the complete, updated index.html code designed to match the hero styling
 
         .nav-logo {
             font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
+            font-weight: 800;
+            color: var(--neon-green);
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
         }
 
         .nav-links {
@@ -68,193 +83,322 @@ Here is the complete, updated index.html code designed to match the hero styling
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-sub);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-cyan);
+            color: var(--electric-blue);
         }
 
-        /* Main Container */
+        /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Hero Section */
+        /* Text Color Utilities */
+        .text-green { color: var(--neon-green); }
+        .text-light-green { color: var(--light-green); }
+        .text-blue { color: var(--electric-blue); }
+        .text-cyan { color: var(--cyan-blue); }
+
+        /* Massive Hero Section */
         header.hero {
-            padding: 6rem 0 4rem;
+            padding: 6rem 0 5rem;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 2.5rem;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
         }
 
         .hero-tagline {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--accent-green);
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.1;
+            font-size: 0.85rem;
             font-weight: 800;
-            color: #fff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--light-green);
             margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .hero h1 span.cyan {
-            color: var(--accent-cyan);
+        .hero-tagline::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* ENLARGED NAME TYPOGRAPHY */
+        .hero-name {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--light-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .hero-headline {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
         }
 
         .hero-description {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            max-width: 500px;
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 580px;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
-        /* Hero Code Box */
+        /* Hero Code Window */
         .code-window {
             background-color: var(--code-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            font-family: 'Fira Code', Consolas, Monaco, 'Courier New', Courier, monospace;
+            border-radius: 14px;
+            padding: 1.8rem;
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
             font-size: 0.85rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.12);
+            transition: border-color 0.3s ease;
+        }
+
+        .code-window:hover {
+            border-color: var(--electric-blue);
         }
 
         .code-dots {
             display: flex;
-            gap: 6px;
-            margin-bottom: 1.2rem;
+            gap: 8px;
+            margin-bottom: 1.5rem;
         }
 
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #333;
-        }
-        .dot-red { background-color: #ff5f56; }
-        .dot-yellow { background-color: #ffbd2e; }
-        .dot-green { background-color: #27c93f; }
+        .dot { width: 11px; height: 11px; border-radius: 50%; }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: var(--neon-green); }
 
-        .code-line { margin-bottom: 0.4rem; color: var(--text-secondary); }
-        .keyword { color: #f472b6; }
-        .function { color: #60a5fa; }
-        .string { color: var(--accent-green); }
-        .status { color: var(--accent-green); font-size: 0.75rem; margin-top: 1rem; display: flex; align-items: center; gap: 6px; }
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--accent-green); }
+        .code-line { margin-bottom: 0.5rem; color: var(--text-sub); }
+        .keyword { color: var(--electric-blue); }
+        .function { color: var(--light-green); }
+        .string { color: #f472b6; }
+        .status { color: var(--neon-green); font-size: 0.8rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
 
-        /* Sections */
+        /* Section Layout */
         section {
-            padding: 4rem 0;
+            padding: 5rem 0;
             border-bottom: 1px solid var(--border-color);
         }
 
         .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--electric-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 800;
         }
 
-        /* Skills Section */
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            color: var(--light-green);
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .project-content p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background-color: var(--badge-bg);
+            color: var(--cyan-blue);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 1.8rem;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--neon-green);
+            transform: translateY(-3px);
         }
 
         .skill-card h4 {
-            color: #fff;
-            margin-bottom: 0.5rem;
+            color: var(--electric-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
         }
 
         .skill-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            font-size: 0.95rem;
+            color: var(--text-sub);
         }
 
         /* Certifications Grid */
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.8rem;
         }
 
         .cert-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .cert-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.12);
         }
 
         .cert-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
 
         .cert-issuer {
-            font-size: 0.9rem;
-            color: var(--accent-cyan);
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--electric-blue);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
         .cert-details {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
+            font-size: 0.88rem;
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
         }
 
         .cert-id {
             font-family: monospace;
             background: var(--badge-bg);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
+            color: var(--light-green);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
             display: inline-block;
-            margin-top: 0.25rem;
+            margin-top: 0.4rem;
             border: 1px solid var(--border-color);
+            font-size: 0.8rem;
         }
 
         .cert-actions {
             margin-top: auto;
             display: flex;
-            gap: 0.5rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
         }
 
@@ -262,42 +406,45 @@ Here is the complete, updated index.html code designed to match the hero styling
         .btn {
             display: inline-block;
             text-decoration: none;
-            color: var(--btn-text);
-            background-color: var(--btn-bg);
-            border: 1px solid transparent;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.2s;
+            color: #000000;
+            background-color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            transition: all 0.25 ease;
             cursor: pointer;
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background-color: var(--light-green);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
         }
 
         .btn-outline {
             background-color: transparent;
-            color: var(--text-primary);
+            color: var(--cyan-blue);
             border-color: var(--border-color);
         }
 
         .btn-outline:hover {
             background-color: var(--badge-bg);
-            border-color: var(--text-secondary);
+            border-color: var(--electric-blue);
+            color: #ffffff;
         }
 
         /* Contact Section */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            color: var(--text-sub);
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
         }
 
         .contact-list {
@@ -305,76 +452,84 @@ Here is the complete, updated index.html code designed to match the hero styling
         }
 
         .contact-list li {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            font-size: 1.05rem;
         }
 
         .contact-list a {
-            color: var(--accent-cyan);
+            color: var(--electric-blue);
             text-decoration: none;
+            font-weight: 600;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
 
         .form-group label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group textarea {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 0.75rem;
-            color: var(--text-primary);
+            border-radius: 8px;
+            padding: 0.85rem;
+            color: var(--text-main);
             font-family: inherit;
+            font-size: 0.95rem;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-cyan);
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
         }
 
         /* Footer */
         footer {
-            padding: 2.5rem 0;
+            padding: 3rem 0;
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 850px) {
-            header.hero {
+        @media (max-width: 900px) {
+            header.hero, .about-grid, .contact-container {
                 grid-template-columns: 1fr;
             }
-            .contact-container {
-                grid-template-columns: 1fr;
+            .hero-name {
+                font-size: 3.2rem;
             }
-            .hero h1 {
-                font-size: 2.4rem;
+            .hero-headline {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <div class="ambient-glow"></div>
+
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="#" class="nav-logo">MUDITA SHARMA</a>
             <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -385,72 +540,124 @@ Here is the complete, updated index.html code designed to match the hero styling
 
     <div class="container">
 
-        <!-- Hero Section -->
+        <!-- Enlarged Hero Section -->
         <header class="hero">
             <div>
-                <div class="hero-tagline">ENGINEER • BUILDER • ARCHITECT</div>
-                <h1>Turning messy data into <span class="cyan">reliable systems.</span></h1>
+                <div class="hero-tagline">DATA ENGINEER • CLOUD ARCHITECT</div>
+                
+                <!-- ENLARGED NAME -->
+                <div class="hero-name">MUDITA SHARMA</div>
+                
+                <h1 class="hero-headline">Turning messy data into <span class="text-blue">reliable</span> <span class="text-green">systems.</span></h1>
+                
                 <p class="hero-description">
-                    Data Engineer with experience building scalable pipelines, cloud platforms, and analytics workflows for enterprise clients.
+                    Building scalable cloud infrastructure, real-time streaming pipelines, and analytical data warehouses across Azure, Databricks, and AI workflows.
                 </p>
+                
                 <div class="hero-buttons">
                     <a href="#contact" class="btn">Get in Touch</a>
-                    <a href="#certifications" class="btn btn-outline">View Certifications</a>
+                    <a href="#projects" class="btn btn-outline">Explore Projects</a>
                 </div>
             </div>
 
-            <!-- Code Preview Box -->
+            <!-- Code Window -->
             <div class="code-window">
                 <div class="code-dots">
                     <div class="dot dot-red"></div>
                     <div class="dot dot-yellow"></div>
                     <div class="dot dot-green"></div>
                 </div>
-                <div class="code-line"><span class="keyword">def</span> <span class="function">build_pipeline</span>():</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;raw = <span class="function">ingest_data</span>()</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;clean = <span class="function">transform</span>(raw)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;curated = <span class="function">optimize</span>(clean)</div>
-                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> curated</div>
+                <div class="code-line"><span class="keyword">def</span> <span class="function">clean_and_load</span>(data_stream):</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;raw = <span class="function">ingest_azure_eventhub</span>(data_stream)</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;transformed = <span class="function">pyspark_clean</span>(raw)</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">load_to_delta_lake</span>(transformed)</div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Pipeline Executed Successfully"</span></div>
                 <div class="status">
-                    <div class="status-dot"></div> Pipeline running...
+                    <div class="status-dot"></div> Pipeline Online & Streaming
                 </div>
             </div>
         </header>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title"><span class="text-green">&lt;/&gt;</span> Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure" class="project-img">
+                    <div class="project-content">
+                        <h3>Enterprise Azure Delta Lakehouse</h3>
+                        <p>Built a high-throughput ETL data pipeline transforming unstructured streaming data into optimized Delta Lake format on Azure Databricks.</p>
+                        <div class="tags">
+                            <span class="tag">Azure Databricks</span>
+                            <span class="tag">PySpark</span>
+                            <span class="tag">Synapse</span>
+                            <span class="tag">Delta Lake</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analytics Dashboard" class="project-img">
+                    <div class="project-content">
+                        <h3>Real-Time Analytics & BI Engine</h3>
+                        <p>Designed structured DAX data models and automated Power BI reports integrated with Azure SQL Database for enterprise analytics.</p>
+                        <div class="tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Azure SQL</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="btn btn-outline" style="margin-top: auto;">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p style="color: var(--text-secondary); max-width: 850px; font-size: 1.05rem; line-height: 1.8;">
-                I specialize in designing and engineering high-performance data architectures, automated cloud ingestion pipelines, and business-critical analytics dashboards. certified across Microsoft Azure, IBM, and Anthropic Claude ecosystems, I focus on delivering clean, maintainable, and cost-effective data solutions[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).
-            </p>
+            <h2 class="section-title"><span class="text-blue">#</span> About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.2rem;">
+                        I am a Data & Cloud Engineer passionate about building fault-tolerant infrastructure and scalable data pipelines. With certifications spanning Microsoft Azure, IBM, and Anthropic Claude, I bridge the gap between complex big data engineering and modern AI applications[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span).
+                    </p>
+                    <p style="color: var(--text-sub); font-size: 1.05rem; line-height: 1.8;">
+                        My expertise includes PySpark ETL orchestration, cloud data warehouse design, Power BI analytics modeling, and prompt/LLM architecture setup[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span).
+                    </p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Data Code Network" class="about-image">
+            </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-title">Technical Expertise</h2>
+            <h2 class="section-title"><span class="text-green">⚡</span> Technical Stack</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h4>Cloud Platforms</h4>
-                    <p>Microsoft Azure, Synapse, Databricks, Azure Data Factory</p>
+                    <p>Microsoft Azure, Databricks, Azure Data Factory, Azure Synapse</p>
                 </div>
                 <div class="skill-card">
                     <h4>Data Engineering</h4>
-                    <p>PySpark, SQL, ETL/ELT Pipelines, Data Warehousing</p>
+                    <p>PySpark, SQL, Delta Lake, Orchestration, Data Lakes</p>
                 </div>
                 <div class="skill-card">
                     <h4>Analytics & BI</h4>
-                    <p>Power BI, DAX, Data Modeling, Tableau</p>
+                    <p>Power BI, DAX, Data Modeling, Tableau, Visual Analytics</p>
                 </div>
                 <div class="skill-card">
                     <h4>AI Architecture</h4>
-                    <p>Claude Frameworks, Prompt Orchestration, Python</p>
+                    <p>Claude Frameworks, Prompt Orchestration, Python ML</p>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
         <section id="certifications">
-            <h2 class="section-title">Certifications & Credentials</h2>
+            <h2 class="section-title"><span class="text-blue">★</span> Certifications & Credentials</h2>
             
             <div class="cert-grid">
 
@@ -460,8 +667,8 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Claude Certified Architect - Foundations</h3>
                         <div class="cert-issuer">Anthropic</div>
                         <div class="cert-details">
-                            <div>Issued: Sep 05, 2026</div>
-                            <div>Expires: Sep 05, 2027</div>
+                            <div>Issued: Sep 05, 2026[span_16](start_span)[span_16](end_span)</div>
+                            <div>Expires: Sep 05, 2027[span_17](start_span)[span_17](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -476,9 +683,9 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Microsoft Certified: Azure Data Engineer Associate</h3>
                         <div class="cert-issuer">Microsoft</div>
                         <div class="cert-details">
-                            <div>Issued: July 20, 2022</div>
-                            <div>Valid until: July 21, 2023</div>
-                            <div class="cert-id">ID: 1355-4696</div>
+                            <div>Issued: July 20, 2022[span_18](start_span)[span_18](end_span)</div>
+                            <div>Valid until: July 21, 2023[span_19](start_span)[span_19](end_span)</div>
+                            <div class="cert-id">ID: 1355-4696[span_20](start_span)[span_20](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -492,9 +699,9 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</h3>
                         <div class="cert-issuer">Microsoft</div>
                         <div class="cert-details">
-                            <div>Issued: August 19, 2022</div>
-                            <div>Valid until: August 20, 2023</div>
-                            <div class="cert-id">ID: 1386-2927</div>
+                            <div>Issued: August 19, 2022[span_21](start_span)[span_21](end_span)</div>
+                            <div>Valid until: August 20, 2023[span_22](start_span)[span_22](end_span)</div>
+                            <div class="cert-id">ID: 1386-2927[span_23](start_span)[span_23](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -508,9 +715,9 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
                         <div class="cert-issuer">Microsoft</div>
                         <div class="cert-details">
-                            <div>Issued: January 17, 2022</div>
-                            <div>Valid until: January 18, 2023</div>
-                            <div class="cert-id">ID: 1109-9027</div>
+                            <div>Issued: January 17, 2022[span_24](start_span)[span_24](end_span)</div>
+                            <div>Valid until: January 18, 2023[span_25](start_span)[span_25](end_span)</div>
+                            <div class="cert-id">ID: 1109-9027[span_26](start_span)[span_26](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -524,8 +731,8 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Microsoft Certified: Azure Data Fundamentals</h3>
                         <div class="cert-issuer">Microsoft</div>
                         <div class="cert-details">
-                            <div>Issued: June 16, 2022</div>
-                            <div class="cert-id">ID: 1310-8724</div>
+                            <div>Issued: June 16, 2022[span_27](start_span)[span_27](end_span)</div>
+                            <div class="cert-id">ID: 1310-8724[span_28](start_span)[span_28](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -539,8 +746,8 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">Microsoft Certified: Azure Fundamentals</h3>
                         <div class="cert-issuer">Microsoft</div>
                         <div class="cert-details">
-                            <div>Issued: July 14, 2021</div>
-                            <div class="cert-id">ID: H898-7313</div>
+                            <div>Issued: July 14, 2021[span_29](start_span)[span_29](end_span)</div>
+                            <div class="cert-id">ID: H898-7313[span_30](start_span)[span_30](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -554,7 +761,7 @@ Here is the complete, updated index.html code designed to match the hero styling
                         <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
                         <div class="cert-issuer">Coursera / IBM</div>
                         <div class="cert-details">
-                            <div>Issued: August 25, 2019</div>
+                            <div>Issued: August 25, 2019[span_31](start_span)[span_31](end_span)</div>
                         </div>
                     </div>
                     <div class="cert-actions">
@@ -568,10 +775,10 @@ Here is the complete, updated index.html code designed to match the hero styling
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title"><span class="text-green">@</span> Get In Touch</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <p>Interested in collaborating or discussing cloud data pipelines? Reach out directly via email or form!</p>
+                    <p>Have a project or want to build high-performance data systems together? Send me a message!</p>
                     <ul class="contact-list">
                         <li><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
                         <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/muditasharma</a></li>
