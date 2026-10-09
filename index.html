@@ -17,7 +17,7 @@
       --card-bg: #111827;
       --card-border: #1f293d;
       --primary: #00e676;     /* Green */
-      --secondary: #00b0ff;   /* Blue */
+      --secondary: #00b0ff;   /* Cyan / Blue */
       --text: #ffffff;        /* White */
       --text-muted: #9ca3af;
     }
@@ -133,17 +133,25 @@
       font-size: 0.8rem;
       font-family: 'JetBrains Mono', monospace;
       margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      line-height: 1.25;
+      font-size: 3.2rem;
+      line-height: 1.15;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #ffffff 30%, #00b0ff 70%, #00e676 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+    }
+
+    .hero h1 .highlight-green {
+      color: var(--primary);
+    }
+
+    .hero h1 .highlight-cyan {
+      color: var(--secondary);
     }
 
     .hero p {
@@ -189,22 +197,52 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Image */
-    .hero-image-wrap {
-      position: relative;
-    }
-
-    .hero-img {
-      width: 100%;
-      border-radius: 16px;
+    /* Hero Code Snippet Box */
+    .hero-code-box {
+      background: #0f172a;
       border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 176, 255, 0.15);
-      object-fit: cover;
-      transition: transform 0.3s ease;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
     }
 
-    .hero-img:hover {
-      transform: scale(1.02);
+    .code-dots {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .code-content {
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    .code-keyword { color: #f472b6; }
+    .code-func { color: #38bdf8; }
+    .code-param { color: #fb923c; }
+
+    .code-status {
+      margin-top: 1.2rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--card-border);
+      color: var(--primary);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     /* Technical Skills Table Styles */
@@ -319,7 +357,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Certification Card Image Styling */
+    /* Certification Image Card Styling */
     .cert-card-img {
       width: 100%;
       height: auto;
@@ -330,9 +368,31 @@
       display: block;
     }
 
-    /* Experience List */
-    .exp-item {
-      margin-bottom: 2rem;
+    /* Timeline Experience Styling */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: calc(-2rem - 6px);
+      top: 0.3rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
     }
 
     .exp-item ul {
@@ -378,6 +438,9 @@
       .skills-category {
         width: 35%;
       }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
@@ -404,19 +467,32 @@
     <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div>
-        <span class="hero-badge">● DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
-        <h1>Building Fault-Tolerant Data Infrastructure & Enterprise Cloud Ecosystems at Scale.</h1>
-        <p>Experienced Data Engineer with 5 years designing, developing, and optimizing end-to-end data workflows for global enterprise organizations including Citi Bank, Google, Unilever, P&G, Mars, and Mondelez.</p>
+        <span class="hero-badge">ENGINEER • BUILDER • MENTOR</span>
+        <h1>Turning messy data into <span class="highlight-cyan">reliable</span> <span class="highlight-green">systems.</span></h1>
+        <p>Data Engineer with experience building scalable pipelines, cloud platforms, and analytics workflows for enterprise clients.</p>
         
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Explore Projects →</a>
-          <a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" class="btn btn-secondary">📄 View Resume</a>
           <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
 
-      <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Data Pipeline and Cloud Engineering Infrastructure" class="hero-img">
+      <div class="hero-code-box">
+        <div class="code-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="code-content">
+          <span class="code-keyword">def</span> <span class="code-func">build_pipeline</span>(<span class="code-param">source</span>):<br>
+          &nbsp;&nbsp;raw = ingest(source)<br>
+          &nbsp;&nbsp;clean = transform(raw)<br>
+          &nbsp;&nbsp;curated = validate(clean)<br><br>
+          &nbsp;&nbsp;<span class="code-keyword">return</span> curated
+        </div>
+        <div class="code-status">
+          ● System Healthy
+        </div>
       </div>
     </section>
 
@@ -427,9 +503,9 @@
       
       <div class="grid-2">
         <div class="card">
-          <p>I specialize in building reliable, fault-tolerant data platforms, designing automated ELT/ETL pipelines, and executing seamless cloud migrations on Azure, Databricks, and GCP.</p>
+          <p>I specialize in building reliable data platforms, designing automated ELT/ETL pipelines, and migrating enterprise architectures to modern cloud platforms like Microsoft Azure and Databricks.</p>
           <br>
-          <p>With 5 years of hands-on industry experience across Fractal Analytics and Infosys, I deliver scalable architectures that adhere strictly to production SLAs while optimizing query latency and system performance.</p>
+          <p>Over my career across Fractal Analytics and Infosys, I have led client engagements, maintained 99%+ SLA adherence on production workloads, and actively mentored 50+ engineers in modern data engineering stacks.</p>
         </div>
         
         <div>
@@ -454,7 +530,7 @@
           <tbody>
             <tr>
               <td class="skills-category">Cloud Technologies</td>
-              <td class="skills-list">Microsoft Azure, Microsoft Azure Data Factory, Databricks, GCP</td>
+              <td class="skills-list">Microsoft Azure, Microsoft Azure Data Factory, Databricks</td>
             </tr>
             <tr>
               <td class="skills-category">Databases</td>
@@ -481,30 +557,40 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
+    <!-- EXPERIENCE SECTION (TIMELINE FORMAT) -->
     <section id="experience">
       <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
       <h2 class="section-title">Career History</h2>
       
-      <div class="card exp-item">
-        <h3>Fractal Analytics | Data Engineer</h3>
-        <span class="card-meta">July 2022 – Present</span>
-        <ul>
-          <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
-          <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
-          <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
-          <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
-        </ul>
-      </div>
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>Fractal Analytics | Data Engineer</h3>
+            <span class="card-meta">July 2022 – Present</span>
+            <ul>
+              <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+              <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
+              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
+              <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="card exp-item">
-        <h3>Infosys | System Engineer</h3>
-        <span class="card-meta">Jan 2021 – June 2022</span>
-        <ul>
-          <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads from GCP to Azure platform.</li>
-          <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
-          <li>Collaborated with business stakeholders and client teams to validate migration requirements and ensure successful project delivery.</li>
-        </ul>
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>Infosys | System Engineer</h3>
+            <span class="card-meta">Jan 2021 – June 2022</span>
+            <ul>
+              <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads from GCP to Azure platform.</li>
+              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
+              <li>Collaborated with business stakeholders and client teams to validate migration requirements and ensure successful project delivery.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
