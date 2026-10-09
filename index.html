@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,7 +17,7 @@
       --card-bg: #111827;
       --card-border: #1f293d;
       --primary: #00e676;     /* Green */
-      --secondary: #00b0ff;   /* Cyan / Blue */
+      --secondary: #00b0ff;   /* Blue / Cyan */
       --text: #ffffff;        /* White */
       --text-muted: #9ca3af;
     }
@@ -108,7 +108,7 @@
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       margin-bottom: 2rem;
       color: #ffffff;
@@ -121,39 +121,42 @@
       grid-template-columns: 1.2fr 1fr;
       gap: 3rem;
       align-items: center;
-      min-height: 70vh;
+      min-height: 75vh;
     }
 
     .hero-name {
-      font-size: 4rem;
+      font-size: 4.8rem;
       font-weight: 900;
       letter-spacing: -1.5px;
-      line-height: 1;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #ffffff 40%, #00b0ff 80%, #00e676 100%);
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #ffffff 30%, #00b0ff 70%, #00e676 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 10px 30px rgba(0, 176, 255, 0.2);
     }
 
     .hero-badge {
       display: inline-block;
-      padding: 0.4rem 1rem;
+      padding: 0.4rem 1.2rem;
       background: rgba(0, 176, 255, 0.1);
       border: 1px solid rgba(0, 176, 255, 0.3);
       border-radius: 50px;
       color: var(--secondary);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-family: 'JetBrains Mono', monospace;
       margin-bottom: 1.5rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
+      font-weight: 600;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       line-height: 1.2;
       font-weight: 800;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
       margin-bottom: 1.5rem;
       color: #ffffff;
     }
@@ -168,7 +171,7 @@
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.7;
     }
@@ -210,7 +213,6 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Data Engineering Graphic Box */
     .hero-image-wrap {
       position: relative;
     }
@@ -221,6 +223,38 @@
       border: 1px solid var(--card-border);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 176, 255, 0.15);
       object-fit: cover;
+    }
+
+    /* About Section Styles */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .about-text {
+      font-size: 1.35rem;
+      line-height: 1.85;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .about-img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: block;
+      margin: 0 auto;
     }
 
     /* Technical Skills Table Styles */
@@ -275,17 +309,10 @@
     }
 
     /* Grids & Cards */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
     .grid-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
     }
 
     .card {
@@ -331,37 +358,44 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    .about-text {
-      font-size: 1.25rem;
-      line-height: 1.8;
-      color: #e2e8f0;
-    }
-
-    .about-img {
-      width: 100%;
-      max-width: 340px;
-      border-radius: 12px;
+    /* Certification Direct Image Display */
+    .cert-card {
+      background: var(--card-bg);
       border: 1px solid var(--card-border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      display: block;
-      margin: 0 auto;
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* Certification Image Styling */
+    .cert-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-4px);
+    }
+
     .cert-card-img {
       width: 100%;
-      height: 180px;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      height: auto;
+      border-radius: 10px;
       border: 1px solid var(--card-border);
-      object-fit: cover;
       display: block;
+      object-fit: contain;
+    }
+
+    .cert-title {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
     }
 
     /* Timeline Experience Styling */
     .timeline {
       position: relative;
-      padding-left: 2rem;
+      padding-left: 2.5rem;
       border-left: 2px solid var(--card-border);
     }
 
@@ -376,13 +410,13 @@
 
     .timeline-dot {
       position: absolute;
-      left: calc(-2rem - 6px);
+      left: calc(-2.5rem - 6px);
       top: 0.4rem;
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background: var(--primary);
-      box-shadow: 0 0 10px var(--primary);
+      box-shadow: 0 0 12px var(--primary);
     }
 
     .exp-item ul {
@@ -393,7 +427,7 @@
     .exp-item li {
       margin-bottom: 0.6rem;
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* Contact Card */
@@ -417,17 +451,17 @@
     }
 
     @media (max-width: 900px) {
-      .hero, .grid-2 {
+      .hero, .about-container {
         grid-template-columns: 1fr;
       }
       .nav-links {
         display: none;
       }
       .hero-name {
-        font-size: 3rem;
+        font-size: 3.2rem;
       }
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       .skills-category {
         width: 35%;
@@ -459,9 +493,9 @@
     <section id="home" class="hero">
       <div>
         <h1 class="hero-name">MUDITA SHARMA</h1>
-        <span class="hero-badge">DATA ENGINEER • CLOUD ARCHITECT • MENTOR</span>
-        <h1>Turning <span class="highlight-cyan">reliable data</span> into empowering systems for <span class="highlight-green">future generations.</span></h1>
-        <p>Data Engineer with 5 years of experience building scalable pipelines, cloud platforms, and automated analytics workflows for enterprise clients including Citi Bank, Google, Unilever, P&G, Mars, and Mondelez.</p>
+        <span class="hero-badge">DATA ENGINEER • BUILDER • MENTOR</span>
+        <h1>Turning <span class="highlight-cyan">messy data</span> into <span class="highlight-green">reliable systems</span> — empowering the future generation.</h1>
+        <p>Data Engineer with 5 years of experience building scalable pipelines, cloud platforms, and automated analytics workflows. Proud mentor to <strong>300+ mentees</strong> in modern data engineering stacks.</p>
         
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Explore Projects →</a>
@@ -477,19 +511,19 @@
     <!-- ABOUT SECTION -->
     <section id="about">
       <span class="section-label">01 — ABOUT</span>
-      <h2 class="section-title">Transforming Big Data into High-Value Business Intelligence</h2>
+      <h2 class="section-title">Architecting Resilient Cloud Ecosystems & Elevating Data Potential</h2>
       
-      <div class="grid-2">
-        <div class="card">
+      <div class="about-container">
+        <div class="about-card">
           <div class="about-text">
-            <p>I specialize in building fault-tolerant data platforms, designing automated ELT/ETL pipelines, and executing large-scale cloud migrations on Microsoft Azure, Databricks, and GCP.</p>
+            <p>I specialize in building fault-tolerant data platforms, designing automated ELT/ETL pipelines, and executing enterprise cloud migrations on Microsoft Azure, Databricks, and GCP.</p>
             <br>
-            <p>Across my career at Fractal Analytics and Infosys, I have delivered end-to-end data engineering solutions, maintained 99%+ SLA adherence on mission-critical production workloads, and mentored 50+ engineers in modern data stacks.</p>
+            <p>Across my career at Fractal Analytics and Infosys, I have led client engagements, maintained 99%+ SLA adherence on production workloads, and actively empowered 300+ aspiring engineers through hands-on data engineering mentorship.</p>
           </div>
         </div>
         
         <div>
-          <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80" alt="Data Engineering System Architecture" class="about-img">
+          <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=500&q=80" alt="Data Engineering System Architecture" class="about-img">
         </div>
       </div>
     </section>
@@ -537,7 +571,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (TIMELINE FORMAT FROM RESUME) -->
+    <!-- EXPERIENCE SECTION (TIMELINE FORMAT FROM LINKEDIN IMAGE) -->
     <section id="experience">
       <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
       <h2 class="section-title">Career History</h2>
@@ -547,17 +581,15 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>FRACTAL ANALYTICS | Data Engineer</h3>
-            <span class="card-meta">July 2022 – Present</span>
+            <h3>Data Engineer | Fractal</h3>
+            <span class="card-meta">Jul 2022 – Present • 4 yrs 4 mos | Gurugram</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Engineer for an International US based Bank (Citi Bank), leading CPG brands (Unilever, P&G, Mars, Mondelez), and search engine Google.</p>
             <ul>
-              <li>Built end-to-end data pipelines for a global US-based bank (Citi Bank) and leading CPG companies (Unilever, P&G, Mars, Mondelez), ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+              <li>Built end-to-end data pipelines ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
               <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
-              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end pipeline testing.</li>
-              <li>Created and optimized HiveQL and SQL scripts for data processing, table creation, and workflow improvements to reduce processing lead time.</li>
-              <li>Worked on Lift-and-Shift migration projects, enhancing performance and reliability of existing data jobs.</li>
-              <li>Automated Databricks workflow reconciliation and validation processes, reducing manual effort by approximately 2 hours per day.</li>
-              <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
-              <li>Led client-facing project discussions and requirement workshops, delivering multiple projects with a 100% on-time delivery record.</li>
+              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, and ensured production readiness.</li>
+              <li>Optimized HiveQL and SQL scripts for data processing and workflow improvements to reduce lead time.</li>
+              <li>Automated Databricks workflow reconciliation processes, saving ~2 hours daily with 99%+ SLA adherence.</li>
             </ul>
           </div>
         </div>
@@ -566,99 +598,150 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>INFOSYS | System Engineer</h3>
-            <span class="card-meta">Jan 2021 – June 2022</span>
+            <h3>System Engineer | Infosys</h3>
+            <span class="card-meta">Jan 2021 – Jun 2022 • 1 yr 6 mos</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Validation Engineer for a US-based Global Clothing brand on a cloud data migration project.</p>
             <ul>
-              <li>Worked as a Data Validation Engineer for a US-based global clothing brand on a data migration project migrating workloads running on GCP to Azure platform.</li>
-              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
-              <li>Executed ETL/Data Warehouse backend testing and BI Report testing to maintain quality assurance across cloud architectures.</li>
-              <li>Prepared Test cases, Test Scenarios, Defect Management, and Test Reports using Jira for agile project delivery.</li>
-              <li>Validated data transfer from GCP to Azure for history/incremental loads, applying cleansing rules in cleansed layers and data transformations in curated layers.</li>
+              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure platform.</li>
+              <li>Validated data transfer from GCP to Azure for historical/incremental loads, cleansing rules, and curated reporting layers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>Data Analytics Consulting Virtual Internship | KPMG Global Services (KGS)</h3>
+            <span class="card-meta">May 2021 – Jun 2021 • 2 mos</span>
+            <ul>
+              <li>Analyzed client datasets to derive actionable business insights, customer segmentation, and data quality assessment reports.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>Content Intern | Great Learning</h3>
+            <span class="card-meta">Oct 2020 – Jan 2021 • 4 mos | New Delhi, Delhi, India</span>
+            <ul>
+              <li>Created and curated technical learning content for data analytics and software engineering modules.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>Research Trainee | Defence Research and Development Organisation (DRDO)</h3>
+            <span class="card-meta">Jun 2019 – Aug 2019 • 3 mos | New Delhi, Delhi, India</span>
+            <ul>
+              <li>Worked on an innovative research project focused on "Landslide & non-landslide" terrain image detection using deep learning models.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
+    <!-- CERTIFICATIONS SECTION (EXACT IMAGE SNAPSHOT DISPLAY) -->
     <section id="certificates">
       <span class="section-label">04 — CERTIFICATIONS</span>
       <h2 class="section-title">Verified Credentials</h2>
       <div class="grid-cards">
         
-        <!-- Certificate 1 -->
-        <div class="card">
+        <!-- Certificate Image 1 -->
+        <div class="cert-card">
           <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect - Foundations" class="cert-card-img">
-          <h3>Claude Certified Architect - Foundations</h3>
-          <span class="card-meta">Issued by Anthropic | Sep 2026</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Architecting enterprise AI solutions and foundational AI system design.</p>
+          <div class="cert-title">Claude Certified Architect - Foundations</div>
         </div>
 
-        <!-- Certificate 2 -->
-        <div class="card">
+        <!-- Certificate Image 2 -->
+        <div class="cert-card">
           <img src="MICROSOFT CERTIFIED.jpeg" alt="Microsoft Certified: Azure Data Engineer Associate" class="cert-card-img">
-          <h3>Microsoft Certified: Azure Data Engineer Associate</h3>
-          <span class="card-meta">Issued by Microsoft</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Integrating, transforming, and consolidating data from disparate structured and unstructured systems into cloud solutions.</p>
+          <div class="cert-title">Microsoft Certified: Azure Data Engineer Associate</div>
         </div>
 
-        <!-- Certificate 3 -->
-        <div class="card">
+        <!-- Certificate Image 3 -->
+        <div class="cert-card">
           <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Microsoft Certified: Power BI Data Analyst Associate" class="cert-card-img">
-          <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
-          <span class="card-meta">PL-300 | Issued by Microsoft</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Data modeling, transformation, and analytical reporting across enterprise architectures.</p>
+          <div class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</div>
         </div>
 
-        <!-- Certificate 4 -->
-        <div class="card">
+        <!-- Certificate Image 4 -->
+        <div class="cert-card">
           <img src="MICROSOFT CERTIFIED (3).jpeg" alt="Microsoft Certified: Azure Administrator Associate" class="cert-card-img">
-          <h3>Microsoft Certified: Azure Administrator Associate</h3>
-          <span class="card-meta">Issued by Microsoft</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Implementing, managing, and monitoring identity, governance, storage, compute, and virtual networks in Azure.</p>
+          <div class="cert-title">Microsoft Certified: Azure Administrator Associate</div>
         </div>
 
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (PURE DATA ENGINEERING FOCUS) -->
+    <!-- PROJECTS SECTION (UPDATED EXACTLY FROM UPLOADED SCREENSHOT) -->
     <section id="projects">
       <span class="section-label">05 — FEATURED PROJECTS</span>
-      <h2 class="section-title">Data Engineering Case Studies</h2>
+      <h2 class="section-title">Engineering Projects</h2>
       <div class="grid-cards">
         
+        <!-- Project 1 -->
         <div class="card">
-          <h3>Automated GCP to Azure Data Migration Pipeline</h3>
-          <span class="card-meta">Cloud Data Migration & Validation</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Architected automated historical and incremental load validation workflows to migrate enterprise datasets from GCP to Azure with complex SQL verification.</p>
+          <h3>Credit Card Fraud Detection</h3>
+          <span class="card-meta">Jan 2020 – Mar 2020</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">This project determines the fraud transaction by comparing three algorithms of machine learning to ensure high prediction accuracy.</p>
           <div class="tag-container">
-            <span class="tag">Azure</span>
-            <span class="tag">GCP</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Data Validation</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Python</span>
+            <span class="tag">Classification</span>
           </div>
         </div>
 
+        <!-- Project 2 -->
         <div class="card">
-          <h3>Enterprise PySpark & Hive Processing Pipeline</h3>
-          <span class="card-meta">Big Data Processing Engine</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Engineered high-throughput PySpark pipelines to ingest raw financial data, execute complex transformations, and deliver optimized Parquet/Hive tables.</p>
+          <h3>Facial recognition using CNN</h3>
+          <span class="card-meta">Oct 2019 – Nov 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">This project is a multiclassifier. It classifies 106 classes with an accuracy of around 51% utilizing deep convolutional neural networks.</p>
           <div class="tag-container">
-            <span class="tag">PySpark</span>
-            <span class="tag">Hive</span>
-            <span class="tag">Parquet</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Deep Learning</span>
             <span class="tag">Python</span>
           </div>
         </div>
 
+        <!-- Project 3 -->
         <div class="card">
-          <h3>Databricks Workflow Reconciliation Engine</h3>
-          <span class="card-meta">Automated Orchestration</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Developed automated Databricks workflow reconciliation and validation scripts, cutting manual pipeline monitoring effort by 2 hours daily with 99%+ SLA.</p>
+          <h3>Finger Knuckle Recognition using CNN</h3>
+          <span class="card-meta">Oct 2019 – Nov 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">In this project I used 100 classes. Each class had 5 images. Evaluated feature extraction and classification performance across knuckle image samples.</p>
           <div class="tag-container">
-            <span class="tag">Databricks</span>
-            <span class="tag">Shell Scripting</span>
-            <span class="tag">Azure ADF</span>
+            <span class="tag">Biometrics</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Image Processing</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card">
+          <h3>Landslide detection using deep learning and CNN</h3>
+          <span class="card-meta">Jun 2019 – Aug 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">The machine predicts whether the given image is of landslide or not. Research project developed during internship at DRDO.</p>
+          <div class="tag-container">
+            <span class="tag">DRDO Research</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">CNN</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="card">
+          <h3>Airport data analysis by creating an instance in Cloud</h3>
+          <span class="card-meta">Jan 2019 – Jan 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">The data of The Chicago International Airport was analysed using machine learning on cloud infrastructure instances.</p>
+          <div class="tag-container">
+            <span class="tag">Cloud Analytics</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Analysis</span>
           </div>
         </div>
 
