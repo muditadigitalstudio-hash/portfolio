@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -368,7 +369,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Certification Card Image Display */
+    /* Certification Card Link Display */
     .cert-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -378,6 +379,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-decoration: none;
     }
 
     .cert-card:hover {
@@ -387,11 +389,12 @@
 
     .cert-card-img {
       width: 100%;
-      height: auto;
+      height: 180px;
       border-radius: 10px;
       border: 1px solid var(--card-border);
       display: block;
-      object-fit: contain;
+      object-fit: cover;
+      background-color: #0b1329;
     }
 
     .cert-title {
@@ -400,6 +403,14 @@
       font-weight: 700;
       color: #ffffff;
       text-align: center;
+    }
+
+    .cert-link-btn {
+      margin-top: 0.8rem;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
     }
 
     /* Timeline Experience Styling */
@@ -514,7 +525,7 @@
       </div>
 
       <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Cloud Infrastructure Data Pipeline" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Technical Data Engineering Infrastructure" class="hero-img">
       </div>
     </section>
 
@@ -581,7 +592,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (FULL TIMELINE FORMAT: 2019 TO PRESENT) -->
+    <!-- EXPERIENCE SECTION -->
     <section id="experience">
       <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
       <h2 class="section-title">Career History</h2>
@@ -667,29 +678,33 @@
       <h2 class="section-title">Verified Credentials</h2>
       <div class="grid-cards">
         
-        <!-- Certificate Image 1 -->
-        <div class="cert-card">
+        <!-- Certificate 1 -->
+        <a href="https://www.credly.com/badges/5a2d11c9-9f85-46ea-a825-e8fba4e565ff" target="_blank" class="cert-card">
           <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect - Foundations" class="cert-card-img">
           <div class="cert-title">Claude Certified Architect - Foundations</div>
-        </div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
 
-        <!-- Certificate Image 2 -->
-        <div class="cert-card">
+        <!-- Certificate 2 -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
           <img src="MICROSOFT CERTIFIED.jpeg" alt="Microsoft Certified: Azure Data Engineer Associate" class="cert-card-img">
           <div class="cert-title">Microsoft Certified: Azure Data Engineer Associate</div>
-        </div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
 
-        <!-- Certificate Image 3 -->
-        <div class="cert-card">
+        <!-- Certificate 3 -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
           <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Microsoft Certified: Power BI Data Analyst Associate" class="cert-card-img">
           <div class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</div>
-        </div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
 
-        <!-- Certificate Image 4 -->
-        <div class="cert-card">
+        <!-- Certificate 4 -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
           <img src="MICROSOFT CERTIFIED (3).jpeg" alt="Microsoft Certified: Azure Administrator Associate" class="cert-card-img">
           <div class="cert-title">Microsoft Certified: Azure Administrator Associate</div>
-        </div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
 
       </div>
     </section>
