@@ -125,16 +125,16 @@
     }
 
     .hero-name {
-      font-size: 4.8rem;
+      font-size: 5rem;
       font-weight: 900;
-      letter-spacing: -1.5px;
+      letter-spacing: -2px;
       line-height: 1.05;
       margin-bottom: 1.2rem;
       background: linear-gradient(135deg, #ffffff 30%, #00b0ff 70%, #00e676 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
-      text-shadow: 0 10px 30px rgba(0, 176, 255, 0.2);
+      filter: drop-shadow(0 0 20px rgba(0, 176, 255, 0.25));
     }
 
     .hero-badge {
@@ -241,15 +241,25 @@
     }
 
     .about-text {
-      font-size: 1.35rem;
-      line-height: 1.85;
+      font-size: 1.3rem;
+      line-height: 1.8;
       color: #ffffff;
       font-weight: 500;
     }
 
+    .about-text .highlight-blue {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .about-text .highlight-green {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
     .about-img {
       width: 100%;
-      max-width: 260px;
+      max-width: 250px;
       border-radius: 12px;
       border: 1px solid var(--card-border);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -358,7 +368,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Certification Direct Image Display */
+    /* Certification Card Image Display */
     .cert-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -494,8 +504,8 @@
       <div>
         <h1 class="hero-name">MUDITA SHARMA</h1>
         <span class="hero-badge">DATA ENGINEER • BUILDER • MENTOR</span>
-        <h1>Turning <span class="highlight-cyan">messy data</span> into <span class="highlight-green">reliable systems</span> — empowering the future generation.</h1>
-        <p>Data Engineer with 5 years of experience building scalable pipelines, cloud platforms, and automated analytics workflows. Proud mentor to <strong>300+ mentees</strong> in modern data engineering stacks.</p>
+        <h1>Turning <span class="highlight-cyan">messy data</span> into <span class="highlight-green">reliable systems</span> and empowering the future generation.</h1>
+        <p>Data Engineer with 5 years of experience building scalable pipelines, cloud platforms, and automated analytics workflows. Proud mentor to <strong style="color: var(--primary);">300+ mentees</strong> in modern data engineering stacks.</p>
         
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Explore Projects →</a>
@@ -516,9 +526,9 @@
       <div class="about-container">
         <div class="about-card">
           <div class="about-text">
-            <p>I specialize in building fault-tolerant data platforms, designing automated ELT/ETL pipelines, and executing enterprise cloud migrations on Microsoft Azure, Databricks, and GCP.</p>
+            <p>I specialize in building <span class="highlight-green">fault-tolerant data platforms</span>, designing automated ELT/ETL pipelines, and executing enterprise cloud migrations on <span class="highlight-blue">Microsoft Azure</span>, <span class="highlight-blue">Databricks</span>, and <span class="highlight-blue">GCP</span>.</p>
             <br>
-            <p>Across my career at Fractal Analytics and Infosys, I have led client engagements, maintained 99%+ SLA adherence on production workloads, and actively empowered 300+ aspiring engineers through hands-on data engineering mentorship.</p>
+            <p>Across my career at <span class="highlight-green">Fractal Analytics</span> and <span class="highlight-green">Infosys</span>, I have led client engagements, maintained <span class="highlight-blue">99%+ SLA adherence</span> on production workloads, and actively empowered <span class="highlight-green">300+ aspiring engineers</span> through hands-on data engineering mentorship.</p>
           </div>
         </div>
         
@@ -571,73 +581,78 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (TIMELINE FORMAT FROM LINKEDIN IMAGE) -->
+    <!-- EXPERIENCE SECTION (FULL TIMELINE FORMAT: 2019 TO PRESENT) -->
     <section id="experience">
       <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
       <h2 class="section-title">Career History</h2>
       
       <div class="timeline">
-        <!-- Timeline Item 1 -->
+        <!-- Item 1: Fractal Analytics -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>Data Engineer | Fractal</h3>
-            <span class="card-meta">Jul 2022 – Present • 4 yrs 4 mos | Gurugram</span>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Engineer for an International US based Bank (Citi Bank), leading CPG brands (Unilever, P&G, Mars, Mondelez), and search engine Google.</p>
+            <h3>FRACTAL ANALYTICS | Data Engineer</h3>
+            <span class="card-meta">July 2022 – Present | Gurugram, India</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Engineer for an International US-based Bank (Citi Bank), leading CPG companies (Unilever, P&G, Mars, Mondelez), and search engine Google.</p>
             <ul>
-              <li>Built end-to-end data pipelines ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+              <li>Built end-to-end data pipelines for Citi Bank and CPG brands, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
               <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
-              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, and ensured production readiness.</li>
-              <li>Optimized HiveQL and SQL scripts for data processing and workflow improvements to reduce lead time.</li>
-              <li>Automated Databricks workflow reconciliation processes, saving ~2 hours daily with 99%+ SLA adherence.</li>
+              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
+              <li>Created and optimized HiveQL and SQL scripts for data processing, table creation, and workflow improvements to reduce processing lead time.</li>
+              <li>Worked on Lift-and-Shift migration projects, enhancing performance and reliability of existing data jobs.</li>
+              <li>Automated Databricks workflow reconciliation and validation processes, reducing manual effort by approximately 2 hours per day.</li>
+              <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
+              <li>Led client-facing project discussions and requirement workshops, delivering multiple projects with a 100% on-time delivery record.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Timeline Item 2 -->
+        <!-- Item 2: Infosys -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>System Engineer | Infosys</h3>
-            <span class="card-meta">Jan 2021 – Jun 2022 • 1 yr 6 mos</span>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Validation Engineer for a US-based Global Clothing brand on a cloud data migration project.</p>
+            <h3>INFOSYS | System Engineer</h3>
+            <span class="card-meta">Jan 2021 – June 2022</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Validation Engineer for a US-based Global Clothing brand on a cloud data migration project migrating workloads running on GCP to Azure platform.</p>
             <ul>
-              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure platform.</li>
-              <li>Validated data transfer from GCP to Azure for historical/incremental loads, cleansing rules, and curated reporting layers.</li>
+              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
+              <li>Executed ETL/Data Warehouse backend testing and BI Report testing to maintain quality assurance across cloud architectures.</li>
+              <li>Prepared Test cases, Test Scenarios, Defect Management, and Test Reports using Jira for agile project delivery.</li>
+              <li>Validated data transfer from GCP to Azure for history/incremental loads, applying cleansing rules in cleansed layers and data transformations in curated layers.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Timeline Item 3 -->
+        <!-- Item 3: KPMG -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>Data Analytics Consulting Virtual Internship | KPMG Global Services (KGS)</h3>
-            <span class="card-meta">May 2021 – Jun 2021 • 2 mos</span>
+            <h3>KPMG GLOBAL SERVICES (KGS) | Data Analytics Consulting Virtual Intern</h3>
+            <span class="card-meta">May 2021 – June 2021</span>
             <ul>
               <li>Analyzed client datasets to derive actionable business insights, customer segmentation, and data quality assessment reports.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Timeline Item 4 -->
+        <!-- Item 4: Great Learning -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>Content Intern | Great Learning</h3>
-            <span class="card-meta">Oct 2020 – Jan 2021 • 4 mos | New Delhi, Delhi, India</span>
+            <h3>GREAT LEARNING | Content Intern</h3>
+            <span class="card-meta">Oct 2020 – Jan 2021 | New Delhi, India</span>
             <ul>
-              <li>Created and curated technical learning content for data analytics and software engineering modules.</li>
+              <li>Created and curated technical learning content for data analytics and software engineering training modules.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Timeline Item 5 -->
+        <!-- Item 5: DRDO -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="card exp-item">
-            <h3>Research Trainee | Defence Research and Development Organisation (DRDO)</h3>
-            <span class="card-meta">Jun 2019 – Aug 2019 • 3 mos | New Delhi, Delhi, India</span>
+            <h3>DEFENCE RESEARCH AND DEVELOPMENT ORGANISATION (DRDO) | Research Trainee</h3>
+            <span class="card-meta">June 2019 – Aug 2019 | New Delhi, India</span>
             <ul>
               <li>Worked on an innovative research project focused on "Landslide & non-landslide" terrain image detection using deep learning models.</li>
             </ul>
@@ -646,7 +661,7 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION (EXACT IMAGE SNAPSHOT DISPLAY) -->
+    <!-- CERTIFICATIONS SECTION -->
     <section id="certificates">
       <span class="section-label">04 — CERTIFICATIONS</span>
       <h2 class="section-title">Verified Credentials</h2>
@@ -679,7 +694,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (UPDATED EXACTLY FROM UPLOADED SCREENSHOT) -->
+    <!-- PROJECTS SECTION -->
     <section id="projects">
       <span class="section-label">05 — FEATURED PROJECTS</span>
       <h2 class="section-title">Engineering Projects</h2>
