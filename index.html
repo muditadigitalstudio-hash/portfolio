@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio & Resume">
-  <title>Portfolio & Resume</title>
+  <meta name="description" content="Mudita Sharma - Data Engineer & Cloud Platforms Portfolio">
+  <title>Mudita Sharma | Data Engineer & Cloud Specialist</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,7 +125,7 @@
     }
 
     .hero-name {
-      font-size: 4.5rem;
+      font-size: 5rem;
       font-weight: 900;
       letter-spacing: -2px;
       line-height: 1.05;
@@ -369,7 +369,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Certification Container */
+    /* Certification Container & Cropped Unified Image Sizing */
     .cert-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -422,6 +422,44 @@
       font-weight: 600;
     }
 
+    /* Timeline Experience Styling */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: calc(-2.5rem - 6px);
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+    }
+
+    .exp-item ul {
+      margin-left: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .exp-item li {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
     /* Contact Card */
     .contact-card {
       background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(9, 13, 22, 0.95));
@@ -429,6 +467,17 @@
       border-radius: 20px;
       padding: 3.5rem 2rem;
       text-align: center;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
@@ -455,14 +504,15 @@
   <!-- HEADER NAVIGATION -->
   <header>
     <nav>
-      <a href="#home" class="brand-name">Portfolio</a>
+      <a href="#home" class="brand-name">Mudita Sharma</a>
       
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#certificates">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="./Claud-architecht.pdf.pdf" target="_blank" style="color: var(--primary); font-weight: 600;">Resume 📄</a></li>
+        <li><a href="https://docs.google.com/presentation/d/1XfEMUPACAGjZ5T98YKsf7LEbAzTmB_R1/edit?usp=sharing&ouid=114009068372382946568&rtpof=true&sd=true" target="_blank" style="color: var(--primary); font-weight: 600;">Resume 📄</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -472,14 +522,13 @@
     <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div>
-        <h1 class="hero-name">DATA ENGINEER</h1>
-        <span class="hero-badge">DATA ENGINEERING • CLOUD PIPELINES • ANALYTICS</span>
-        <h1>Turning <span class="highlight-cyan">messy data</span> into <span class="highlight-green">reliable systems</span> and empowering cloud transformation.</h1>
-        <p>Architecting scalable data pipelines, automated analytics workflows, and enterprise cloud solutions.</p>
+        <h1 class="hero-name">MUDITA SHARMA</h1>
+        <span class="hero-badge">DATA ENGINEER • BUILDER • MENTOR</span>
+        <h1>Turning <span class="highlight-cyan">messy data</span> into <span class="highlight-green">reliable systems</span> and empowering the future generation.</h1>
+        <p>Data Engineer with 5 years of experience building scalable pipelines, cloud platforms, and automated analytics workflows. Proud mentor to <strong style="color: var(--primary);">300+ mentees</strong> in modern data engineering stacks.</p>
         
         <div class="hero-buttons">
-          <a href="./Claud-architecht.pdf.pdf" target="_blank" class="btn btn-primary">View Resume (PDF) 📄</a>
-          <a href="#projects" class="btn btn-secondary">Explore Projects →</a>
+          <a href="#projects" class="btn btn-primary">Explore Projects →</a>
           <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
@@ -492,12 +541,14 @@
     <!-- ABOUT SECTION -->
     <section id="about">
       <span class="section-label">01 — ABOUT</span>
-      <h2 class="section-title">Architecting Resilient Cloud Ecosystems & Data Solutions</h2>
+      <h2 class="section-title">Architecting Resilient Cloud Ecosystems & Elevating Data Potential</h2>
       
       <div class="about-container">
         <div class="about-card">
           <div class="about-text">
-            <p>Specializing in building <span class="highlight-green">fault-tolerant data platforms</span>, designing automated ELT/ETL pipelines, and executing enterprise cloud migrations on <span class="highlight-blue">Microsoft Azure</span>, <span class="highlight-blue">Databricks</span>, and <span class="highlight-blue">GCP</span>.</p>
+            <p>I specialize in building <span class="highlight-green">fault-tolerant data platforms</span>, designing automated ELT/ETL pipelines, and executing enterprise cloud migrations on <span class="highlight-blue">Microsoft Azure</span>, <span class="highlight-blue">Databricks</span>, and <span class="highlight-blue">GCP</span>.</p>
+            <br>
+            <p>Across my career at <span class="highlight-green">Fractal Analytics</span> and <span class="highlight-green">Infosys</span>, I have led client engagements, maintained <span class="highlight-blue">99%+ SLA adherence</span> on production workloads, and actively empowered <span class="highlight-green">300+ aspiring engineers</span> through hands-on data engineering mentorship.</p>
           </div>
         </div>
         
@@ -534,8 +585,12 @@
               <td class="skills-list">Python, PySpark, SQL, HQL, Linux, Hadoop</td>
             </tr>
             <tr>
-              <td class="skills-category">Version Control & Tools</td>
-              <td class="skills-list">Github, Bitbucket, Jira, Anaconda, Tectia</td>
+              <td class="skills-category">Other Tools</td>
+              <td class="skills-list">Anaconda, Tectia, Bitbucket, Github</td>
+            </tr>
+            <tr>
+              <td class="skills-category">Version Control</td>
+              <td class="skills-list">Github, Bitbucket, Jira</td>
             </tr>
             <tr>
               <td class="skills-category">Data Engineering</td>
@@ -546,46 +601,135 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION LINKED TO GITHUB PDF FILES -->
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <span class="section-label">03 — PROFESSIONAL EXPERIENCE</span>
+      <h2 class="section-title">Career History</h2>
+      
+      <div class="timeline">
+        <!-- Item 1: Fractal Analytics -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>FRACTAL ANALYTICS | Data Engineer</h3>
+            <span class="card-meta">July 2022 – Present | Gurugram, India</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Engineer for an International US-based Bank (Citi Bank), leading CPG companies (Unilever, P&G, Mars, Mondelez), and search engine Google.</p>
+            <ul>
+              <li>Built end-to-end data pipelines for Citi Bank and CPG brands, ingesting and processing data from diverse sources using Python (Pandas, NumPy), PySpark, Hive, and SQL.</li>
+              <li>Developed scalable PySpark pipelines to read from Hive tables, CSVs, and other sources, transform data, and deliver outputs to Hive, Parquet, and CSV targets.</li>
+              <li>Automated pipeline execution using Shell scripting, implemented data quality checks, ensured production readiness, and conducted end-to-end testing.</li>
+              <li>Created and optimized HiveQL and SQL scripts for data processing, table creation, and workflow improvements to reduce processing lead time.</li>
+              <li>Worked on Lift-and-Shift migration projects, enhancing performance and reliability of existing data jobs.</li>
+              <li>Automated Databricks workflow reconciliation and validation processes, reducing manual effort by approximately 2 hours per day.</li>
+              <li>Supported production workloads with 99%+ SLA adherence through proactive monitoring and issue resolution.</li>
+              <li>Led client-facing project discussions and requirement workshops, delivering multiple projects with a 100% on-time delivery record.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Infosys -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>INFOSYS | System Engineer</h3>
+            <span class="card-meta">Jan 2021 – June 2022</span>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Worked as a Data Validation Engineer for a US-based Global Clothing brand on a cloud data migration project migrating workloads running on GCP to Azure platform.</p>
+            <ul>
+              <li>Developed and executed complex SQL validation queries to ensure accuracy of data migrated from GCP to Azure.</li>
+              <li>Executed ETL/Data Warehouse backend testing and BI Report testing to maintain quality assurance across cloud architectures.</li>
+              <li>Prepared Test cases, Test Scenarios, Defect Management, and Test Reports using Jira for agile project delivery.</li>
+              <li>Validated data transfer from GCP to Azure for history/incremental loads, applying cleansing rules in cleansed layers and data transformations in curated layers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: KPMG -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>KPMG GLOBAL SERVICES (KGS) | Data Analytics Consulting Virtual Intern</h3>
+            <span class="card-meta">May 2021 – June 2021</span>
+            <ul>
+              <li>Analyzed client datasets to derive actionable business insights, customer segmentation, and data quality assessment reports.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 4: Great Learning -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>GREAT LEARNING | Content Intern</h3>
+            <span class="card-meta">Oct 2020 – Jan 2021 | New Delhi, India</span>
+            <ul>
+              <li>Created and curated technical learning content for data analytics and software engineering training modules.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 5: DRDO -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card exp-item">
+            <h3>DEFENCE RESEARCH AND DEVELOPMENT ORGANISATION (DRDO) | Research Trainee</h3>
+            <span class="card-meta">June 2019 – Aug 2019 | New Delhi, India</span>
+            <ul>
+              <li>Worked on an innovative research project focused on "Landslide & non-landslide" terrain image detection using deep learning models.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION WITH EMBEDDED CROPPED UNIFIED IMAGES -->
     <section id="certificates">
-      <span class="section-label">03 — CERTIFICATIONS</span>
+      <span class="section-label">04 — CERTIFICATIONS</span>
       <h2 class="section-title">Verified Credentials</h2>
       <div class="grid-cards">
         
-        <!-- Certificate 1: Azure Administrator -->
-        <a href="./Azure-administrator.pdf.PDF" target="_blank" class="cert-card">
+        <!-- Certificate 1: Claude Certified -->
+        <a href="https://www.credly.com/badges/5a2d11c9-9f85-46ea-a825-e8fba4e565ff" target="_blank" class="cert-card">
           <div class="cert-img-box">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" alt="Azure Administrator Certificate" class="cert-card-img">
-          </div>
-          <div class="cert-title">Azure Administrator Certification</div>
-          <span class="cert-link-btn">View Certificate (PDF) ↗</span>
-        </a>
-
-        <!-- Certificate 2: Claude Certified Architect -->
-        <a href="./Claud-architecht.pdf.pdf" target="_blank" class="cert-card">
-          <div class="cert-img-box">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" alt="Claude Certified Architect Certificate" class="cert-card-img">
+            <img src="CLAUDE CERTIFIED.jpeg" alt="Claude Certified Architect - Foundations" class="cert-card-img">
           </div>
           <div class="cert-title">Claude Certified Architect - Foundations</div>
-          <span class="cert-link-btn">View Certificate (PDF) ↗</span>
+          <span class="cert-link-btn">Verify Credential ↗</span>
         </a>
 
-        <!-- Certificate 3: Power BI Data Analyst Associate -->
-        <a href="./Power BI Data Analyst Associate.pdf" target="_blank" class="cert-card">
+        <!-- Certificate 2: Azure Data Engineer -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
           <div class="cert-img-box">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="Power BI Data Analyst Associate Certificate" class="cert-card-img">
+            <img src="MICROSOFT CERTIFIED.jpeg" alt="Microsoft Certified: Azure Data Engineer Associate" class="cert-card-img">
           </div>
-          <div class="cert-title">Power BI Data Analyst Associate</div>
-          <span class="cert-link-btn">View Certificate (PDF) ↗</span>
+          <div class="cert-title">Microsoft Certified: Azure Data Engineer Associate</div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
         </a>
 
-        <!-- Certificate 4: Azure Data Engineering -->
-        <a href="./azure-data engineering.pdf.pdf" target="_blank" class="cert-card">
+        <!-- Certificate 3: Power BI Data Analyst -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
           <div class="cert-img-box">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="Azure Data Engineering Certificate" class="cert-card-img">
+            <img src="MICROSOFT CERTIFIED (2).jpeg" alt="Microsoft Certified: Power BI Data Analyst Associate" class="cert-card-img">
           </div>
-          <div class="cert-title">Azure Data Engineering Certification</div>
-          <span class="cert-link-btn">View Certificate (PDF) ↗</span>
+          <div class="cert-title">Microsoft Certified: Power BI Data Analyst Associate</div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
+
+        <!-- Certificate 4: Azure Administrator -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
+          <div class="cert-img-box">
+            <img src="MICROSOFT CERTIFIED (3).jpeg" alt="Microsoft Certified: Azure Administrator Associate" class="cert-card-img">
+          </div>
+          <div class="cert-title">Microsoft Certified: Azure Administrator Associate</div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
+        </a>
+
+        <!-- Certificate 5: Azure Data Fundamentals -->
+        <a href="https://learn.microsoft.com/en-us/users/muditasharma/" target="_blank" class="cert-card">
+          <div class="cert-img-box">
+            <img src="MICROSOFT CERTIFIED (4).jpeg" alt="Microsoft Certified: Azure Data Fundamentals" class="cert-card-img">
+          </div>
+          <div class="cert-title">Microsoft Certified: Azure Data Fundamentals</div>
+          <span class="cert-link-btn">Verify Credential ↗</span>
         </a>
 
       </div>
@@ -593,15 +737,15 @@
 
     <!-- PROJECTS SECTION -->
     <section id="projects">
-      <span class="section-label">04 — FEATURED PROJECTS</span>
+      <span class="section-label">05 — FEATURED PROJECTS</span>
       <h2 class="section-title">Engineering Projects</h2>
       <div class="grid-cards">
         
         <!-- Project 1 -->
         <div class="card">
           <h3>Credit Card Fraud Detection</h3>
-          <span class="card-meta">Machine Learning & Analytics</span>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Determines fraudulent transactions by comparing multiple classification algorithms in machine learning for high prediction accuracy.</p>
+          <span class="card-meta">Jan 2020 – Mar 2020</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">This project determines the fraud transaction by comparing three algorithms of machine learning to ensure high prediction accuracy.</p>
           <div class="tag-container">
             <span class="tag">Machine Learning</span>
             <span class="tag">Python</span>
@@ -611,13 +755,49 @@
 
         <!-- Project 2 -->
         <div class="card">
-          <h3>Cloud Data Pipeline & Storage</h3>
-          <span class="card-meta">Data Engineering</span>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Automated cloud storage ingestion and pipeline architecture for high-throughput dataset handling and downstream processing.</p>
+          <h3>Facial recognition using CNN</h3>
+          <span class="card-meta">Oct 2019 – Nov 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">This project is a multiclassifier. It classifies 106 classes with an accuracy of around 51% utilizing deep convolutional neural networks.</p>
           <div class="tag-container">
-            <span class="tag">Cloud Infrastructure</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Deep Learning</span>
             <span class="tag">Python</span>
-            <span class="tag">ETL</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+          <h3>Finger Knuckle Recognition using CNN</h3>
+          <span class="card-meta">Oct 2019 – Nov 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">In this project I used 100 classes. Each class had 5 images. Evaluated feature extraction and classification performance across knuckle image samples.</p>
+          <div class="tag-container">
+            <span class="tag">Biometrics</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Image Processing</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card">
+          <h3>Landslide detection using deep learning and CNN</h3>
+          <span class="card-meta">Jun 2019 – Aug 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">The machine predicts whether the given image is of landslide or not. Research project developed during internship at DRDO.</p>
+          <div class="tag-container">
+            <span class="tag">DRDO Research</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">CNN</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="card">
+          <h3>Airport data analysis by creating an instance in Cloud</h3>
+          <span class="card-meta">Jan 2019 – Jan 2019</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">The data of The Chicago International Airport was analysed using machine learning on cloud infrastructure instances.</p>
+          <div class="tag-container">
+            <span class="tag">Cloud Analytics</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Analysis</span>
           </div>
         </div>
 
@@ -627,13 +807,20 @@
     <!-- CONTACT SECTION -->
     <section id="contact">
       <div class="contact-card">
-        <span class="section-label">05 — GET IN TOUCH</span>
+        <span class="section-label">06 — GET IN TOUCH</span>
         <h2>Let’s Work Together</h2>
-        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto; margin-bottom: 1.5rem;">Feel free to reach out for project collaborations or professional opportunities.</p>
+        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Feel free to reach out for data engineering engagements, cloud pipeline consulting, or mentorship.</p>
         
+        <div class="contact-details">
+          <span>📧 mudita10251@gmail.com</span>
+          <span>📞 (+91) 9599010195</span>
+          <span>📍 New Delhi, India</span>
+        </div>
+
         <div class="hero-buttons" style="justify-content: center;">
-          <a href="./Claud-architecht.pdf.pdf" target="_blank" class="btn btn-primary">Download / Open Resume (PDF) 📄</a>
-          <a href="https://github.com/muditadigitalstudio-hash/portfolio" target="_blank" class="btn btn-secondary">GitHub Repository</a>
+          <a href="mailto:mudita10251@gmail.com" class="btn btn-primary">Send Email →</a>
+          <a href="https://www.linkedin.com/in/mudita-sharma" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+          <a href="https://github.com/Mudita98/Sharma" target="_blank" class="btn btn-secondary">GitHub Profile</a>
         </div>
       </div>
     </section>
